@@ -1,0 +1,16 @@
+title: ABEY
+lang: en
+description: ABEY chain is a truly fast, permissionless, secure and scalable public blockchain platform!
+
+remote_theme: rundocs/jekyll-rtd-theme
+
+readme_index:
+  with_frontmatter: true
+
+exclude:
+  - Makefile
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+
+theme: jekyll-theme-time-machine
