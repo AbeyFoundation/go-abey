@@ -7,7 +7,7 @@ ADD . /abey
 RUN cd /abey && make gabey
 
 # Pull Gabey into a second stage deploy alpine container
-FROM alpine:3.18.3
+FROM alpine:3.18.5
 
 RUN apk add --no-cache ca-certificates
 COPY --from=construction /abey/build/bin/gabey /usr/local/bin/
