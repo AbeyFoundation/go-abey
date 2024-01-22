@@ -302,6 +302,9 @@ func (bc *BlockChain) loadLastState() error {
 		SnailHash:   common.Hash{},
 		SnailNumber: bc.chainConfig.TIP9.SnailNumber,
 	}
+	if !bc.chainConfig.IsTIP9(currentHeader.Number) {
+		rewardHead = bc.GetLastRowByFastCurrentBlock()
+	}
 
 	if rewardHead != nil {
 		bc.currentReward.Store(rewardHead)
