@@ -18,16 +18,16 @@ package backends_test
 
 import (
 	"context"
-	"github.com/abeychain/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/params"
 	"math/big"
 	"testing"
 
-	ethereum "github.com/abeychain/go-abey"
-	"github.com/abeychain/go-abey/accounts/abi/bind"
-	"github.com/abeychain/go-abey/accounts/abi/bind/backends"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/crypto"
+	ethereum "github.com/AbeyFoundation/go-abey"
+	"github.com/AbeyFoundation/go-abey/accounts/abi/bind"
+	"github.com/AbeyFoundation/go-abey/accounts/abi/bind/backends"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/crypto"
 )
 
 func TestSimulatedBackend(t *testing.T) {

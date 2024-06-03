@@ -19,13 +19,13 @@ package discover
 import (
 	"encoding/hex"
 	"fmt"
-	"github.com/abeychain/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/log"
 	"math/rand"
 	"net"
 	"sync"
 
-	"github.com/abeychain/go-abey/p2p/enode"
-	"github.com/abeychain/go-abey/p2p/enr"
+	"github.com/AbeyFoundation/go-abey/p2p/enode"
+	"github.com/AbeyFoundation/go-abey/p2p/enr"
 )
 
 var nullNode *enode.Node

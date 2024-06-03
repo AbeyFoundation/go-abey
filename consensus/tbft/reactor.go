@@ -3,11 +3,11 @@ package tbft
 import (
 	"errors"
 	"fmt"
-	"github.com/abeychain/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/help"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/tp2p"
+	ttypes "github.com/AbeyFoundation/go-abey/consensus/tbft/types"
+	"github.com/AbeyFoundation/go-abey/log"
 	"github.com/tendermint/go-amino"
-	"github.com/abeychain/go-abey/consensus/tbft/help"
-	"github.com/abeychain/go-abey/consensus/tbft/tp2p"
-	ttypes "github.com/abeychain/go-abey/consensus/tbft/types"
 	"reflect"
 	"sync"
 	"time"
@@ -148,7 +148,7 @@ func (conR *ConsensusReactor) RemovePeer(peer tp2p.Peer, reason interface{}) {
 	//peer.Get(PeerStateKey).(*PeerState).Disconnect()
 }
 
-//SetHealthMgr sets peer  healthMgr
+// SetHealthMgr sets peer  healthMgr
 func (conR *ConsensusReactor) SetHealthMgr(h *ttypes.HealthMgr) {
 	conR.hm = h
 }
@@ -804,10 +804,10 @@ func (conR *ConsensusReactor) StringIndented(indent string) string {
 //-----------------------------------------------------------------------------
 
 var (
-//ErrPeerStateHeightRegression is Error peer state height regression
-//ErrPeerStateHeightRegression = errors.New("error peer state height regression")
-//ErrPeerStateInvalidStartTime is Error peer state invalid startTime
-//ErrPeerStateInvalidStartTime = errors.New("error peer state invalid startTime")
+// ErrPeerStateHeightRegression is Error peer state height regression
+// ErrPeerStateHeightRegression = errors.New("error peer state height regression")
+// ErrPeerStateInvalidStartTime is Error peer state invalid startTime
+// ErrPeerStateInvalidStartTime = errors.New("error peer state invalid startTime")
 )
 
 // PeerState contains the known state of a peer, including its connection and

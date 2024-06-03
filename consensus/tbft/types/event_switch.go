@@ -1,11 +1,11 @@
 package types
 
 import (
-	"github.com/abeychain/go-abey/consensus/tbft/help"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/help"
 	"sync"
 )
 
-//EventData Generic event data can be typed and registered with go-amino
+// EventData Generic event data can be typed and registered with go-amino
 // via concrete implementation of this interface
 type EventData interface {
 	//AssertIsEventData()
@@ -17,12 +17,12 @@ type Eventable interface {
 	SetEventSwitch(evsw EventSwitch)
 }
 
-//Fireable an event switch or cache implements fireable
+// Fireable an event switch or cache implements fireable
 type Fireable interface {
 	FireEvent(event string, data EventData)
 }
 
-//EventSwitch interface
+// EventSwitch interface
 type EventSwitch interface {
 	help.Service
 	Fireable
@@ -40,7 +40,7 @@ type eventSwitch struct {
 	listeners  map[string]*eventListener
 }
 
-//NewEventSwitch new
+// NewEventSwitch new
 func NewEventSwitch() EventSwitch {
 	evsw := &eventSwitch{
 		eventCells: make(map[string]*eventCell),
@@ -174,7 +174,7 @@ func (cell *eventCell) FireEvent(data EventData) {
 
 //-----------------------------------------------------------------------------
 
-//EventCallback call back event
+// EventCallback call back event
 type EventCallback func(data EventData)
 
 type eventListener struct {

@@ -19,11 +19,11 @@ package bind
 import (
 	"context"
 	"errors"
-	"github.com/abeychain/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common"
 	"time"
 
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/log"
 )
 
 // WaitMined waits for tx to be mined on the blockchain.

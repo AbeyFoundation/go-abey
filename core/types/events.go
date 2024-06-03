@@ -17,14 +17,14 @@
 package types
 
 import (
-	"github.com/abeychain/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common"
 	"math/big"
 )
 
 // NewTxsEvent is posted when a batch of transactions enter the transaction pool.
 type NewTxsEvent struct{ Txs []*Transaction }
 
-//NewFruitsEvent is posted when a fruit has been imported.
+// NewFruitsEvent is posted when a fruit has been imported.
 type NewFruitsEvent struct{ Fruits []*SnailBlock }
 
 // NewMinedFruitEvent is posted when a block has been Mined.

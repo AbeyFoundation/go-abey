@@ -28,9 +28,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/rlp"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/rlp"
 	"github.com/syndtr/goleveldb/leveldb"
 	"github.com/syndtr/goleveldb/leveldb/errors"
 	"github.com/syndtr/goleveldb/leveldb/iterator"

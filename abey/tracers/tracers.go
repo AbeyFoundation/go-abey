@@ -21,7 +21,7 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/abeychain/go-abey/abey/tracers/internal/tracers"
+	"github.com/AbeyFoundation/go-abey/abey/tracers/internal/tracers"
 )
 
 // all contains all the built in JavaScript tracers by name.

@@ -19,7 +19,7 @@ package abeyapi
 import (
 	"sync"
 
-	"github.com/abeychain/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common"
 )
 
 type AddrLocker struct {

@@ -19,10 +19,10 @@ package minerva
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/common/math"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common/math"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/params"
 	osMath "math"
 	"math/big"
 	"os"
@@ -209,10 +209,10 @@ func TestOutSqrt(t *testing.T) {
 	fmt.Println(string(b))
 }
 
-//Calculate the reward distribution corresponding to the slow block height
-//There is a new distribution incentive for every 4,500 blocks.
-//The unit of output is wei
-//6 bits at the end are cleared
+// Calculate the reward distribution corresponding to the slow block height
+// There is a new distribution incentive for every 4,500 blocks.
+// The unit of output is wei
+// 6 bits at the end are cleared
 func TestSnailAwardForHeight(t *testing.T) {
 	for i := 1; i < 1000; i++ {
 		snailBlockNumber := new(big.Int).SetInt64(int64(1 + 4500*(i-1)))

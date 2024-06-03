@@ -17,7 +17,7 @@
 package vm
 
 import (
-	"github.com/abeychain/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/params"
 )
 
 type (

@@ -21,12 +21,12 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/abeychain/go-abey/abey/downloader"
-	dtype "github.com/abeychain/go-abey/abey/types"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/p2p/enode"
+	"github.com/AbeyFoundation/go-abey/abey/downloader"
+	dtype "github.com/AbeyFoundation/go-abey/abey/types"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/p2p/enode"
 )
 
 const (

@@ -21,8 +21,8 @@ import (
 	"container/heap"
 	"errors"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/rlp"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/rlp"
 )
 
 // Iterator is a key-value trie iterator that traverses a Trie.

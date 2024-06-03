@@ -27,10 +27,10 @@ import (
 	"testing"
 	"time"
 
+	"github.com/AbeyFoundation/go-abey/accounts"
+	"github.com/AbeyFoundation/go-abey/common"
 	"github.com/cespare/cp"
 	"github.com/davecgh/go-spew/spew"
-	"github.com/abeychain/go-abey/accounts"
-	"github.com/abeychain/go-abey/common"
 )
 
 var (

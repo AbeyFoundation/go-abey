@@ -19,9 +19,9 @@ package state
 import (
 	"bytes"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/rlp"
-	"github.com/abeychain/go-abey/trie"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/rlp"
+	"github.com/AbeyFoundation/go-abey/trie"
 )
 
 // NewStateSync create a new state trie download scheduler.

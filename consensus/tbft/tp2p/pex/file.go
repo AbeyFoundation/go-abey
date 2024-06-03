@@ -3,8 +3,8 @@ package pex
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/consensus/tbft/help"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/help"
+	"github.com/AbeyFoundation/go-abey/log"
 	"os"
 )
 

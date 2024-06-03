@@ -20,7 +20,7 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/abeychain/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/params"
 )
 
 func TestTransaction(t *testing.T) {
@@ -29,9 +29,8 @@ func TestTransaction(t *testing.T) {
 	txt := new(testMatcher)
 
 	txt.config(`^Frontier/`, params.ChainConfig{
-		ChainID:        big.NewInt(1),
+		ChainID: big.NewInt(1),
 	})
-
 
 	txt.walk(t, transactionTestDir, func(t *testing.T, name string, test *TransactionTest) {
 		cfg := txt.findConfig(name)

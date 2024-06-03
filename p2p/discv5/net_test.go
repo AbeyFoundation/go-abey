@@ -22,8 +22,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/crypto"
 )
 
 func TestNetwork_Lookup(t *testing.T) {

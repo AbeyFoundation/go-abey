@@ -27,10 +27,10 @@ import (
 	"testing/quick"
 	"time"
 
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/p2p/enode"
-	"github.com/abeychain/go-abey/p2p/enr"
-	"github.com/abeychain/go-abey/p2p/netutil"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/p2p/enode"
+	"github.com/AbeyFoundation/go-abey/p2p/enr"
+	"github.com/AbeyFoundation/go-abey/p2p/netutil"
 )
 
 func TestTable_pingReplace(t *testing.T) {
@@ -599,7 +599,7 @@ func (tn *preminedTestnet) findnode(toid enode.ID, toaddr *net.UDPAddr, target e
 
 func (*preminedTestnet) close() {}
 
-//func (*preminedTestnet) ping(toid enode.ID, toaddr *net.UDPAddr) error { return nil }
+// func (*preminedTestnet) ping(toid enode.ID, toaddr *net.UDPAddr) error { return nil }
 func (*preminedTestnet) ping(*enode.Node) (seq uint64, err error) { return 0, nil }
 
 var _ = (*preminedTestnet).mine // avoid linter warning about mine being dead code.

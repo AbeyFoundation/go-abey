@@ -9,10 +9,10 @@ import (
 	"strings"
 	"time"
 
+	"github.com/AbeyFoundation/go-abey/cmd/utils"
+	"github.com/AbeyFoundation/go-abey/node"
+	"github.com/AbeyFoundation/go-abey/rpc"
 	"github.com/gizak/termui"
-	"github.com/abeychain/go-abey/cmd/utils"
-	"github.com/abeychain/go-abey/node"
-	"github.com/abeychain/go-abey/rpc"
 	"gopkg.in/urfave/cli.v1"
 )
 

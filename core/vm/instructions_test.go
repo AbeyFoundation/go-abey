@@ -23,10 +23,10 @@ import (
 	"io/ioutil"
 	"testing"
 
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/params"
 	"github.com/holiman/uint256"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/params"
 )
 
 type TwoOperandTestcase struct {

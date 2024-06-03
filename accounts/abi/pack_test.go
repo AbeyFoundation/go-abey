@@ -27,7 +27,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/abeychain/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common"
 )
 
 // TestPack tests the general pack/unpack tests in packing_test.go

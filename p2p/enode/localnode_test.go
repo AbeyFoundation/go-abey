@@ -19,8 +19,8 @@ package enode
 import (
 	"testing"
 
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/p2p/enr"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/p2p/enr"
 )
 
 func newLocalNodeForTesting() (*LocalNode, *DB) {

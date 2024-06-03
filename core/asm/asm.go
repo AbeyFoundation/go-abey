@@ -21,7 +21,7 @@ import (
 	"encoding/hex"
 	"fmt"
 
-	"github.com/abeychain/go-abey/core/vm"
+	"github.com/AbeyFoundation/go-abey/core/vm"
 )
 
 // Iterator for disassembled EVM instructions

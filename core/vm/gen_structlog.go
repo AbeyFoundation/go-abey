@@ -6,9 +6,9 @@ import (
 	"encoding/json"
 	"math/big"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/common/hexutil"
-	"github.com/abeychain/go-abey/common/math"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common/hexutil"
+	"github.com/AbeyFoundation/go-abey/common/math"
 )
 
 var _ = (*structLogMarshaling)(nil)

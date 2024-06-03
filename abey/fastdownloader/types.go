@@ -19,7 +19,7 @@ package fastdownloader
 import (
 	"fmt"
 
-	"github.com/abeychain/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/core/types"
 )
 
 // headerPack is a batch of block headers returned by a peer.
@@ -45,7 +45,7 @@ func (p *bodyPack) Items() int {
 	return len(p.transactions)
 }
 func (p *bodyPack) Stats() string {
-	return fmt.Sprintf("Fast %d:%d:%d", len(p.transactions), len(p.signs),len(p.infos))
+	return fmt.Sprintf("Fast %d:%d:%d", len(p.transactions), len(p.signs), len(p.infos))
 }
 
 // receiptPack is a batch of receipts returned by a peer.

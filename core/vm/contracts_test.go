@@ -20,13 +20,13 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"github.com/abeychain/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/params"
 	"io/ioutil"
 	"math/big"
 	"testing"
 	"time"
 
-	"github.com/abeychain/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common"
 )
 
 // precompiledTest defines the input/output pairs for precompiled contract tests.

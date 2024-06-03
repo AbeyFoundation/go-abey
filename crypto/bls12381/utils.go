@@ -20,7 +20,7 @@ import (
 	"errors"
 	"math/big"
 
-	"github.com/abeychain/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common"
 )
 
 func bigFromHex(hex string) *big.Int {

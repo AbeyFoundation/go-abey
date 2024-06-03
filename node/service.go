@@ -19,11 +19,11 @@ package node
 import (
 	"reflect"
 
-	"github.com/abeychain/go-abey/accounts"
-	"github.com/abeychain/go-abey/abeydb"
-	"github.com/abeychain/go-abey/event"
-	"github.com/abeychain/go-abey/p2p"
-	"github.com/abeychain/go-abey/rpc"
+	"github.com/AbeyFoundation/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/accounts"
+	"github.com/AbeyFoundation/go-abey/event"
+	"github.com/AbeyFoundation/go-abey/p2p"
+	"github.com/AbeyFoundation/go-abey/rpc"
 )
 
 // ServiceContext is a collection of service independent options inherited from

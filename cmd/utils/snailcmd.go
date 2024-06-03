@@ -26,10 +26,10 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/rlp"
-	"github.com/abeychain/go-abey/core/snailchain"
-	"github.com/abeychain/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/core/snailchain"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/rlp"
 )
 
 func ImportSnailChain(chain *snailchain.SnailBlockChain, fn string) error {

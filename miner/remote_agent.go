@@ -24,10 +24,10 @@ import (
 
 	"encoding/hex"
 	"errors"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/consensus"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/consensus"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/log"
 	"math/big"
 )
 
@@ -61,7 +61,7 @@ type RemoteAgent struct {
 	running int32 // running indicates whether the agent is active. Call atomically
 }
 
-//NewRemoteAgent create remote agent object
+// NewRemoteAgent create remote agent object
 func NewRemoteAgent(chain consensus.ChainReader, snailchain consensus.SnailChainReader, engine consensus.Engine) *RemoteAgent {
 
 	return &RemoteAgent{
@@ -73,7 +73,7 @@ func NewRemoteAgent(chain consensus.ChainReader, snailchain consensus.SnailChain
 	}
 }
 
-//SubmitHashrate return the HashRate for remote agent
+// SubmitHashrate return the HashRate for remote agent
 func (a *RemoteAgent) SubmitHashrate(id common.Hash, rate uint64) {
 	a.hashrateMu.Lock()
 	defer a.hashrateMu.Unlock()
@@ -91,7 +91,7 @@ func (a *RemoteAgent) SetReturnCh(returnCh chan<- *Result) {
 	a.returnCh = returnCh
 }
 
-//Start remote control the start mine
+// Start remote control the start mine
 func (a *RemoteAgent) Start() {
 	if !atomic.CompareAndSwapInt32(&a.running, 0, 1) {
 		return
@@ -101,7 +101,7 @@ func (a *RemoteAgent) Start() {
 	go a.loop(a.workCh, a.quitCh)
 }
 
-//Stop remote control the stop mine
+// Stop remote control the stop mine
 func (a *RemoteAgent) Stop() {
 	if !atomic.CompareAndSwapInt32(&a.running, 1, 0) {
 		return
@@ -122,7 +122,7 @@ func (a *RemoteAgent) GetHashRate() (tot int64) {
 	return
 }
 
-//GetWork return the current block hash without nonce
+// GetWork return the current block hash without nonce
 func (a *RemoteAgent) GetWork() ([4]string, error) {
 	a.mu.Lock()
 	defer a.mu.Unlock()
@@ -254,7 +254,7 @@ func (a *RemoteAgent) SubmitWork(nonce types.BlockNonce, mixDigest, hash common.
 	return true
 }
 
-//GetWork return the current block hash without nonce
+// GetWork return the current block hash without nonce
 func (a *RemoteAgent) GetDataset() ([DATASETHEADLENGH]string, error) {
 	a.mu.Lock()
 	defer a.mu.Unlock()
@@ -264,7 +264,7 @@ func (a *RemoteAgent) GetDataset() ([DATASETHEADLENGH]string, error) {
 	return res, errors.New("the epoch is zore not need dataset")
 }
 
-//GetWork return the current block hash without nonce
+// GetWork return the current block hash without nonce
 func (a *RemoteAgent) GetDatasetBySeedHash(seedHash string) ([DATASETHEADLENGH]string, error) {
 	a.mu.Lock()
 	defer a.mu.Unlock()

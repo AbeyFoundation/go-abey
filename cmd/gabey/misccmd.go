@@ -1,5 +1,3 @@
-
-
 package main
 
 import (
@@ -8,9 +6,9 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/abeychain/go-abey/cmd/utils"
-	"github.com/abeychain/go-abey/abey"
-	"github.com/abeychain/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/abey"
+	"github.com/AbeyFoundation/go-abey/cmd/utils"
+	"github.com/AbeyFoundation/go-abey/params"
 	"gopkg.in/urfave/cli.v1"
 )
 

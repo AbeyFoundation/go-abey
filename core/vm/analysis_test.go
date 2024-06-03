@@ -19,7 +19,7 @@ package vm
 import (
 	"testing"
 
-	"github.com/abeychain/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/crypto"
 )
 
 func TestJumpDestAnalysis(t *testing.T) {

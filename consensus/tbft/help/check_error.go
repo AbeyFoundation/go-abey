@@ -1,6 +1,6 @@
 package help
 
-import "github.com/abeychain/go-abey/log"
+import "github.com/AbeyFoundation/go-abey/log"
 
 func CheckAndPrintError(err error) {
 	if err != nil {

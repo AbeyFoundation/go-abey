@@ -5,7 +5,7 @@ import (
 	"net"
 	"time"
 
-	"github.com/abeychain/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/log"
 )
 
 type UPNPCapabilities struct {

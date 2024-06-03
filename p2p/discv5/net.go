@@ -24,12 +24,12 @@ import (
 	"net"
 	"time"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/common/mclock"
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/rlp"
-	"github.com/abeychain/go-abey/p2p/netutil"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common/mclock"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/p2p/netutil"
+	"github.com/AbeyFoundation/go-abey/rlp"
 	"golang.org/x/crypto/sha3"
 )
 

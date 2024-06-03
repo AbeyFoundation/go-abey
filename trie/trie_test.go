@@ -29,11 +29,11 @@ import (
 	"testing"
 	"testing/quick"
 
+	"github.com/AbeyFoundation/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/rlp"
 	"github.com/davecgh/go-spew/spew"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/rlp"
-	"github.com/abeychain/go-abey/abeydb"
 )
 
 func init() {

@@ -19,7 +19,7 @@ package les
 import (
 	"crypto/ecdsa"
 	"fmt"
-	"github.com/abeychain/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/crypto"
 	"io"
 	"math"
 	"math/rand"
@@ -28,13 +28,13 @@ import (
 	"sync"
 	"time"
 
-	"github.com/abeychain/go-abey/common/mclock"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/rlp"
-	"github.com/abeychain/go-abey/abeydb"
-	"github.com/abeychain/go-abey/p2p"
-	"github.com/abeychain/go-abey/p2p/discv5"
-	"github.com/abeychain/go-abey/p2p/enode"
+	"github.com/AbeyFoundation/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/common/mclock"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/p2p"
+	"github.com/AbeyFoundation/go-abey/p2p/discv5"
+	"github.com/AbeyFoundation/go-abey/p2p/enode"
+	"github.com/AbeyFoundation/go-abey/rlp"
 )
 
 const (

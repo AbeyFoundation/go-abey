@@ -19,7 +19,7 @@ package tests
 import (
 	"testing"
 
-	"github.com/abeychain/go-abey/core/vm"
+	"github.com/AbeyFoundation/go-abey/core/vm"
 )
 
 func TestVM(t *testing.T) {

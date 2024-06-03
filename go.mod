@@ -1,4 +1,4 @@
-module github.com/abeychain/go-abey
+module github.com/AbeyFoundation/go-abey
 
 go 1.15
 

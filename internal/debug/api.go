@@ -34,7 +34,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/abeychain/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/log"
 )
 
 // Handler is the global debugging handler.

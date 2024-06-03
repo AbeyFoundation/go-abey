@@ -19,7 +19,7 @@ package main
 import (
 	"testing"
 
-	"github.com/abeychain/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common"
 )
 
 func TestFacebook(t *testing.T) {

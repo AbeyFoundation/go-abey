@@ -5,8 +5,8 @@ import (
 	uurl "net/url"
 	"time"
 
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/metrics"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/metrics"
 	"github.com/influxdata/influxdb/client"
 )
 

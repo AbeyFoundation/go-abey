@@ -1,8 +1,8 @@
 package tbft
 
 import (
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/types"
 	"github.com/tendermint/go-amino"
-	"github.com/abeychain/go-abey/consensus/tbft/types"
 )
 
 var cdc = amino.NewCodec()

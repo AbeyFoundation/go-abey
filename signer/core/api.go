@@ -25,15 +25,15 @@ import (
 	"math/big"
 	"reflect"
 
-	"github.com/abeychain/go-abey/accounts"
-	"github.com/abeychain/go-abey/accounts/keystore"
-	"github.com/abeychain/go-abey/accounts/usbwallet"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/common/hexutil"
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/internal/abeyapi"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/rlp"
+	"github.com/AbeyFoundation/go-abey/accounts"
+	"github.com/AbeyFoundation/go-abey/accounts/keystore"
+	"github.com/AbeyFoundation/go-abey/accounts/usbwallet"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common/hexutil"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/internal/abeyapi"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/rlp"
 )
 
 // ExternalAPI defines the external API through which signing requests are made.
@@ -374,7 +374,7 @@ func (api *SignerAPI) SignTransaction(ctx context.Context, args SendTxArgs, meth
 //
 // The key used to calculate the signature is decrypted with the given password.
 //
-// https://github.com/abeychain/go-abey/wiki/Management-APIs#personal_sign
+// https://github.com/AbeyFoundation/go-abey/wiki/Management-APIs#personal_sign
 func (api *SignerAPI) Sign(ctx context.Context, addr common.MixedcaseAddress, data hexutil.Bytes) (hexutil.Bytes, error) {
 	sighash, msg := SignHash(data)
 	// We make the request prior to looking up if we actually have the account, to prevent
@@ -413,7 +413,7 @@ func (api *SignerAPI) Sign(ctx context.Context, addr common.MixedcaseAddress, da
 // Note, the signature must conform to the secp256k1 curve R, S and V values, where
 // the V value must be be 27 or 28 for legacy reasons.
 //
-// https://github.com/abeychain/go-abey/wiki/Management-APIs#personal_ecRecover
+// https://github.com/AbeyFoundation/go-abey/wiki/Management-APIs#personal_ecRecover
 func (api *SignerAPI) EcRecover(ctx context.Context, data, sig hexutil.Bytes) (common.Address, error) {
 	if len(sig) != 65 {
 		return common.Address{}, fmt.Errorf("signature must be 65 bytes long")
@@ -434,7 +434,8 @@ func (api *SignerAPI) EcRecover(ctx context.Context, data, sig hexutil.Bytes) (c
 // safely used to calculate a signature from.
 //
 // The hash is calculated as
-//   keccak256("\x19Ethereum Signed Message:\n"${message length}${message}).
+//
+//	keccak256("\x19Ethereum Signed Message:\n"${message length}${message}).
 //
 // This gives context to the signed message and prevents signing of transactions.
 func SignHash(data []byte) ([]byte, string) {

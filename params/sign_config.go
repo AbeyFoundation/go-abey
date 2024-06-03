@@ -1,6 +1,6 @@
 package params
 
-import "github.com/abeychain/go-abey/common"
+import "github.com/AbeyFoundation/go-abey/common"
 
 var (
 	//

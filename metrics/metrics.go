@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/abeychain/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/log"
 )
 
 // Enabled is checked by the constructor functions for all of the

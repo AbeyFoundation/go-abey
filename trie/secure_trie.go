@@ -19,8 +19,8 @@ package trie
 import (
 	"fmt"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/log"
 )
 
 // SecureTrie wraps a trie with key hashing. In a secure trie, all

@@ -21,9 +21,9 @@ import (
 	"context"
 	"sync"
 
-	"github.com/abeychain/go-abey/internal/abeyapi"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/rpc"
+	"github.com/AbeyFoundation/go-abey/internal/abeyapi"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/rpc"
 )
 
 type StdIOUI struct {

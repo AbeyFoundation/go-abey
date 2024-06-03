@@ -30,8 +30,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/abeychain/go-abey/accounts/keystore"
-	"github.com/abeychain/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/accounts/keystore"
+	"github.com/AbeyFoundation/go-abey/core/types"
 )
 
 // Tests that the account management snippets work correctly.

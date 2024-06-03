@@ -22,16 +22,16 @@ package fastdownloader
 import (
 	"errors"
 	"fmt"
-	"github.com/abeychain/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/core/types"
 	"math"
 	"math/big"
 	"sync"
 	"sync/atomic"
 	"time"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/log"
-	abey "github.com/abeychain/go-abey/abey/types"
+	abey "github.com/AbeyFoundation/go-abey/abey/types"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/log"
 )
 
 const (
@@ -134,8 +134,8 @@ func (p *peerConnection) GetVersion() int { return p.version }
 
 func (p *peerConnection) GetPeer() abey.Peer     { return p.peer }
 func (p *peerConnection) SetPeer(peer abey.Peer) { p.peer = peer }
-func (p *peerConnection) GetLog() log.Logger      { return p.log }
-func (p *peerConnection) GetLock() *sync.RWMutex  { return &p.lock }
+func (p *peerConnection) GetLog() log.Logger     { return p.log }
+func (p *peerConnection) GetLock() *sync.RWMutex { return &p.lock }
 
 // Reset clears the internal state of a peer entity.
 func (p *peerConnection) Reset() {

@@ -7,12 +7,12 @@ import (
 	"math/big"
 	"strings"
 
-	ethereum "github.com/abeychain/go-abey"
-	"github.com/abeychain/go-abey/accounts/abi"
-	"github.com/abeychain/go-abey/accounts/abi/bind"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/event"
+	ethereum "github.com/AbeyFoundation/go-abey"
+	"github.com/AbeyFoundation/go-abey/accounts/abi"
+	"github.com/AbeyFoundation/go-abey/accounts/abi/bind"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/event"
 )
 
 // PublicResolverABI is the input ABI used to generate the binding from.

@@ -20,9 +20,9 @@ import (
 	"hash"
 	"sync"
 
-	"github.com/abeychain/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/rlp"
 	"golang.org/x/crypto/sha3"
-	"github.com/abeychain/go-abey/rlp"
 )
 
 type hasher struct {

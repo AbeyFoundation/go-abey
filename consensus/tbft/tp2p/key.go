@@ -2,7 +2,7 @@ package tp2p
 
 import (
 	"encoding/hex"
-	"github.com/abeychain/go-abey/consensus/tbft/crypto"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/crypto"
 )
 
 // ID is a hex-encoded crypto.Address

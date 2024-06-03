@@ -21,9 +21,9 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/crypto"
-	ethdb "github.com/abeychain/go-abey/abeydb"
+	ethdb "github.com/AbeyFoundation/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/crypto"
 	checker "gopkg.in/check.v1"
 )
 

@@ -8,13 +8,13 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/common/hexutil"
-	"github.com/abeychain/go-abey/consensus/tbft/help"
-	"github.com/abeychain/go-abey/consensus/tbft/tp2p"
-	ctypes "github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common/hexutil"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/help"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/tp2p"
+	ctypes "github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/params"
 )
 
 const (
@@ -30,7 +30,7 @@ const (
 
 var EnableHealthMgr = true
 
-//Health struct
+// Health struct
 type Health struct {
 	ID    tp2p.ID
 	IP    string
@@ -42,7 +42,7 @@ type Health struct {
 	Self  bool
 }
 
-//NewHealth new
+// NewHealth new
 func NewHealth(id tp2p.ID, t, state uint32, val *Validator, Self bool) *Health {
 	return &Health{
 		ID:    id,
@@ -62,7 +62,7 @@ func (h *Health) String() string {
 		hexutil.Encode(h.Val.Address))
 }
 
-//SimpleString string
+// SimpleString string
 func (h *Health) SimpleString() string {
 	s := atomic.LoadUint32(&h.State)
 	t := atomic.LoadInt32(&h.Tick)
@@ -80,7 +80,7 @@ func (h *Health) Equal(other *Health) bool {
 	return h.ID == other.ID && bytes.Equal(h.Val.PubKey.Bytes(), other.Val.PubKey.Bytes())
 }
 
-//SwitchValidator struct
+// SwitchValidator struct
 type SwitchValidator struct {
 	Remove    *Health
 	Add       *Health
@@ -156,7 +156,7 @@ func (s *SwitchValidator) EqualWithRemove(other *SwitchValidator) bool {
 	return s.Remove.Equal(other.Remove)
 }
 
-//HealthMgr struct
+// HealthMgr struct
 type HealthMgr struct {
 	help.BaseService
 	Work           map[tp2p.ID]*Health
@@ -172,7 +172,7 @@ type HealthMgr struct {
 	lock           *sync.Mutex
 }
 
-//NewHealthMgr func
+// NewHealthMgr func
 func NewHealthMgr(cid uint64) *HealthMgr {
 	h := &HealthMgr{
 		Work:           make(map[tp2p.ID]*Health, 0),
@@ -198,12 +198,12 @@ func (h *HealthMgr) Sum() int {
 	return len(h.Work) + len(h.Back) + len(h.seed)
 }
 
-//PutWorkHealth add a *health to work
+// PutWorkHealth add a *health to work
 func (h *HealthMgr) PutWorkHealth(he *Health) {
 	h.Work[he.ID] = he
 }
 
-//PutBackHealth add a *health to back
+// PutBackHealth add a *health to back
 func (h *HealthMgr) PutBackHealth(he *Health) {
 	if he != nil {
 		if he.HType == ctypes.TypeFixed {
@@ -235,7 +235,7 @@ func (h *HealthMgr) GetHealthTick(pid tp2p.ID) int32 {
 	return -1
 }
 
-//UpdataHealthInfo update one health
+// UpdataHealthInfo update one health
 func (h *HealthMgr) UpdataHealthInfo(id tp2p.ID, ip string, port uint32, pk []byte) {
 	enter := h.GetHealth(pk)
 	if enter != nil && enter.ID != "" {
@@ -244,17 +244,17 @@ func (h *HealthMgr) UpdataHealthInfo(id tp2p.ID, ip string, port uint32, pk []by
 	}
 }
 
-//ChanFrom get switchChanTo for recv from state
+// ChanFrom get switchChanTo for recv from state
 func (h *HealthMgr) ChanFrom() chan *SwitchValidator {
 	return h.switchChanFrom
 }
 
-//ChanTo get switchChanTo for send to state
+// ChanTo get switchChanTo for send to state
 func (h *HealthMgr) ChanTo() chan *SwitchValidator {
 	return h.switchChanTo
 }
 
-//OnStart mgr start
+// OnStart mgr start
 func (h *HealthMgr) OnStart() error {
 	EnableHealthMgr = false
 	if h.healthTick == nil && EnableHealthMgr {
@@ -264,7 +264,7 @@ func (h *HealthMgr) OnStart() error {
 	return nil
 }
 
-//OnStop mgr stop
+// OnStop mgr stop
 func (h *HealthMgr) OnStop() {
 	log.Info("Begin HealthMgr finish")
 	EnableHealthMgr = false
@@ -297,7 +297,7 @@ func (h *HealthMgr) removeCurSV() {
 	}
 }
 
-//Switch send switch
+// Switch send switch
 func (h *HealthMgr) Switch(s *SwitchValidator) {
 	if s == nil {
 		return
@@ -411,7 +411,7 @@ func (h *HealthMgr) isShiftSV() (bool, int) {
 	return cnt > params.MinimumCommitteeNumber, cnt
 }
 
-//switchResult handle the sv after consensus and the result removed from self
+// switchResult handle the sv after consensus and the result removed from self
 func (h *HealthMgr) switchResult(res *SwitchValidator) {
 	if !EnableHealthMgr {
 		return
@@ -460,7 +460,7 @@ func (h *HealthMgr) switchResult(res *SwitchValidator) {
 	log.Debug("switchResult", "result:", ss, "res", res, "cid", h.cid)
 }
 
-//pickUnuseValidator get a back committee
+// pickUnuseValidator get a back committee
 func (h *HealthMgr) pickUnuseValidator() *Health {
 	for _, v := range h.Back {
 
@@ -477,7 +477,7 @@ func (h *HealthMgr) pickUnuseValidator() *Health {
 	return nil
 }
 
-//Update tick
+// Update tick
 func (h *HealthMgr) Update(id tp2p.ID) {
 	if v, ok := h.Work[id]; ok {
 		if v.HType != ctypes.TypeFixed {
@@ -521,7 +521,7 @@ func (h *HealthMgr) getHealthFromPart(address []byte, part int) *Health {
 	return nil
 }
 
-//GetHealth get a Health for mgr
+// GetHealth get a Health for mgr
 func (h *HealthMgr) GetHealth(adress []byte) *Health {
 	enter := h.getHealthFromPart(adress, SwitchPartWork)
 	if enter == nil {
@@ -535,7 +535,7 @@ func (h *HealthMgr) GetHealth(adress []byte) *Health {
 	return enter
 }
 
-//VerifySwitch verify remove and add switchEnter
+// VerifySwitch verify remove and add switchEnter
 func (h *HealthMgr) VerifySwitch(sv *SwitchValidator) error {
 	if !EnableHealthMgr {
 		err := fmt.Errorf("healthMgr not enable")
@@ -582,7 +582,7 @@ func (h *HealthMgr) verifySwitchEnter(remove, add *Health) error {
 	return errors.New("Wrong state:" + res + "Remove:" + remove.String() + ",add:" + add.String())
 }
 
-//UpdateFromCommittee agent put member and back, update flag
+// UpdateFromCommittee agent put member and back, update flag
 func (h *HealthMgr) UpdateFromCommittee(member, backMember ctypes.CommitteeMembers) {
 	for _, v := range member {
 		for k, v2 := range h.Work {

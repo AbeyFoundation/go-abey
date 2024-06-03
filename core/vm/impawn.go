@@ -8,16 +8,16 @@ import (
 	"sort"
 	// "sync"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/params"
-	"github.com/abeychain/go-abey/rlp"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/rlp"
 	lru "github.com/hashicorp/golang-lru"
 )
 
-/////////////////////////////////////////////////////////////////////////////////
+// ///////////////////////////////////////////////////////////////////////////////
 var IC *ImpawnCache
 
 func init() {
@@ -37,7 +37,7 @@ func newImpawnCache() *ImpawnCache {
 	return cc
 }
 
-/////////////////////////////////////////////////////////////////////////////////
+// ///////////////////////////////////////////////////////////////////////////////
 type PairstakingValue struct {
 	Amount *big.Int
 	Height *big.Int
@@ -590,7 +590,7 @@ func (s *SAImpawns) update(sa1 *StakingAccount, hh uint64, next, move bool, effe
 	}
 }
 
-/////////////////////////////////////////////////////////////////////////////////
+// ///////////////////////////////////////////////////////////////////////////////
 // be thread-safe for caller locked
 type ImpawnImpl struct {
 	accounts   map[uint64]SAImpawns // key is epoch id,value is SA set
@@ -626,8 +626,8 @@ func CloneImpawnImpl(ori *ImpawnImpl) *ImpawnImpl {
 	return tmp
 }
 
-/////////////////////////////////////////////////////////////////////////////////
-///////////  auxiliary function ////////////////////////////////////////////
+// ///////////////////////////////////////////////////////////////////////////////
+// /////////  auxiliary function ////////////////////////////////////////////
 func (i *ImpawnImpl) getCurrentEpoch() uint64 {
 	return i.curEpochID
 }
@@ -868,7 +868,7 @@ func (i *ImpawnImpl) reward(begin, end, effectid uint64, allAmount *big.Int) ([]
 
 ///////////auxiliary function ////////////////////////////////////////////
 
-/////////////////////////////////////////////////////////////////////////////////
+// ///////////////////////////////////////////////////////////////////////////////
 // move the accounts from prev to next epoch and keeps the prev account still here
 func (i *ImpawnImpl) move(prev, next, effectHeight uint64) error {
 	nextEpoch := types.GetEpochFromID(next)
@@ -1220,7 +1220,7 @@ func (i *ImpawnImpl) Reward2(begin, end, effectid uint64, allAmount *big.Int) ([
 	return res, err
 }
 
-/////////////////////////////////////////////////////////////////////////////////
+// ///////////////////////////////////////////////////////////////////////////////
 // GetStakings return all staking accounts of the current epoch
 func (i *ImpawnImpl) GetAllStakingAccount() SAImpawns {
 	if val, ok := i.accounts[i.curEpochID]; ok {
@@ -1337,7 +1337,7 @@ func (i *ImpawnImpl) MakeModifyStateByTip10() {
 	}
 }
 
-/////////////////////////////////////////////////////////////////////////////////
+// ///////////////////////////////////////////////////////////////////////////////
 // storage layer
 func (i *ImpawnImpl) GetRoot() common.Hash {
 	return common.Hash{}
@@ -1465,7 +1465,7 @@ func (i *ImpawnImpl) Summay() *types.ImpawnSummay {
 	return summay
 }
 
-/////////////////////////////////////////////////////////////////////////////////
+// ///////////////////////////////////////////////////////////////////////////////
 type valuesByHeight []*PairstakingValue
 
 func (vs valuesByHeight) Len() int {

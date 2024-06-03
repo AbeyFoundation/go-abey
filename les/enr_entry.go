@@ -17,7 +17,7 @@
 package les
 
 import (
-	"github.com/abeychain/go-abey/rlp"
+	"github.com/AbeyFoundation/go-abey/rlp"
 )
 
 // lesEntry is the "les" ENR entry. This is set for LES servers only.

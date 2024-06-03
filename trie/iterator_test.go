@@ -22,8 +22,8 @@ import (
 	"math/rand"
 	"testing"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/common"
 )
 
 func TestIterator(t *testing.T) {

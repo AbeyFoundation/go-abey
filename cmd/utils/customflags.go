@@ -27,7 +27,7 @@ import (
 	"path"
 	"strings"
 
-	"github.com/abeychain/go-abey/common/math"
+	"github.com/AbeyFoundation/go-abey/common/math"
 	"gopkg.in/urfave/cli.v1"
 )
 

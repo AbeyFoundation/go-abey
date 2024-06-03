@@ -4,12 +4,13 @@ import (
 	"bytes"
 	"crypto/ecdsa"
 	"fmt"
-	tcrypyo "github.com/abeychain/go-abey/crypto"
+
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/help"
+	tcrypyo "github.com/AbeyFoundation/go-abey/crypto"
 	"github.com/tendermint/go-amino"
-	"github.com/abeychain/go-abey/consensus/tbft/help"
 )
 
-//-------------------------------------
+// -------------------------------------
 const (
 	EcdsaPrivKeyAminoRoute = "true/PrivKeyTrue"
 	EcdsaPubKeyAminoRoute  = "true/PubKeyTrue"
@@ -102,7 +103,7 @@ func (pub PubKeyTrue) Bytes() []byte {
 	return bz
 }
 
-//VerifyBytes is check msg
+// VerifyBytes is check msg
 func (pub PubKeyTrue) VerifyBytes(msg []byte, sig []byte) bool {
 	// make sure we use the same algorithm to sign
 	if pub0, err := tcrypyo.SigToPub(msg, sig); err == nil {

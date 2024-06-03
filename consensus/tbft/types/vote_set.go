@@ -3,14 +3,15 @@ package types
 import (
 	"bytes"
 	"fmt"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/common/hexutil"
-	"github.com/pkg/errors"
-	"github.com/abeychain/go-abey/consensus/tbft/help"
-	ttypes "github.com/abeychain/go-abey/core/types"
 	"math/big"
 	"strings"
 	"sync"
+
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common/hexutil"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/help"
+	ttypes "github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/pkg/errors"
 )
 
 // P2PID UNSTABLE
@@ -92,12 +93,12 @@ func NewVoteSet(chainID string, height uint64, round int, typeB byte, valSet *Va
 	}
 }
 
-//ChainID is return VoteSet's ChainID
+// ChainID is return VoteSet's ChainID
 func (voteSet *VoteSet) ChainID() string {
 	return voteSet.chainID
 }
 
-//Height is return VoteSet's height
+// Height is return VoteSet's height
 func (voteSet *VoteSet) Height() uint64 {
 	if voteSet == nil {
 		return 0
@@ -105,7 +106,7 @@ func (voteSet *VoteSet) Height() uint64 {
 	return voteSet.height
 }
 
-//Round is return VoteSet's round
+// Round is return VoteSet's round
 func (voteSet *VoteSet) Round() int {
 	if voteSet == nil {
 		return -1
@@ -113,7 +114,7 @@ func (voteSet *VoteSet) Round() int {
 	return int(voteSet.round)
 }
 
-//Type is return VoteSet's type
+// Type is return VoteSet's type
 func (voteSet *VoteSet) Type() byte {
 	if voteSet == nil {
 		return 0x00
@@ -121,7 +122,7 @@ func (voteSet *VoteSet) Type() byte {
 	return voteSet.typeB
 }
 
-//Size is return VoteSet's size
+// Size is return VoteSet's size
 func (voteSet *VoteSet) Size() uint {
 	if voteSet == nil {
 		return 0
@@ -129,10 +130,12 @@ func (voteSet *VoteSet) Size() uint {
 	return uint(voteSet.valSet.Size())
 }
 
-//AddVote  Returns added=true if vote is valid and new.
+// AddVote  Returns added=true if vote is valid and new.
 // Otherwise returns err=ErrVote[
-//		UnexpectedStep | InvalidIndex | InvalidAddress |
-//		InvalidSignature | InvalidBlockHash | ConflictingVotes ]
+//
+//	UnexpectedStep | InvalidIndex | InvalidAddress |
+//	InvalidSignature | InvalidBlockHash | ConflictingVotes ]
+//
 // Duplicate votes return added=false, err=nil.
 // Conflicting votes return added=*, err=ErrVoteConflictingVotes.
 // NOTE: vote should not be mutated after adding.
@@ -335,7 +338,7 @@ func (voteSet *VoteSet) SetPeerMaj23(peerID P2PID, blockID BlockID) error {
 	return nil
 }
 
-//BitArray get voteSet's bitArray
+// BitArray get voteSet's bitArray
 func (voteSet *VoteSet) BitArray() *help.BitArray {
 	if voteSet == nil {
 		return nil
@@ -345,7 +348,7 @@ func (voteSet *VoteSet) BitArray() *help.BitArray {
 	return voteSet.votesBitArray.Copy()
 }
 
-//BitArrayByBlockID get a BitArray for blockID
+// BitArrayByBlockID get a BitArray for blockID
 func (voteSet *VoteSet) BitArrayByBlockID(blockID BlockID) *help.BitArray {
 	if voteSet == nil {
 		return nil
@@ -359,7 +362,7 @@ func (voteSet *VoteSet) BitArrayByBlockID(blockID BlockID) *help.BitArray {
 	return nil
 }
 
-//GetByIndex if validator has conflicting votes, returns "canonical" vote
+// GetByIndex if validator has conflicting votes, returns "canonical" vote
 func (voteSet *VoteSet) GetByIndex(valIndex uint) *Vote {
 	if voteSet == nil {
 		return nil
@@ -369,7 +372,7 @@ func (voteSet *VoteSet) GetByIndex(valIndex uint) *Vote {
 	return voteSet.votes[valIndex]
 }
 
-//GetByAddress is get a vote for address
+// GetByAddress is get a vote for address
 func (voteSet *VoteSet) GetByAddress(address []byte) *Vote {
 	if voteSet == nil {
 		return nil
@@ -383,7 +386,7 @@ func (voteSet *VoteSet) GetByAddress(address []byte) *Vote {
 	return voteSet.votes[valIndex]
 }
 
-//HasTwoThirdsMajority check is have first block id
+// HasTwoThirdsMajority check is have first block id
 func (voteSet *VoteSet) HasTwoThirdsMajority() bool {
 	if voteSet == nil {
 		return false
@@ -393,7 +396,7 @@ func (voteSet *VoteSet) HasTwoThirdsMajority() bool {
 	return voteSet.maj23 != nil
 }
 
-//IsCommit check if is commit
+// IsCommit check if is commit
 func (voteSet *VoteSet) IsCommit() bool {
 	if voteSet == nil {
 		return false
@@ -406,7 +409,7 @@ func (voteSet *VoteSet) IsCommit() bool {
 	return voteSet.maj23 != nil
 }
 
-//HasTwoThirdsAny return is have up 2/3
+// HasTwoThirdsAny return is have up 2/3
 func (voteSet *VoteSet) HasTwoThirdsAny() bool {
 	if voteSet == nil {
 		return false
@@ -437,7 +440,7 @@ func (voteSet *VoteSet) TwoThirdsMajority() (blockID BlockID, ok bool) {
 	return BlockID{}, false
 }
 
-//MakePbftSigns is make a signs for hash
+// MakePbftSigns is make a signs for hash
 func (voteSet *VoteSet) MakePbftSigns(thash []byte) ([]*ttypes.PbftSign, error) {
 	if voteSet == nil {
 		return nil, errors.New("no voteset")
@@ -472,7 +475,7 @@ func (voteSet *VoteSet) MakePbftSigns(thash []byte) ([]*ttypes.PbftSign, error) 
 	return signs, nil
 }
 
-//GetSignByAddress is address to KeepBlockSign
+// GetSignByAddress is address to KeepBlockSign
 func (voteSet *VoteSet) GetSignByAddress(addr help.Address) *KeepBlockSign {
 	vote := voteSet.GetByAddress(addr[:])
 	if vote == nil {
@@ -497,7 +500,7 @@ func (voteSet *VoteSet) String() string {
 	return voteSet.StringIndented("")
 }
 
-//StringIndented is format print VoteSet indented
+// StringIndented is format print VoteSet indented
 func (voteSet *VoteSet) StringIndented(indent string) string {
 	voteSet.mtx.Lock()
 	defer voteSet.mtx.Unlock()
@@ -534,7 +537,7 @@ func (voteSet *VoteSet) MarshalJSON() ([]byte, error) {
 	})
 }
 
-//VoteSetJSON More human readable JSON of the vote set
+// VoteSetJSON More human readable JSON of the vote set
 // NOTE: insufficient for unmarshalling from (compressed votes)
 // TODO: make the peerMaj23s nicer to read (eg just the block hash)
 type VoteSetJSON struct {
@@ -558,7 +561,7 @@ func (voteSet *VoteSet) bitArrayString() string {
 	return fmt.Sprintf("%s %d,%d/%d = %.2f", bAString, v, voted, total, fracVoted)
 }
 
-//VoteStrings Returns a list of votes compressed to more readable strings.
+// VoteStrings Returns a list of votes compressed to more readable strings.
 func (voteSet *VoteSet) VoteStrings() []string {
 	voteSet.mtx.Lock()
 	defer voteSet.mtx.Unlock()
@@ -577,7 +580,7 @@ func (voteSet *VoteSet) voteStrings() []string {
 	return voteStrings
 }
 
-//StringShort is format VteSet to short format
+// StringShort is format VteSet to short format
 func (voteSet *VoteSet) StringShort() string {
 	if voteSet == nil {
 		return "nil-VoteSet"
@@ -626,10 +629,10 @@ func (voteSet *VoteSet) MakeCommit() *Commit {
 //--------------------------------------------------------------------------------
 
 /*
-	Votes for a particular block
-	There are two ways a *blockVotes gets created for a blockKey.
-	1. first (non-conflicting) vote of a validator w/ blockKey (peerMaj23=false)
-	2. A peer claims to have a 2/3 majority w/ blockKey (peerMaj23=true)
+Votes for a particular block
+There are two ways a *blockVotes gets created for a blockKey.
+1. first (non-conflicting) vote of a validator w/ blockKey (peerMaj23=false)
+2. A peer claims to have a 2/3 majority w/ blockKey (peerMaj23=true)
 */
 type blockVotes struct {
 	peerMaj23 bool           // peer claims to have maj23

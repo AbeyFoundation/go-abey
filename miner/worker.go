@@ -24,19 +24,19 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/abeychain/go-abey/abeydb"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/consensus"
-	"github.com/abeychain/go-abey/core"
-	"github.com/abeychain/go-abey/core/state"
-	"github.com/abeychain/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/consensus"
+	"github.com/AbeyFoundation/go-abey/core"
+	"github.com/AbeyFoundation/go-abey/core/state"
+	"github.com/AbeyFoundation/go-abey/core/types"
 
-	//"github.com/abeychain/go-abey/core/vm"
+	//"github.com/AbeyFoundation/go-abey/core/vm"
 	//"crypto/rand"
-	chain "github.com/abeychain/go-abey/core/snailchain"
-	"github.com/abeychain/go-abey/event"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/params"
+	chain "github.com/AbeyFoundation/go-abey/core/snailchain"
+	"github.com/AbeyFoundation/go-abey/event"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/params"
 	"gopkg.in/fatih/set.v0"
 )
 
@@ -88,7 +88,7 @@ type Work struct {
 	createdAt time.Time
 }
 
-//Result is for miner and get mined result
+// Result is for miner and get mined result
 type Result struct {
 	Work  *Work
 	Block *types.SnailBlock
@@ -846,7 +846,7 @@ func (w *worker) CommitFruits(fruits []*types.SnailBlock, bc *chain.SnailBlockCh
 	return nil
 }
 
-//create a new list that maye add one fruit who just mined but not add in to pending list
+// create a new list that maye add one fruit who just mined but not add in to pending list
 // make sure not need mined the same fruit
 func (w *worker) CopyPendingFruit(fruits map[common.Hash]*types.SnailBlock, bc *chain.SnailBlockChain) []*types.SnailBlock {
 

@@ -19,7 +19,7 @@
 package downloader
 
 import (
-	"github.com/abeychain/go-abey/metrics"
+	"github.com/AbeyFoundation/go-abey/metrics"
 )
 
 var (
@@ -32,7 +32,6 @@ var (
 	bodyReqTimer     = metrics.NewRegisteredTimer("abey/downloader/bodies/req", nil)
 	bodyDropMeter    = metrics.NewRegisteredMeter("abey/downloader/bodies/drop", nil)
 	bodyTimeoutMeter = metrics.NewRegisteredMeter("abey/downloader/bodies/timeout", nil)
-
 
 	stateInMeter   = metrics.NewRegisteredMeter("abey/downloader/states/in", nil)
 	stateDropMeter = metrics.NewRegisteredMeter("abey/downloader/states/drop", nil)

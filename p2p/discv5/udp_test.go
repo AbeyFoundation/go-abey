@@ -25,10 +25,10 @@ import (
 	"sync"
 	"testing"
 
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/rlp"
 	"github.com/davecgh/go-spew/spew"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/rlp"
 )
 
 func init() {

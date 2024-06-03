@@ -1,7 +1,7 @@
 package help
 
 import (
-	"github.com/abeychain/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/log"
 	"sync"
 	"time"
 )

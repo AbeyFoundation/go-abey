@@ -8,9 +8,9 @@ import (
 	"crypto/sha256"
 	"encoding/binary"
 	"fmt"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/consensus/tbft/help"
-	"github.com/abeychain/go-abey/consensus/tbft/tp2p"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/help"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/tp2p"
+	"github.com/AbeyFoundation/go-abey/log"
 	"math"
 	"net"
 	"sync"
@@ -739,7 +739,8 @@ func (a *addrBook) moveToOld(ka *knownAddress) {
 // calculate bucket placements
 
 // doublesha256(  key + sourcegroup +
-//                int64(doublesha256(key + group + sourcegroup))%bucket_per_group  ) % num_new_buckets
+//
+//	int64(doublesha256(key + group + sourcegroup))%bucket_per_group  ) % num_new_buckets
 func (a *addrBook) calcNewBucket(addr, src *tp2p.NetAddress) int {
 	data1 := []byte{}
 	data1 = append(data1, []byte(a.key)...)
@@ -760,7 +761,8 @@ func (a *addrBook) calcNewBucket(addr, src *tp2p.NetAddress) int {
 }
 
 // doublesha256(  key + group +
-//                int64(doublesha256(key + addr))%buckets_per_group  ) % num_old_buckets
+//
+//	int64(doublesha256(key + addr))%buckets_per_group  ) % num_old_buckets
 func (a *addrBook) calcOldBucket(addr *tp2p.NetAddress) int {
 	data1 := []byte{}
 	data1 = append(data1, []byte(a.key)...)

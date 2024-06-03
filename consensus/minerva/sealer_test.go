@@ -2,7 +2,7 @@ package minerva
 
 import (
 	"fmt"
-	"github.com/abeychain/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/core/types"
 	"math/rand"
 	"testing"
 	"time"
@@ -14,7 +14,7 @@ type SnailChainReader interface {
 	GetHeaderByNumber(number uint64) *types.SnailHeader
 }
 
-//TestUpdateLookup Feed datasets to update to get new matrix data
+// TestUpdateLookup Feed datasets to update to get new matrix data
 func TestUpdateLookup(t *testing.T) {
 	//minerva := NewTester()
 

@@ -4,13 +4,13 @@ import (
 	"bytes"
 	"errors"
 	"fmt"
-	"github.com/abeychain/go-abey/common/hexutil"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/consensus/tbft/help"
-	"github.com/abeychain/go-abey/consensus/tbft/metrics"
-	ttypes "github.com/abeychain/go-abey/consensus/tbft/types"
-	"github.com/abeychain/go-abey/core/types"
-	cfg "github.com/abeychain/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/common/hexutil"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/help"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/metrics"
+	ttypes "github.com/AbeyFoundation/go-abey/consensus/tbft/types"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/log"
+	cfg "github.com/AbeyFoundation/go-abey/params"
 	"reflect"
 	"runtime/debug"
 	"sync"
@@ -161,7 +161,7 @@ func (cs *ConsensusState) SetEventBus(b *ttypes.EventBus) {
 	cs.eventBus = b
 }
 
-//SetHealthMgr sets peer  health
+// SetHealthMgr sets peer  health
 func (cs *ConsensusState) SetHealthMgr(h *ttypes.HealthMgr) {
 	cs.hm = h
 }
@@ -372,7 +372,7 @@ func (cs *ConsensusState) scheduleTimeoutWithWait(ti timeoutInfo) {
 	cs.timeoutTicker.ScheduleTimeout(ti)
 }
 
-//UpdateStateForSync is sync update state
+// UpdateStateForSync is sync update state
 func (cs *ConsensusState) updateStateForSync() {
 	log.Debug("begin updateStateForSync", "height", cs.Height)
 	oldH := cs.Height
@@ -688,7 +688,9 @@ func (cs *ConsensusState) handleTimeoutForTask(ti timeoutInfo, rs ttypes.RoundSt
 // Used internally by handleTimeout and handleMsg to make state transitions
 
 // Enter: `timeoutNewHeight` by startTime (commitTime+timeoutCommit),
-// 	or, if SkipTimeout==true, after receiving all precommits from (height,round-1)
+//
+//	or, if SkipTimeout==true, after receiving all precommits from (height,round-1)
+//
 // Enter: `timeoutPrecommits` after any +2/3 precommits from (height,round-1)
 // Enter: +2/3 precommits for nil at (height,round-1)
 // Enter: +2/3 prevotes any or +2/3 precommits for block or any from (height, round)
@@ -910,7 +912,7 @@ func (cs *ConsensusState) createProposalBlock(round int) (*types.Block, *ttypes.
 	if (cs.state.GetLastBlockHeight() + 1) == cs.cm.StartHeight.Uint64() {
 		//make all committee
 		memers := append(cs.cm.Members, cs.cm.BackMembers...)
-		
+
 		v = &ttypes.SwitchValidator{
 			Infos: memers,
 		}
@@ -1672,7 +1674,7 @@ func (cs *ConsensusState) signAddVote(typeB byte, hash []byte, header ttypes.Par
 	return nil
 }
 
-//---------------------------------------------------------
+// ---------------------------------------------------------
 func (cs *ConsensusState) switchHandle(s *ttypes.SwitchValidator) {
 	if s != nil {
 		if s.From == 0 { // add

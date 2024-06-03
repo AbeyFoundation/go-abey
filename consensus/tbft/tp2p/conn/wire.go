@@ -1,8 +1,8 @@
 package conn
 
 import (
+	cryptoAmino "github.com/AbeyFoundation/go-abey/consensus/tbft/crypto/cryptoamino"
 	amino "github.com/tendermint/go-amino"
-	cryptoAmino "github.com/abeychain/go-abey/consensus/tbft/crypto/cryptoamino"
 )
 
 var cdc = amino.NewCodec()

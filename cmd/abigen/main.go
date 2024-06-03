@@ -24,11 +24,11 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/abeychain/go-abey/accounts/abi/bind"
-	"github.com/abeychain/go-abey/cmd/utils"
-	"github.com/abeychain/go-abey/common/compiler"
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/accounts/abi/bind"
+	"github.com/AbeyFoundation/go-abey/cmd/utils"
+	"github.com/AbeyFoundation/go-abey/common/compiler"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/log"
 	"gopkg.in/urfave/cli.v1"
 )
 

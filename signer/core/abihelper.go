@@ -22,8 +22,8 @@ import (
 	"io/ioutil"
 	"strings"
 
-	"github.com/abeychain/go-abey/accounts/abi"
-	"github.com/abeychain/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/accounts/abi"
+	"github.com/AbeyFoundation/go-abey/common"
 
 	"bytes"
 	"os"

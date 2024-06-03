@@ -27,11 +27,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/event"
-	"github.com/abeychain/go-abey/p2p"
-	"github.com/abeychain/go-abey/p2p/enode"
-	"github.com/abeychain/go-abey/p2p/simulations/adapters"
+	"github.com/AbeyFoundation/go-abey/event"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/p2p"
+	"github.com/AbeyFoundation/go-abey/p2p/enode"
+	"github.com/AbeyFoundation/go-abey/p2p/simulations/adapters"
 )
 
 var DialBanTimeout = 200 * time.Millisecond

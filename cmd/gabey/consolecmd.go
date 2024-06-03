@@ -1,5 +1,3 @@
-
-
 package main
 
 import (
@@ -10,10 +8,10 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/abeychain/go-abey/cmd/utils"
-	"github.com/abeychain/go-abey/console"
-	"github.com/abeychain/go-abey/node"
-	"github.com/abeychain/go-abey/rpc"
+	"github.com/AbeyFoundation/go-abey/cmd/utils"
+	"github.com/AbeyFoundation/go-abey/console"
+	"github.com/AbeyFoundation/go-abey/node"
+	"github.com/AbeyFoundation/go-abey/rpc"
 	"gopkg.in/urfave/cli.v1"
 )
 
@@ -29,7 +27,7 @@ var (
 		Description: `
 The Gabey console is an interactive shell for the JavaScript runtime environment
 which exposes a node admin interface as well as the Ðapp JavaScript API.
-See https://github.com/abeychain/go-abey/wiki/JavaScript-Console.`,
+See https://github.com/AbeyFoundation/go-abey/wiki/JavaScript-Console.`,
 	}
 
 	attachCommand = cli.Command{
@@ -42,7 +40,7 @@ See https://github.com/abeychain/go-abey/wiki/JavaScript-Console.`,
 		Description: `
 The Gabey console is an interactive shell for the JavaScript runtime environment
 which exposes a node admin interface as well as the Ðapp JavaScript API.
-See https://github.com/abeychain/go-abey/wiki/JavaScript-Console.
+See https://github.com/AbeyFoundation/go-abey/wiki/JavaScript-Console.
 This command allows to open a console on a running gabey node.`,
 	}
 
@@ -55,7 +53,7 @@ This command allows to open a console on a running gabey node.`,
 		Category:  "CONSOLE COMMANDS",
 		Description: `
 The JavaScript VM exposes a node admin interface as well as the Ðapp
-JavaScript API. See https://github.com/abeychain/go-abey/wiki/JavaScript-Console`,
+JavaScript API. See https://github.com/AbeyFoundation/go-abey/wiki/JavaScript-Console`,
 	}
 )
 
@@ -112,7 +110,7 @@ func remoteConsole(ctx *cli.Context) error {
 				path = filepath.Join(path, "testnet")
 			} else if ctx.GlobalBool(utils.DevnetFlag.Name) {
 				path = filepath.Join(path, "devnet")
-			}else if ctx.GlobalBool(utils.SingleNodeFlag.Name) {
+			} else if ctx.GlobalBool(utils.SingleNodeFlag.Name) {
 				path = filepath.Join(path, "singlenode")
 			}
 		}

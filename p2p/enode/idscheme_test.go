@@ -23,11 +23,11 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/rlp"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/p2p/enr"
+	"github.com/AbeyFoundation/go-abey/rlp"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"github.com/abeychain/go-abey/p2p/enr"
 )
 
 var (

@@ -20,20 +20,20 @@ import (
 	"encoding/binary"
 	"time"
 
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/metrics"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/metrics"
 
 	"github.com/syndtr/goleveldb/leveldb"
 )
 
-//AccountMetrics abstracts away the metrics DB and
-//the reporter to persist metrics
+// AccountMetrics abstracts away the metrics DB and
+// the reporter to persist metrics
 type AccountingMetrics struct {
 	reporter *reporter
 }
 
-//Close will be called when the node is being shutdown
-//for a graceful cleanup
+// Close will be called when the node is being shutdown
+// for a graceful cleanup
 func (am *AccountingMetrics) Close() {
 	close(am.reporter.quit)
 	// wait for reporter loop to finish saving metrics
@@ -46,8 +46,8 @@ func (am *AccountingMetrics) Close() {
 	am.reporter.db.Close()
 }
 
-//reporter is an internal structure used to write p2p accounting related
-//metrics to a LevelDB. It will periodically write the accrued metrics to the DB.
+// reporter is an internal structure used to write p2p accounting related
+// metrics to a LevelDB. It will periodically write the accrued metrics to the DB.
 type reporter struct {
 	reg      metrics.Registry //the registry for these metrics (independent of other metrics)
 	interval time.Duration    //duration at which the reporter will persist metrics
@@ -56,8 +56,8 @@ type reporter struct {
 	done     chan struct{}    //signal that reporter loop is done
 }
 
-//NewMetricsDB creates a new LevelDB instance used to persist metrics defined
-//inside p2p/protocols/accounting.go
+// NewMetricsDB creates a new LevelDB instance used to persist metrics defined
+// inside p2p/protocols/accounting.go
 func NewAccountingMetrics(r metrics.Registry, d time.Duration, path string) *AccountingMetrics {
 	var val = make([]byte, 8)
 	var err error
@@ -113,7 +113,7 @@ func NewAccountingMetrics(r metrics.Registry, d time.Duration, path string) *Acc
 	return m
 }
 
-//run is the goroutine which periodically sends the metrics to the configured LevelDB
+// run is the goroutine which periodically sends the metrics to the configured LevelDB
 func (r *reporter) run() {
 	// signal that the reporter loop is done
 	defer close(r.done)
@@ -141,7 +141,7 @@ func (r *reporter) run() {
 	}
 }
 
-//send the metrics to the DB
+// send the metrics to the DB
 func (r *reporter) save() error {
 	//create a LevelDB Batch
 	batch := leveldb.Batch{}

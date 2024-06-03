@@ -18,16 +18,16 @@ package les
 
 import (
 	"fmt"
-	"github.com/abeychain/go-abey/core"
+	"github.com/AbeyFoundation/go-abey/core"
 	"math/big"
 
-	"github.com/abeychain/go-abey/abey"
-	"github.com/abeychain/go-abey/abeydb"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/light"
-	"github.com/abeychain/go-abey/p2p"
-	"github.com/abeychain/go-abey/p2p/enode"
-	"github.com/abeychain/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/abey"
+	"github.com/AbeyFoundation/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/light"
+	"github.com/AbeyFoundation/go-abey/p2p"
+	"github.com/AbeyFoundation/go-abey/p2p/enode"
+	"github.com/AbeyFoundation/go-abey/params"
 )
 
 var (

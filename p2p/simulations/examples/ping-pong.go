@@ -25,13 +25,13 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/node"
-	"github.com/abeychain/go-abey/p2p"
-	"github.com/abeychain/go-abey/p2p/enode"
-	"github.com/abeychain/go-abey/p2p/simulations"
-	"github.com/abeychain/go-abey/p2p/simulations/adapters"
-	"github.com/abeychain/go-abey/rpc"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/node"
+	"github.com/AbeyFoundation/go-abey/p2p"
+	"github.com/AbeyFoundation/go-abey/p2p/enode"
+	"github.com/AbeyFoundation/go-abey/p2p/simulations"
+	"github.com/AbeyFoundation/go-abey/p2p/simulations/adapters"
+	"github.com/AbeyFoundation/go-abey/rpc"
 )
 
 var adapterType = flag.String("adapter", "sim", `node adapter to use (one of "sim", "exec" or "docker")`)

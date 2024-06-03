@@ -19,9 +19,9 @@ package keystore
 import (
 	"math/big"
 
-	ethereum "github.com/abeychain/go-abey"
-	"github.com/abeychain/go-abey/accounts"
-	"github.com/abeychain/go-abey/core/types"
+	ethereum "github.com/AbeyFoundation/go-abey"
+	"github.com/AbeyFoundation/go-abey/accounts"
+	"github.com/AbeyFoundation/go-abey/core/types"
 )
 
 // keystoreWallet implements the accounts.Wallet interface for the original

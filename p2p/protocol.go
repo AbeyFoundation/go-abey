@@ -19,8 +19,8 @@ package p2p
 import (
 	"fmt"
 
-	"github.com/abeychain/go-abey/p2p/enode"
-	"github.com/abeychain/go-abey/p2p/enr"
+	"github.com/AbeyFoundation/go-abey/p2p/enode"
+	"github.com/AbeyFoundation/go-abey/p2p/enr"
 )
 
 // Protocol represents a P2P subprotocol implementation.

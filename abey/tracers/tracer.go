@@ -25,11 +25,11 @@ import (
 	"time"
 	"unsafe"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/common/hexutil"
-	"github.com/abeychain/go-abey/core/vm"
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common/hexutil"
+	"github.com/AbeyFoundation/go-abey/core/vm"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/log"
 	duktape "gopkg.in/olebedev/go-duktape.v3"
 )
 

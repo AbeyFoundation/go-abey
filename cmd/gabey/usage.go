@@ -8,8 +8,8 @@ import (
 
 	"strings"
 
-	"github.com/abeychain/go-abey/cmd/utils"
-	"github.com/abeychain/go-abey/internal/debug"
+	"github.com/AbeyFoundation/go-abey/cmd/utils"
+	"github.com/AbeyFoundation/go-abey/internal/debug"
 	"gopkg.in/urfave/cli.v1"
 )
 

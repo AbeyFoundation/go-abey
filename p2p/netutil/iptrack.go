@@ -19,7 +19,7 @@ package netutil
 import (
 	"time"
 
-	"github.com/abeychain/go-abey/common/mclock"
+	"github.com/AbeyFoundation/go-abey/common/mclock"
 )
 
 // IPTracker predicts the external endpoint, i.e. IP address and port, of the local host

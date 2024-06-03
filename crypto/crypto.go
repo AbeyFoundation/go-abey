@@ -28,13 +28,13 @@ import (
 	"math/big"
 	"os"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/common/math"
-	"github.com/abeychain/go-abey/rlp"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common/math"
+	"github.com/AbeyFoundation/go-abey/rlp"
 	"golang.org/x/crypto/sha3"
 )
 
-//SignatureLength indicates the byte length required to carry a signature with recovery id.
+// SignatureLength indicates the byte length required to carry a signature with recovery id.
 const SignatureLength = 64 + 1 // 64 bytes ECDSA signature + 1 byte recovery id
 
 // RecoveryIDOffset points to the byte offset within the signature that contains the recovery id.

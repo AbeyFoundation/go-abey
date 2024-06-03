@@ -25,13 +25,13 @@ import (
 	"testing"
 	"time"
 
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/rlp"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/rlp"
 
-	"github.com/abeychain/go-abey/p2p"
-	"github.com/abeychain/go-abey/p2p/enode"
-	"github.com/abeychain/go-abey/p2p/simulations/adapters"
-	p2ptest "github.com/abeychain/go-abey/p2p/testing"
+	"github.com/AbeyFoundation/go-abey/p2p"
+	"github.com/AbeyFoundation/go-abey/p2p/enode"
+	"github.com/AbeyFoundation/go-abey/p2p/simulations/adapters"
+	p2ptest "github.com/AbeyFoundation/go-abey/p2p/testing"
 )
 
 // handshake message type
@@ -48,7 +48,7 @@ type kill struct {
 type drop struct {
 }
 
-/// protoHandshake represents module-independent aspects of the protocol and is
+// / protoHandshake represents module-independent aspects of the protocol and is
 // the first message peers send and receive as part the initial exchange
 type protoHandshake struct {
 	Version   uint   // local and remote peer should have identical version
@@ -351,8 +351,8 @@ func TestProtocolHook(t *testing.T) {
 	}
 }
 
-//We need to test that if the hook is not defined, then message infrastructure
-//(send,receive) still works
+// We need to test that if the hook is not defined, then message infrastructure
+// (send,receive) still works
 func TestNoHook(t *testing.T) {
 	//create a test spec
 	spec := createTestSpec()
@@ -587,9 +587,9 @@ func TestMultiplePeersDropOther(t *testing.T) {
 	)
 }
 
-//dummy implementation of a MsgReadWriter
-//this allows for quick and easy unit tests without
-//having to build up the complete protocol
+// dummy implementation of a MsgReadWriter
+// this allows for quick and easy unit tests without
+// having to build up the complete protocol
 type dummyRW struct {
 	msg  interface{}
 	size uint32

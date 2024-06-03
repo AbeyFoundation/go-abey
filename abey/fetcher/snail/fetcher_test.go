@@ -18,11 +18,11 @@ package snailfetcher
 
 import (
 	"errors"
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/consensus/minerva"
-	"github.com/abeychain/go-abey/core/snailchain"
-	"github.com/abeychain/go-abey/core/vm"
+	"github.com/AbeyFoundation/go-abey/consensus/minerva"
+	"github.com/AbeyFoundation/go-abey/core/snailchain"
+	"github.com/AbeyFoundation/go-abey/core/vm"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/log"
 	"math/big"
 	"os"
 	"sync"
@@ -30,11 +30,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/core"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/abeydb"
-	"github.com/abeychain/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/core"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/params"
 )
 
 func init() {
@@ -59,10 +59,10 @@ var (
 	blockchain, _ = core.NewBlockChain(testdb, nil, gspec.Config, engine, vm.Config{})
 )
 
-//makeChain creates a chain of n blocks starting at and including parent.
-//the returned hash chain is ordered head->parent. In addition, every 3rd block
-//contains a transaction and every 5th an uncle to allow testing correct block
-//reassembly.
+// makeChain creates a chain of n blocks starting at and including parent.
+// the returned hash chain is ordered head->parent. In addition, every 3rd block
+// contains a transaction and every 5th an uncle to allow testing correct block
+// reassembly.
 func makeChain(n int, seed byte, parent *types.SnailBlock) ([]common.Hash, map[common.Hash]*types.SnailBlock) {
 	params.MinimumFruits = 1
 	params.MinTimeGap = big.NewInt(0)

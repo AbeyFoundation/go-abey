@@ -20,9 +20,9 @@ import (
 	"container/ring"
 	"sync"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/log"
 )
 
 // headerRetriever is used by the unconfirmed block set to verify whether a previously

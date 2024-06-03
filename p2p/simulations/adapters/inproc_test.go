@@ -20,7 +20,7 @@ import (
 	"bytes"
 	"encoding/binary"
 	"fmt"
-	"github.com/abeychain/go-abey/p2p/simulations/pipes"
+	"github.com/AbeyFoundation/go-abey/p2p/simulations/pipes"
 	"testing"
 	"time"
 )

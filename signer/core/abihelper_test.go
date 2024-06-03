@@ -25,8 +25,8 @@ import (
 	"math/big"
 	"reflect"
 
-	"github.com/abeychain/go-abey/accounts/abi"
-	"github.com/abeychain/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/accounts/abi"
+	"github.com/AbeyFoundation/go-abey/common"
 )
 
 func verify(t *testing.T, jsondata, calldata string, exp []interface{}) {

@@ -9,21 +9,21 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/abey/downloader"
+	"github.com/AbeyFoundation/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/cmd/utils"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/console"
+	"github.com/AbeyFoundation/go-abey/core"
+	"github.com/AbeyFoundation/go-abey/core/snailchain"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/event"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/trie"
 	"github.com/syndtr/goleveldb/leveldb/util"
-	"github.com/abeychain/go-abey/cmd/utils"
-	"github.com/abeychain/go-abey/console"
-	"github.com/abeychain/go-abey/core"
-	"github.com/abeychain/go-abey/core/snailchain"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/abey/downloader"
-	"github.com/abeychain/go-abey/abeydb"
-	"github.com/abeychain/go-abey/event"
-	"github.com/abeychain/go-abey/trie"
 	"gopkg.in/urfave/cli.v1"
 
-	"github.com/abeychain/go-abey/abey/fastdownloader"
+	"github.com/AbeyFoundation/go-abey/abey/fastdownloader"
 )
 
 var (

@@ -21,7 +21,7 @@ import (
 	"io"
 	"net"
 
-	"github.com/abeychain/go-abey/rlp"
+	"github.com/AbeyFoundation/go-abey/rlp"
 )
 
 // Entry is implemented by known node record entry types.

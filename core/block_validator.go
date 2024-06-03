@@ -22,11 +22,11 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/abeychain/go-abey/consensus"
-	"github.com/abeychain/go-abey/core/state"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/consensus"
+	"github.com/AbeyFoundation/go-abey/core/state"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/params"
 )
 
 // BlockValidator is responsible for validating block headers, uncles and

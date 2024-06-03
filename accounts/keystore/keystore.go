@@ -33,11 +33,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/accounts"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/event"
+	"github.com/AbeyFoundation/go-abey/accounts"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/event"
 )
 
 var (

@@ -25,13 +25,13 @@ import (
 	"sync"
 	"time"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/common/hexutil"
-	"github.com/abeychain/go-abey"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/abeydb"
-	"github.com/abeychain/go-abey/event"
-	"github.com/abeychain/go-abey/rpc"
+	"github.com/AbeyFoundation/go-abey"
+	"github.com/AbeyFoundation/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common/hexutil"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/event"
+	"github.com/AbeyFoundation/go-abey/rpc"
 )
 
 var (

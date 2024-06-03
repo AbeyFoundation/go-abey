@@ -17,8 +17,8 @@
 package les
 
 import (
-	"github.com/abeychain/go-abey/common/bitutil"
-	"github.com/abeychain/go-abey/light"
+	"github.com/AbeyFoundation/go-abey/common/bitutil"
+	"github.com/AbeyFoundation/go-abey/light"
 	"time"
 )
 

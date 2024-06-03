@@ -29,18 +29,18 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/p2p/enode"
-	"github.com/abeychain/go-abey/p2p/enr"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/p2p/enode"
+	"github.com/AbeyFoundation/go-abey/p2p/enr"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/common/mclock"
-	"github.com/abeychain/go-abey/event"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/p2p/discover"
-	"github.com/abeychain/go-abey/p2p/discv5"
-	"github.com/abeychain/go-abey/p2p/nat"
-	"github.com/abeychain/go-abey/p2p/netutil"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common/mclock"
+	"github.com/AbeyFoundation/go-abey/event"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/p2p/discover"
+	"github.com/AbeyFoundation/go-abey/p2p/discv5"
+	"github.com/AbeyFoundation/go-abey/p2p/nat"
+	"github.com/AbeyFoundation/go-abey/p2p/netutil"
 )
 
 const (

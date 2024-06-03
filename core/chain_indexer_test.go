@@ -8,7 +8,7 @@
 //
 // The go-ethereum library is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNES"github.com/abeychain/go-abey/S FOR A PARTICULAR PURPOSE. See the
+// MERCHANTABILITY or FITNES"github.com/AbeyFoundation/go-abey/S FOR A PARTICULAR PURPOSE. See the
 // GNU Lesser General Public License for more details.
 //
 // You should have received a copy of the GNU Lesser General Public License
@@ -24,10 +24,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/abeychain/go-abey/abeydb"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/core/rawdb"
-	"github.com/abeychain/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/core/rawdb"
+	"github.com/AbeyFoundation/go-abey/core/types"
 )
 
 // Runs multiple tests with randomized parameters.

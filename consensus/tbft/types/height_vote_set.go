@@ -4,12 +4,13 @@ import (
 	"bytes"
 	"errors"
 	"fmt"
-	"github.com/abeychain/go-abey/consensus/tbft/help"
 	"strings"
 	"sync"
+
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/help"
 )
 
-//RoundVoteSet struct
+// RoundVoteSet struct
 type RoundVoteSet struct {
 	Prevotes   *VoteSet
 	Precommits *VoteSet
@@ -46,7 +47,7 @@ type HeightVoteSet struct {
 	peerCatchupRounds map[string][]int     // keys: peer.ID; values: at most 2 rounds
 }
 
-//NewHeightVoteSet get new HeightVoteSet
+// NewHeightVoteSet get new HeightVoteSet
 func NewHeightVoteSet(chainID string, height uint64, valSet *ValidatorSet) *HeightVoteSet {
 	hvs := &HeightVoteSet{
 		chainID: chainID,
@@ -55,7 +56,7 @@ func NewHeightVoteSet(chainID string, height uint64, valSet *ValidatorSet) *Heig
 	return hvs
 }
 
-//Reset is reset ValidatorSet
+// Reset is reset ValidatorSet
 func (hvs *HeightVoteSet) Reset(height uint64, valSet *ValidatorSet) {
 	hvs.mtx.Lock()
 	defer hvs.mtx.Unlock()
@@ -69,14 +70,14 @@ func (hvs *HeightVoteSet) Reset(height uint64, valSet *ValidatorSet) {
 	hvs.round = 0
 }
 
-//Height get now VoteSet Height
+// Height get now VoteSet Height
 func (hvs *HeightVoteSet) Height() uint64 {
 	hvs.mtx.Lock()
 	defer hvs.mtx.Unlock()
 	return hvs.height
 }
 
-//Round get now VoteSet round
+// Round get now VoteSet round
 func (hvs *HeightVoteSet) Round() int {
 	hvs.mtx.Lock()
 	defer hvs.mtx.Unlock()
@@ -114,7 +115,7 @@ func (hvs *HeightVoteSet) addRound(round int) {
 	}
 }
 
-//AddVote Duplicate votes return added=false, err=nil.
+// AddVote Duplicate votes return added=false, err=nil.
 // By convention, peerID is "" if origin is self.
 func (hvs *HeightVoteSet) AddVote(vote *Vote, peerID string) (added bool, err error) {
 	hvs.mtx.Lock()
@@ -138,14 +139,14 @@ func (hvs *HeightVoteSet) AddVote(vote *Vote, peerID string) (added bool, err er
 	return
 }
 
-//Prevotes get preVote vote
+// Prevotes get preVote vote
 func (hvs *HeightVoteSet) Prevotes(round int) *VoteSet {
 	hvs.mtx.Lock()
 	defer hvs.mtx.Unlock()
 	return hvs.getVoteSet(round, VoteTypePrevote)
 }
 
-//Precommits get  preCommit vote
+// Precommits get  preCommit vote
 func (hvs *HeightVoteSet) Precommits(round int) *VoteSet {
 	hvs.mtx.Lock()
 	defer hvs.mtx.Unlock()
@@ -200,7 +201,7 @@ func (hvs *HeightVoteSet) SetPeerMaj23(round int, typeB byte, peerID string, blo
 	return voteSet.SetPeerMaj23(P2PID(peerID), blockID)
 }
 
-//GetSignsFromVote get sign from all round
+// GetSignsFromVote get sign from all round
 func (hvs *HeightVoteSet) GetSignsFromVote(round int, hash []byte, addr help.Address) *KeepBlockSign {
 	for r := round; r >= 0; r-- {
 		if prevote := hvs.Prevotes(r); prevote != nil {
@@ -213,13 +214,13 @@ func (hvs *HeightVoteSet) GetSignsFromVote(round int, hash []byte, addr help.Add
 	return nil
 }
 
-//---------------------------------------------------------
+// ---------------------------------------------------------
 // string and json
 func (hvs *HeightVoteSet) String() string {
 	return hvs.StringIndented("")
 }
 
-//StringIndented get Indented voteSet string
+// StringIndented get Indented voteSet string
 func (hvs *HeightVoteSet) StringIndented(indent string) string {
 	hvs.mtx.Lock()
 	defer hvs.mtx.Unlock()
@@ -249,7 +250,7 @@ func (hvs *HeightVoteSet) StringIndented(indent string) string {
 		indent)
 }
 
-//MarshalJSON get all votes json
+// MarshalJSON get all votes json
 func (hvs *HeightVoteSet) MarshalJSON() ([]byte, error) {
 	hvs.mtx.Lock()
 	defer hvs.mtx.Unlock()

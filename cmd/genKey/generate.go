@@ -4,9 +4,9 @@ import (
 	"encoding/hex"
 	"fmt"
 
-	"github.com/abeychain/go-abey/cmd/utils"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/cmd/utils"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/crypto"
 
 	"gopkg.in/urfave/cli.v1"
 )

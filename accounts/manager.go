@@ -21,7 +21,7 @@ import (
 	"sort"
 	"sync"
 
-	"github.com/abeychain/go-abey/event"
+	"github.com/AbeyFoundation/go-abey/event"
 )
 
 // Manager is an overarching account manager that can communicate with various

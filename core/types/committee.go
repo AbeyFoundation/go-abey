@@ -11,11 +11,11 @@ import (
 	"strings"
 	"sync/atomic"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/common/hexutil"
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/rlp"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common/hexutil"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/rlp"
 	"golang.org/x/crypto/sha3"
 )
 
@@ -64,7 +64,7 @@ const (
 	SDownloaderPartCall
 )
 
-//CommitteeMembers committee members
+// CommitteeMembers committee members
 type CommitteeMembers []*CommitteeMember
 
 type CommitteeMember struct {
@@ -131,7 +131,7 @@ func (c *CommitteeMember) UnmarshalJSON(input []byte) error {
 	return nil
 }
 
-//CommitteeNode contains  main info of committee node
+// CommitteeNode contains  main info of committee node
 type CommitteeNode struct {
 	IP        string
 	Port      uint32
@@ -140,7 +140,6 @@ type CommitteeNode struct {
 	Publickey []byte
 }
 
-//
 type TransportCommitteeNode struct {
 	IP    string
 	Port  uint32
@@ -264,7 +263,7 @@ func (h *PbftSign) Hash() common.Hash {
 	return rlpHash(h)
 }
 
-//HashWithNoSign returns the hash which PbftSign without sign
+// HashWithNoSign returns the hash which PbftSign without sign
 func (h *PbftSign) HashWithNoSign() common.Hash {
 	return rlpHash([]interface{}{
 		h.FastHeight,
@@ -317,12 +316,12 @@ func (c *CommitteeInfo) String() string {
 	return fmt.Sprintf("CommitteeInfo{ID:%s,SH:%s,EH:%s}", c.Id, c.StartHeight, c.EndHeight)
 }
 
-//EncryptCommitteeNode represent a committee member encrypt info
+// EncryptCommitteeNode represent a committee member encrypt info
 // which encrypt committeeNode with member Publickey
 type EncryptCommitteeNode []byte
 type Sign []byte
 
-//EncryptNodeMessage  all information of the committee
+// EncryptNodeMessage  all information of the committee
 type EncryptNodeMessage struct {
 	CreatedAt   *big.Int
 	CommitteeID *big.Int

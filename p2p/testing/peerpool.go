@@ -20,8 +20,8 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/p2p/enode"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/p2p/enode"
 )
 
 type TestPeer interface {

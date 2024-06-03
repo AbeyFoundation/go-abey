@@ -30,8 +30,8 @@ import (
 	"testing"
 	"time"
 
+	"github.com/AbeyFoundation/go-abey/log"
 	"github.com/davecgh/go-spew/spew"
-	"github.com/abeychain/go-abey/log"
 )
 
 func TestClientRequest(t *testing.T) {

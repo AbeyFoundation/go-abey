@@ -25,10 +25,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/common/hexutil"
-	"github.com/abeychain/go-abey/common/math"
-	"github.com/abeychain/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common/hexutil"
+	"github.com/AbeyFoundation/go-abey/common/math"
+	"github.com/AbeyFoundation/go-abey/core/types"
 )
 
 var errTraceLimitReached = errors.New("the number of logs reached the specified limit")

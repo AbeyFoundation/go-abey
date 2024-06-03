@@ -25,15 +25,15 @@ import (
 	"time"
 
 	"fmt"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/consensus"
-	"github.com/abeychain/go-abey/consensus/tbft/help"
-	"github.com/abeychain/go-abey/core"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/event"
-	"github.com/abeychain/go-abey/metrics"
-	"github.com/abeychain/go-abey/utils"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/consensus"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/help"
+	"github.com/AbeyFoundation/go-abey/core"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/event"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/metrics"
+	"github.com/AbeyFoundation/go-abey/utils"
 	"math/big"
 )
 
@@ -183,7 +183,7 @@ func NewSnailPool(config SnailPoolConfig, fastBlockChain *core.BlockChain, chain
 	return pool
 }
 
-//Start load and  rotate Journal
+// Start load and  rotate Journal
 func (pool *SnailPool) Start() {
 	// If journaling is enabled, load fruit from disk
 	if pool.config.Journal != "" {
@@ -197,7 +197,7 @@ func (pool *SnailPool) Start() {
 	}
 }
 
-//updateFruit move the validated fruit to pending list
+// updateFruit move the validated fruit to pending list
 func (pool *SnailPool) updateFruit(fruit *types.SnailBlock) bool {
 
 	pool.muFruit.Lock()
@@ -426,7 +426,7 @@ func (pool *SnailPool) loop() {
 	}
 }
 
-//get the old snailchian's fruits which need to be remined
+// get the old snailchian's fruits which need to be remined
 func fruitsDifference(a, b []*types.SnailBlock) []*types.SnailBlock {
 	keep := make([]*types.SnailBlock, 0, len(a))
 
@@ -558,7 +558,7 @@ func (pool *SnailPool) insertRestFruits(reinject []*types.SnailBlock) error {
 	return nil
 }
 
-//remove unfresh fruit after rest
+// remove unfresh fruit after rest
 func (pool *SnailPool) removeUnfreshFruit() {
 	for _, fruit := range pool.allFruits {
 		// check freshness
@@ -575,7 +575,7 @@ func (pool *SnailPool) removeUnfreshFruit() {
 	}
 }
 
-//RemovePendingFruitByFastHash remove unVerifyFreshness fruit
+// RemovePendingFruitByFastHash remove unVerifyFreshness fruit
 func (pool *SnailPool) RemovePendingFruitByFastHash(fasthash common.Hash) {
 	pool.muFruit.Lock()
 	defer pool.muFruit.Unlock()

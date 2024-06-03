@@ -26,13 +26,13 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/abeychain/go-abey/abeydb"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/consensus"
-	"github.com/abeychain/go-abey/core/rawdb"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/consensus"
+	"github.com/AbeyFoundation/go-abey/core/rawdb"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/params"
 	"github.com/hashicorp/golang-lru"
 )
 
@@ -69,9 +69,10 @@ type HeaderChain struct {
 }
 
 // NewHeaderChain creates a new HeaderChain structure.
-//  getValidator should return the parent's validator
-//  procInterrupt points to the parent's interrupt semaphore
-//  wg points to the parent's shutdown wait group
+//
+//	getValidator should return the parent's validator
+//	procInterrupt points to the parent's interrupt semaphore
+//	wg points to the parent's shutdown wait group
 func NewHeaderChain(chainDb abeydb.Database, config *params.ChainConfig, engine consensus.Engine, procInterrupt func() bool) (*HeaderChain, error) {
 	headerCache, _ := lru.New(headerCacheLimit)
 	tdCache, _ := lru.New(tdCacheLimit)

@@ -21,11 +21,11 @@ import (
 
 	"encoding/json"
 
-	"github.com/abeychain/go-abey/accounts"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/common/hexutil"
-	"github.com/abeychain/go-abey/internal/abeyapi"
-	"github.com/abeychain/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/accounts"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common/hexutil"
+	"github.com/AbeyFoundation/go-abey/internal/abeyapi"
+	"github.com/AbeyFoundation/go-abey/log"
 )
 
 type AuditLogger struct {

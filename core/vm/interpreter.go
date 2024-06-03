@@ -17,12 +17,12 @@
 package vm
 
 import (
-	"github.com/abeychain/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/log"
 	"hash"
 	"sync/atomic"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/common/math"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common/math"
 )
 
 // Config are the configuration options for the Interpreter

@@ -17,18 +17,18 @@
 package core
 
 import (
-	//"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/metrics"
+	//"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/metrics"
 	"math"
 	"time"
 
-	//"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/consensus"
-	"github.com/abeychain/go-abey/core/state"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/core/vm"
-	"github.com/abeychain/go-abey/params"
+	//"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/consensus"
+	"github.com/AbeyFoundation/go-abey/core/state"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/core/vm"
+	"github.com/AbeyFoundation/go-abey/params"
 
 	"math/big"
 )

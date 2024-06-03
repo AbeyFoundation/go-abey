@@ -22,7 +22,7 @@ import (
 	"math/big"
 	"time"
 
-	"github.com/abeychain/go-abey/rpc"
+	"github.com/AbeyFoundation/go-abey/rpc"
 )
 
 // In this example, our client whishes to track the latest 'block number'

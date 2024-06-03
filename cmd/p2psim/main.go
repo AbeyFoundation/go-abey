@@ -19,21 +19,20 @@
 // Here is an example of creating a 2 node network with the first node
 // connected to the second:
 //
-//     $ p2psim node create
-//     Created node01
+//	$ p2psim node create
+//	Created node01
 //
-//     $ p2psim node start node01
-//     Started node01
+//	$ p2psim node start node01
+//	Started node01
 //
-//     $ p2psim node create
-//     Created node02
+//	$ p2psim node create
+//	Created node02
 //
-//     $ p2psim node start node02
-//     Started node02
+//	$ p2psim node start node02
+//	Started node02
 //
-//     $ p2psim node connect node01 node02
-//     Connected node01 to node02
-//
+//	$ p2psim node connect node01 node02
+//	Connected node01 to node02
 package main
 
 import (
@@ -45,12 +44,12 @@ import (
 	"strings"
 	"text/tabwriter"
 
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/p2p"
-	"github.com/abeychain/go-abey/p2p/discv5"
-	"github.com/abeychain/go-abey/p2p/simulations"
-	"github.com/abeychain/go-abey/p2p/simulations/adapters"
-	"github.com/abeychain/go-abey/rpc"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/p2p"
+	"github.com/AbeyFoundation/go-abey/p2p/discv5"
+	"github.com/AbeyFoundation/go-abey/p2p/simulations"
+	"github.com/AbeyFoundation/go-abey/p2p/simulations/adapters"
+	"github.com/AbeyFoundation/go-abey/rpc"
 	cli "gopkg.in/urfave/cli.v1"
 )
 

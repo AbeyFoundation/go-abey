@@ -18,20 +18,20 @@ package downloader
 
 import (
 	"fmt"
-	"github.com/abeychain/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/core/types"
 	"hash"
 	"sync"
 	"time"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/core/rawdb"
-	"github.com/abeychain/go-abey/core/state"
-	"github.com/abeychain/go-abey/abeydb"
-	"github.com/abeychain/go-abey/trie"
+	"github.com/AbeyFoundation/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/core/rawdb"
+	"github.com/AbeyFoundation/go-abey/core/state"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/trie"
 	"golang.org/x/crypto/sha3"
 
-	abey "github.com/abeychain/go-abey/abey/types"
+	abey "github.com/AbeyFoundation/go-abey/abey/types"
 )
 
 // stateReq represents a batch of state fetch requests grouped together into
@@ -41,7 +41,7 @@ type stateReq struct {
 	tasks    map[common.Hash]*stateTask // Download tasks to track previous attempts
 	timeout  time.Duration              // Maximum round trip time for this to complete
 	timer    *time.Timer                // Timer to fire when the RTT timeout expires
-	peer     abey.PeerConnection       // Peer that we're requesting from
+	peer     abey.PeerConnection        // Peer that we're requesting from
 	response [][]byte                   // Response data of the peer (nil for timeouts)
 	dropped  bool                       // Flag whether the peer dropped off early
 }

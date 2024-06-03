@@ -20,7 +20,7 @@ import (
 	"github.com/holiman/uint256"
 	"math/big"
 
-	"github.com/abeychain/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common"
 )
 
 // ContractRef is a reference to the contract's backing object

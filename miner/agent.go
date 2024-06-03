@@ -20,9 +20,9 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/abeychain/go-abey/consensus"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/consensus"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/log"
 )
 
 // CPUAgent is for agent to mine
@@ -51,13 +51,13 @@ func NewCPUAgent(chain consensus.SnailChainReader, engine consensus.Engine) *CPU
 	return miner
 }
 
-//Work is Agent return monitor work chan
+// Work is Agent return monitor work chan
 func (agent *CPUAgent) Work() chan<- *Work { return agent.workCh }
 
-//SetReturnCh is Agent return monitor result chan after the miner
+// SetReturnCh is Agent return monitor result chan after the miner
 func (agent *CPUAgent) SetReturnCh(ch chan<- *Result) { agent.returnCh = ch }
 
-//Stop is a interface the work can control the Agent to stop miner
+// Stop is a interface the work can control the Agent to stop miner
 func (agent *CPUAgent) Stop() {
 	if !atomic.CompareAndSwapInt32(&agent.isMining, 1, 0) {
 		return // agent already stopped

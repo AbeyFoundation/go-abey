@@ -17,11 +17,11 @@
 package les
 
 import (
-	"github.com/abeychain/go-abey/rlp"
+	"github.com/AbeyFoundation/go-abey/rlp"
 	"sync"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/core/types"
 )
 
 type ltrInfo struct {

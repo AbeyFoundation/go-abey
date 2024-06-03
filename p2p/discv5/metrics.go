@@ -16,7 +16,7 @@
 
 package discv5
 
-import "github.com/abeychain/go-abey/metrics"
+import "github.com/AbeyFoundation/go-abey/metrics"
 
 var (
 	ingressTrafficMeter = metrics.NewRegisteredMeter("discv5/InboundTraffic", nil)

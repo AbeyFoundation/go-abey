@@ -7,8 +7,8 @@ import (
 	"errors"
 	"math/big"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/common/math"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common/math"
 )
 
 var _ = (*stEnvMarshaling)(nil)

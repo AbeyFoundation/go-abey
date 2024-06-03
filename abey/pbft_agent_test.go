@@ -2,17 +2,17 @@ package abey
 
 import (
 	"fmt"
-	"github.com/abeychain/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/core/types"
 	"time"
 
 	"bytes"
 	"crypto/ecdsa"
-	"github.com/abeychain/go-abey/abeydb"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/core"
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/core"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/params"
 	"testing"
 )
 

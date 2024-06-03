@@ -22,8 +22,8 @@ import (
 	"math/big"
 	"time"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/common/math"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common/math"
 )
 
 type JSONLogger struct {

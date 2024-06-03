@@ -4,7 +4,7 @@ import (
 	"encoding/hex"
 	"flag"
 	"fmt"
-	"github.com/abeychain/go-abey/signer/core"
+	"github.com/AbeyFoundation/go-abey/signer/core"
 	"os"
 	"strings"
 )

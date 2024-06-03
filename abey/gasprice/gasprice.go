@@ -22,10 +22,10 @@ import (
 	"sort"
 	"sync"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/params"
-	"github.com/abeychain/go-abey/rpc"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/rpc"
 )
 
 var maxPrice = big.NewInt(50 * params.GWei)

@@ -1,8 +1,9 @@
 package metrics
 
 import (
-	"github.com/abeychain/go-abey/metrics"
 	"time"
+
+	"github.com/AbeyFoundation/go-abey/metrics"
 )
 
 var (

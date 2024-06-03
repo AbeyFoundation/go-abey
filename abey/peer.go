@@ -24,12 +24,12 @@ import (
 	"sync"
 	"time"
 
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/p2p"
+	"github.com/AbeyFoundation/go-abey/rlp"
 	"github.com/deckarep/golang-set"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/rlp"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/p2p"
 )
 
 var (
@@ -422,7 +422,7 @@ func (p *peer) AsyncSendSign(signs []*types.PbftSign) {
 	}
 }
 
-//SendNodeInfo sends node info to the peer and includes the hashes
+// SendNodeInfo sends node info to the peer and includes the hashes
 // in its signs hash set for future reference.
 func (p *peer) SendNodeInfo(nodeInfo *types.EncryptNodeMessage) error {
 	p.knownNodeInfos.Add(nodeInfo.Hash())
@@ -454,7 +454,7 @@ func (p *peer) AsyncSendNodeInfoHash(nodeInfo *types.EncryptNodeMessage) {
 	}
 }
 
-//Sendfruits sends fruits to the peer and includes the hashes
+// Sendfruits sends fruits to the peer and includes the hashes
 // in its fruit hash set for future reference.
 func (p *peer) SendFruits(fruits types.Fruits) error {
 	for _, fruit := range fruits {

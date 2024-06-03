@@ -22,8 +22,8 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/abeychain/go-abey/common/mclock"
-	"github.com/abeychain/go-abey/p2p/enode"
+	"github.com/AbeyFoundation/go-abey/common/mclock"
+	"github.com/AbeyFoundation/go-abey/p2p/enode"
 )
 
 // clientTree is a full tree being synced.

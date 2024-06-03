@@ -22,12 +22,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/rlp"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/abey/downloader"
-	"github.com/abeychain/go-abey/p2p"
+	"github.com/AbeyFoundation/go-abey/abey/downloader"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/p2p"
+	"github.com/AbeyFoundation/go-abey/rlp"
 )
 
 func init() {

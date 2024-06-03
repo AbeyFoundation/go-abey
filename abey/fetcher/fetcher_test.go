@@ -18,7 +18,7 @@ package fetcher
 
 import (
 	"errors"
-	"github.com/abeychain/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/log"
 	"math/big"
 	"os"
 	"sync"
@@ -26,13 +26,13 @@ import (
 	"testing"
 	"time"
 
-	"github.com/abeychain/go-abey/abeydb"
-	"github.com/abeychain/go-abey/common"
-	ethash "github.com/abeychain/go-abey/consensus/minerva"
-	"github.com/abeychain/go-abey/core"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/common"
+	ethash "github.com/AbeyFoundation/go-abey/consensus/minerva"
+	"github.com/AbeyFoundation/go-abey/core"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/params"
 )
 
 func init() {

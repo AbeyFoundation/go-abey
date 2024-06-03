@@ -20,9 +20,9 @@ import (
 	"bytes"
 	"fmt"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/rlp"
-	"github.com/abeychain/go-abey/trie"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/rlp"
+	"github.com/AbeyFoundation/go-abey/trie"
 )
 
 // NodeIterator is an iterator to traverse the entire state trie post-order,

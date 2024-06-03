@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/abeychain/go-abey/rpc"
+	"github.com/AbeyFoundation/go-abey/rpc"
 	"math/big"
 	"os"
 	"strconv"
@@ -10,34 +10,34 @@ import (
 	"time"
 )
 
-//send complete
+// send complete
 var Count int64 = 0
 
-//Transaction from to account id
+// Transaction from to account id
 var from, to, frequency = 0, 1, 1
 
-//Two transmission intervals
+// Two transmission intervals
 var interval = time.Millisecond * 0
 
-//Send transmission full sleep intervals
+// Send transmission full sleep intervals
 var sleep = time.Millisecond * 10000
 
-//get all account
+// get all account
 var account []string
 
-//time format
+// time format
 var termTimeFormat = "[01-02|15:04:05.000]"
 
-//the pre count
+// the pre count
 var preCount int64 = 0
 
-//the pre account
+// the pre account
 var preAccount = ""
 
-//flag sleep
+// flag sleep
 var bSleep = false
 
-//check Account
+// check Account
 var CheckAcc = false
 
 // get par
@@ -94,12 +94,12 @@ func main() {
 
 }
 
-//get time
+// get time
 func getTime() string {
 	return time.Now().Format(termTimeFormat)
 }
 
-//send transaction init
+// send transaction init
 func send(count int, ip string) {
 	//dial abey
 start:
@@ -178,7 +178,7 @@ start:
 	waitMain.Wait()
 }
 
-//send count transaction
+// send count transaction
 func sendTransactions(client *rpc.Client, account []string, count int, wait *sync.WaitGroup) {
 	defer wait.Done()
 	waitGroup := &sync.WaitGroup{}
@@ -199,7 +199,7 @@ func sendTransactions(client *rpc.Client, account []string, count int, wait *syn
 	}
 }
 
-//send one transaction
+// send one transaction
 func sendTransaction(client *rpc.Client, account []string, wait *sync.WaitGroup) {
 	defer wait.Done()
 	map_data := make(map[string]interface{})

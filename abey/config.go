@@ -17,7 +17,7 @@
 package abey
 
 import (
-	"github.com/abeychain/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/params"
 	"math/big"
 	"os"
 	"os/user"
@@ -27,13 +27,13 @@ import (
 
 	"crypto/ecdsa"
 
-	"github.com/abeychain/go-abey/abey/downloader"
-	"github.com/abeychain/go-abey/abey/gasprice"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/common/hexutil"
-	"github.com/abeychain/go-abey/consensus/minerva"
-	"github.com/abeychain/go-abey/core"
-	"github.com/abeychain/go-abey/core/snailchain"
+	"github.com/AbeyFoundation/go-abey/abey/downloader"
+	"github.com/AbeyFoundation/go-abey/abey/gasprice"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common/hexutil"
+	"github.com/AbeyFoundation/go-abey/consensus/minerva"
+	"github.com/AbeyFoundation/go-abey/core"
+	"github.com/AbeyFoundation/go-abey/core/snailchain"
 )
 
 // DefaultConfig contains default settings for use on the ABEY chain main net.

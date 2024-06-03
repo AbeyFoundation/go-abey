@@ -2,9 +2,9 @@ package types
 
 import (
 	"errors"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/consensus/tbft/help"
-	"github.com/abeychain/go-abey/event"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/help"
+	"github.com/AbeyFoundation/go-abey/event"
+	"github.com/AbeyFoundation/go-abey/log"
 )
 
 //const defaultCapacity = 0
@@ -41,12 +41,12 @@ func (b *EventBus) OnStart() error {
 	return nil
 }
 
-//OnStop eventBus stop
+// OnStop eventBus stop
 func (b *EventBus) OnStop() {
 	b.scope.Close()
 }
 
-//Subscribe chan<- interface{}
+// Subscribe chan<- interface{}
 func (b *EventBus) Subscribe(key string, out chan<- interface{}) event.Subscription {
 	if _, ok := b.subs[key]; !ok {
 		var feed event.Feed
@@ -91,7 +91,7 @@ func (b *EventBus) Subscribe(key string, out chan<- interface{}) event.Subscript
 // 	return errors.New(EventMsgNotFound)
 // }
 
-//PublishEventVote send event data common EventVote
+// PublishEventVote send event data common EventVote
 func (b *EventBus) PublishEventVote(event EventDataVote) error {
 	if v, ok := b.subs[EventVote]; ok {
 		v.Send(event)
@@ -135,7 +135,7 @@ func (b *EventBus) PublishEventVote(event EventDataVote) error {
 
 //--- EventDataRoundState events
 
-//PublishEventNewRoundStep send event data common EventNewRoundStep
+// PublishEventNewRoundStep send event data common EventNewRoundStep
 func (b *EventBus) PublishEventNewRoundStep(event EventDataRoundState) error {
 	if v, ok := b.subs[EventNewRoundStep]; ok {
 		v.Send(EventDataCommon{
@@ -147,7 +147,7 @@ func (b *EventBus) PublishEventNewRoundStep(event EventDataRoundState) error {
 	return errors.New(EventMsgNotFound)
 }
 
-//PublishEventTimeoutPropose send event data common EventTimeoutPropose
+// PublishEventTimeoutPropose send event data common EventTimeoutPropose
 func (b *EventBus) PublishEventTimeoutPropose(event EventDataRoundState) error {
 	if v, ok := b.subs[EventTimeoutPropose]; ok {
 		v.Send(EventDataCommon{
@@ -159,7 +159,7 @@ func (b *EventBus) PublishEventTimeoutPropose(event EventDataRoundState) error {
 	return errors.New(EventMsgNotFound)
 }
 
-//PublishEventTimeoutWait send event data common EventTimeoutWait
+// PublishEventTimeoutWait send event data common EventTimeoutWait
 func (b *EventBus) PublishEventTimeoutWait(event EventDataRoundState) error {
 	if v, ok := b.subs[EventTimeoutWait]; ok {
 		v.Send(EventDataCommon{
@@ -171,7 +171,7 @@ func (b *EventBus) PublishEventTimeoutWait(event EventDataRoundState) error {
 	return errors.New(EventMsgNotFound)
 }
 
-//PublishEventNewRound send event data common EventNewRound
+// PublishEventNewRound send event data common EventNewRound
 func (b *EventBus) PublishEventNewRound(event EventDataRoundState) error {
 	if v, ok := b.subs[EventNewRound]; ok {
 		v.Send(EventDataCommon{
@@ -183,7 +183,7 @@ func (b *EventBus) PublishEventNewRound(event EventDataRoundState) error {
 	return errors.New(EventMsgNotFound)
 }
 
-//PublishEventCompleteProposal send event data common EventCompleteProposal
+// PublishEventCompleteProposal send event data common EventCompleteProposal
 func (b *EventBus) PublishEventCompleteProposal(event EventDataRoundState) error {
 	if v, ok := b.subs[EventCompleteProposal]; ok {
 		v.Send(EventDataCommon{
@@ -195,7 +195,7 @@ func (b *EventBus) PublishEventCompleteProposal(event EventDataRoundState) error
 	return errors.New(EventMsgNotFound)
 }
 
-//PublishEventPolka send event data common EventPolka
+// PublishEventPolka send event data common EventPolka
 func (b *EventBus) PublishEventPolka(event EventDataRoundState) error {
 	if v, ok := b.subs[EventPolka]; ok {
 		v.Send(EventDataCommon{
@@ -207,7 +207,7 @@ func (b *EventBus) PublishEventPolka(event EventDataRoundState) error {
 	return errors.New(EventMsgNotFound)
 }
 
-//PublishEventUnlock send event data common unlock
+// PublishEventUnlock send event data common unlock
 func (b *EventBus) PublishEventUnlock(event EventDataRoundState) error {
 	if v, ok := b.subs[EventUnlock]; ok {
 		v.Send(EventDataCommon{
@@ -219,7 +219,7 @@ func (b *EventBus) PublishEventUnlock(event EventDataRoundState) error {
 	return errors.New(EventMsgNotFound)
 }
 
-//PublishEventRelock send event data common relock
+// PublishEventRelock send event data common relock
 func (b *EventBus) PublishEventRelock(event EventDataRoundState) error {
 	if v, ok := b.subs[EventRelock]; ok {
 		v.Send(EventDataCommon{
@@ -231,7 +231,7 @@ func (b *EventBus) PublishEventRelock(event EventDataRoundState) error {
 	return errors.New(EventMsgNotFound)
 }
 
-//PublishEventLock send event data common
+// PublishEventLock send event data common
 func (b *EventBus) PublishEventLock(event EventDataRoundState) error {
 	if v, ok := b.subs[EventLock]; ok {
 		v.Send(EventDataCommon{

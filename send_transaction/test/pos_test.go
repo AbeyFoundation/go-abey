@@ -2,24 +2,24 @@ package test
 
 import (
 	"fmt"
-	"github.com/abeychain/go-abey/core/snailchain"
+	"github.com/AbeyFoundation/go-abey/core/snailchain"
 	"math/big"
 	"os"
 	"testing"
 
-	"github.com/abeychain/go-abey/core"
-	"github.com/abeychain/go-abey/core/state"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/core/vm"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/core"
+	"github.com/AbeyFoundation/go-abey/core/state"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/core/vm"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/params"
 )
 
 func init() {
 	log.Root().SetHandler(log.LvlFilterHandler(log.LvlInfo, log.StreamHandler(os.Stderr, log.TerminalFormat(false))))
 }
 
-///////////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////////
 func TestGetLockedAsset(t *testing.T) {
 	// Create a helper to check if a gas allowance results in an executable transaction
 	executable := func(number uint64, gen *core.BlockGen, blockchain *core.BlockChain, header *types.Header, statedb *state.StateDB) {
@@ -65,7 +65,7 @@ func TestFeeAndPK(t *testing.T) {
 	//epoch  [id:2,begin:2001,end:4000]   5002
 }
 
-///////////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////////
 func TestDeposit(t *testing.T) {
 	// Create a helper to check if a gas allowance results in an executable transaction
 	executable := func(number uint64, gen *core.BlockGen, blockchain *core.BlockChain, header *types.Header, statedb *state.StateDB) {
@@ -135,7 +135,7 @@ func TestDepositGetDeposit(t *testing.T) {
 	fmt.Println(" saddr1 ", types.ToAbey(manager.GetBalance(saddr1)), " StakingAddress ", manager.GetBalance(types.StakingAddress), " ", types.ToAbey(manager.GetBalance(types.StakingAddress)))
 }
 
-///////////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////////
 func TestSendTX(t *testing.T) {
 	params.MinTimeGap = big.NewInt(0)
 	params.SnailRewardInterval = big.NewInt(3)
@@ -158,7 +158,7 @@ func TestSendTX(t *testing.T) {
 	}
 }
 
-///////////////////////////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////////
 func TestRewardTime(t *testing.T) {
 	params.MinTimeGap = big.NewInt(0)
 	params.SnailRewardInterval = big.NewInt(3)

@@ -13,14 +13,14 @@ import (
 	"testing"
 	"time"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/log"
-	tcrypto "github.com/abeychain/go-abey/consensus/tbft/crypto"
-	"github.com/abeychain/go-abey/consensus/tbft/help"
-	ttypes "github.com/abeychain/go-abey/consensus/tbft/types"
-	"github.com/abeychain/go-abey/core/types"
-	config "github.com/abeychain/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/common"
+	tcrypto "github.com/AbeyFoundation/go-abey/consensus/tbft/crypto"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/help"
+	ttypes "github.com/AbeyFoundation/go-abey/consensus/tbft/types"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/log"
+	config "github.com/AbeyFoundation/go-abey/params"
 )
 
 type PbftAgentProxyImp struct {
@@ -1320,12 +1320,12 @@ func TestStat(t *testing.T) {
 }
 
 func TestTimer(t *testing.T) {
-	timeoutTicker:= NewTimeoutTicker("TimeoutTicker")
+	timeoutTicker := NewTimeoutTicker("TimeoutTicker")
 	timeoutTicker.Start()
 	timeoutTicker.ScheduleTimeout(timeoutInfo{5, 10, uint(0), ttypes.RoundStepNewHeight, 1})
-	go func(){
+	go func() {
 		pos := 0
-		for {	
+		for {
 			select {
 			case <-timeoutTicker.Chan(): // tockChan:
 				pos++
@@ -1333,6 +1333,6 @@ func TestTimer(t *testing.T) {
 			}
 		}
 	}()
-	time.Sleep(20*time.Second)
+	time.Sleep(20 * time.Second)
 	fmt.Println("finish")
 }

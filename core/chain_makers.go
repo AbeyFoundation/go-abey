@@ -20,13 +20,13 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/abeychain/go-abey/abeydb"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/consensus"
-	"github.com/abeychain/go-abey/core/state"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/core/vm"
-	"github.com/abeychain/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/consensus"
+	"github.com/AbeyFoundation/go-abey/core/state"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/core/vm"
+	"github.com/AbeyFoundation/go-abey/params"
 )
 
 // BlockGen creates blocks for testing.

@@ -22,11 +22,11 @@ import (
 	"io"
 	"io/ioutil"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/accounts"
-	"github.com/abeychain/go-abey/accounts/keystore"
-	"github.com/abeychain/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/accounts"
+	"github.com/AbeyFoundation/go-abey/accounts/keystore"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/crypto"
 )
 
 // NewTransactor is a utility method to easily create a transaction signer from

@@ -20,8 +20,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/crypto"
 )
 
 // Event is an event potentially triggered by the EVM's LOG mechanism. The Event

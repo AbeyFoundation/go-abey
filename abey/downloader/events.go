@@ -16,10 +16,9 @@
 
 package downloader
 
-import "github.com/abeychain/go-abey/core/types"
+import "github.com/AbeyFoundation/go-abey/core/types"
 
-
-type DoneEvent struct{
+type DoneEvent struct {
 	Latest *types.SnailHeader
 }
 type StartEvent struct{}

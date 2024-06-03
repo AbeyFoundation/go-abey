@@ -18,7 +18,7 @@
 package flowcontrol
 
 import (
-	"github.com/abeychain/go-abey/common/mclock"
+	"github.com/AbeyFoundation/go-abey/common/mclock"
 	"sync"
 	"time"
 )

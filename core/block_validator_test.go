@@ -18,17 +18,17 @@ package core
 
 import (
 	"fmt"
-	"github.com/abeychain/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common"
 	"math/big"
 	"runtime"
 	"testing"
 	"time"
 
-	"github.com/abeychain/go-abey/abeydb"
-	"github.com/abeychain/go-abey/consensus/minerva"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/core/vm"
-	"github.com/abeychain/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/consensus/minerva"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/core/vm"
+	"github.com/AbeyFoundation/go-abey/params"
 )
 
 // Tests that simple header verification works, for both good and bad blocks.

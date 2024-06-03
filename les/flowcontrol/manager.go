@@ -21,7 +21,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/abeychain/go-abey/common/mclock"
+	"github.com/AbeyFoundation/go-abey/common/mclock"
 )
 
 const rcConst = 1000000

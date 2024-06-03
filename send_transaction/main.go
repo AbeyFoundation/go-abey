@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"github.com/abeychain/go-abey/common/hexutil"
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/rpc"
+	"github.com/AbeyFoundation/go-abey/common/hexutil"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/rpc"
 	"math/big"
 	"os"
 	"strconv"
@@ -12,16 +12,16 @@ import (
 	"time"
 )
 
-//Count send complete
+// Count send complete
 var Count int64
 
-//Transaction from to account id
+// Transaction from to account id
 var from, to, frequency = 0, 1, 1
 
-//Two transmission intervals
+// Two transmission intervals
 var interval = time.Millisecond * 0
 
-//get all account
+// get all account
 var account []string
 
 // The message state
@@ -97,7 +97,7 @@ func main() {
 	fmt.Println("send Transaction num is:", num)
 }
 
-//send transaction init
+// send transaction init
 func send(count int, ip string) {
 	//dial abey
 	client, err := rpc.Dial("http://" + ip)
@@ -168,7 +168,7 @@ func send(count int, ip string) {
 	msg <- true
 }
 
-//send count transaction
+// send count transaction
 func sendTransactions(client *rpc.Client, account []string, count int, wait *sync.WaitGroup) {
 	defer wait.Done()
 	waitGroup := &sync.WaitGroup{}
@@ -213,7 +213,7 @@ func sendTransactions(client *rpc.Client, account []string, count int, wait *syn
 	fmt.Println(" Complete ", Count, " time ", Time, " count ", len(accounts)*loop)
 }
 
-//send one transaction
+// send one transaction
 func sendTransaction(client *rpc.Client, from string, index int, son string, value string, wait *sync.WaitGroup) {
 	defer wait.Done()
 

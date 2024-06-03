@@ -25,12 +25,12 @@ import (
 	"sync"
 	"time"
 
+	ethereum "github.com/AbeyFoundation/go-abey"
+	"github.com/AbeyFoundation/go-abey/accounts"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/log"
 	"github.com/karalabe/hid"
-	ethereum "github.com/abeychain/go-abey"
-	"github.com/abeychain/go-abey/accounts"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/log"
 )
 
 // Maximum time between wallet health checks to detect USB unplugs.
