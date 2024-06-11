@@ -25,12 +25,12 @@ import (
 	"strings"
 	"time"
 
+	"github.com/AbeyFoundation/go-abey/common/mclock"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/p2p/enode"
+	"github.com/AbeyFoundation/go-abey/p2p/enr"
 	lru "github.com/hashicorp/golang-lru"
-	"github.com/abeychain/go-abey/common/mclock"
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/p2p/enode"
-	"github.com/abeychain/go-abey/p2p/enr"
 )
 
 // Client discovers nodes by querying DNS servers.

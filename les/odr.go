@@ -19,10 +19,10 @@ package les
 import (
 	"context"
 
-	"github.com/abeychain/go-abey/abeydb"
-	"github.com/abeychain/go-abey/core"
-	"github.com/abeychain/go-abey/light"
-	"github.com/abeychain/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/core"
+	"github.com/AbeyFoundation/go-abey/light"
+	"github.com/AbeyFoundation/go-abey/log"
 )
 
 // LesOdr implements light.OdrBackend

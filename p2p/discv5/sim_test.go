@@ -28,7 +28,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/abeychain/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common"
 )
 
 // In this test, nodes try to randomly resolve each other.

@@ -21,11 +21,11 @@ import (
 	"crypto/rand"
 	"encoding/binary"
 	"fmt"
-	"github.com/abeychain/go-abey/light"
+	"github.com/AbeyFoundation/go-abey/light"
 	"sync"
 	"time"
 
-	"github.com/abeychain/go-abey/common/mclock"
+	"github.com/AbeyFoundation/go-abey/common/mclock"
 )
 
 var (

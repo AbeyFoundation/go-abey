@@ -7,11 +7,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/abeychain/go-abey/consensus/tbft/help"
-	"github.com/abeychain/go-abey/consensus/tbft/testlog"
-	"github.com/abeychain/go-abey/consensus/tbft/tp2p/conn"
-	"github.com/abeychain/go-abey/log"
-	config "github.com/abeychain/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/help"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/testlog"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/tp2p/conn"
+	"github.com/AbeyFoundation/go-abey/log"
+	config "github.com/AbeyFoundation/go-abey/params"
 )
 
 const (
@@ -342,8 +342,8 @@ func (sw *Switch) stopAndRemovePeer(peer Peer, reason interface{}) {
 // to the PEX/Addrbook to find the peer with the addr again
 // NOTE: this will keep trying even if the handshake or auth fails.
 // TODO: be more explicit with error types so we only retry on certain failures
-//  - ie. if we're getting ErrDuplicatePeer we can stop
-//  	because the addrbook got us the peer back already
+//   - ie. if we're getting ErrDuplicatePeer we can stop
+//     because the addrbook got us the peer back already
 func (sw *Switch) reconnectToPeer(addr *NetAddress) {
 	time.Sleep(time.Second)
 	if sw.peers.Has(addr.ID) {

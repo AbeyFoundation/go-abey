@@ -7,9 +7,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/consensus/tbft/help"
-	"github.com/abeychain/go-abey/consensus/tbft/tp2p/upnp"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/help"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/tp2p/upnp"
+	"github.com/AbeyFoundation/go-abey/log"
 )
 
 // Listener is a network listener for stream-oriented protocols, providing

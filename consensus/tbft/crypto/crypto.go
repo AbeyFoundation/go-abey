@@ -2,10 +2,11 @@ package crypto
 
 import (
 	"crypto/sha256"
-	"github.com/abeychain/go-abey/consensus/tbft/help"
+
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/help"
 )
 
-//PrivKey is private key interface
+// PrivKey is private key interface
 type PrivKey interface {
 	Bytes() []byte
 	Sign(msg []byte) ([]byte, error)
@@ -23,14 +24,14 @@ type PubKey interface {
 	Equals(PubKey) bool
 }
 
-//Symmetric is Keygen,Encrypt and Decrypt interface
+// Symmetric is Keygen,Encrypt and Decrypt interface
 type Symmetric interface {
 	Keygen() []byte
 	Encrypt(plaintext []byte, secret []byte) (ciphertext []byte)
 	Decrypt(ciphertext []byte, secret []byte) (plaintext []byte, err error)
 }
 
-//Sha256 return new sha256
+// Sha256 return new sha256
 func Sha256(bytes []byte) []byte {
 	hasher := sha256.New()
 	hasher.Write(bytes)

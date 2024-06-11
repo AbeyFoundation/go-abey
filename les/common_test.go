@@ -2,7 +2,7 @@ package les
 
 import (
 	"fmt"
-	"github.com/abeychain/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/params"
 	"testing"
 )
 

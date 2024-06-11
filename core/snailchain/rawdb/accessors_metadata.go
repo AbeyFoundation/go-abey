@@ -19,10 +19,10 @@ package rawdb
 import (
 	"encoding/json"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/params"
-	"github.com/abeychain/go-abey/rlp"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/rlp"
 )
 
 // ReadDatabaseVersion retrieves the version number of the database.

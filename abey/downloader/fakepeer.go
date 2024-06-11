@@ -19,11 +19,11 @@ package downloader
 import (
 	"math/big"
 
-	"github.com/abeychain/go-abey/common"
-	core "github.com/abeychain/go-abey/core/snailchain"
-	"github.com/abeychain/go-abey/core/snailchain/rawdb"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/common"
+	core "github.com/AbeyFoundation/go-abey/core/snailchain"
+	"github.com/AbeyFoundation/go-abey/core/snailchain/rawdb"
+	"github.com/AbeyFoundation/go-abey/core/types"
 )
 
 // FakePeer is a mock downloader peer that operates on a local database instance

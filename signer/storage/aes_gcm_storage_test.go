@@ -13,7 +13,6 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with go-ethereum. If not, see <http://www.gnu.org/licenses/>.
-//
 package storage
 
 import (
@@ -22,8 +21,8 @@ import (
 	"io/ioutil"
 	"testing"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/log"
 	"github.com/mattn/go-colorable"
 )
 

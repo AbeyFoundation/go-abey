@@ -22,13 +22,13 @@ import (
 	"testing"
 	"time"
 
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/core"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/abey/downloader"
-	"github.com/abeychain/go-abey/p2p"
-	"github.com/abeychain/go-abey/p2p/enode"
-	"github.com/abeychain/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/abey/downloader"
+	"github.com/AbeyFoundation/go-abey/core"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/p2p"
+	"github.com/AbeyFoundation/go-abey/p2p/enode"
+	"github.com/AbeyFoundation/go-abey/params"
 )
 
 // Tests that fast sync gets disabled as soon as a real block is successfully

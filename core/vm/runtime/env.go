@@ -17,8 +17,8 @@
 package runtime
 
 import (
-	"github.com/abeychain/go-abey/core"
-	"github.com/abeychain/go-abey/core/vm"
+	"github.com/AbeyFoundation/go-abey/core"
+	"github.com/AbeyFoundation/go-abey/core/vm"
 )
 
 func NewEnv(cfg *Config) *vm.EVM {

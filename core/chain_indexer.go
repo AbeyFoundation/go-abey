@@ -20,17 +20,17 @@ import (
 	"context"
 	"encoding/binary"
 	"fmt"
-	"github.com/abeychain/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/params"
 	"sync"
 	"sync/atomic"
 	"time"
 
-	"github.com/abeychain/go-abey/abeydb"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/core/rawdb"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/event"
-	"github.com/abeychain/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/core/rawdb"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/event"
+	"github.com/AbeyFoundation/go-abey/log"
 )
 
 // ChainIndexerBackend defines the methods needed to process chain segments in

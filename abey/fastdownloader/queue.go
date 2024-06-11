@@ -25,12 +25,12 @@ import (
 	"sync"
 	"time"
 
-	abey "github.com/abeychain/go-abey/abey/types"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/common/prque"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/metrics"
+	abey "github.com/AbeyFoundation/go-abey/abey/types"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common/prque"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/metrics"
 )
 
 var (

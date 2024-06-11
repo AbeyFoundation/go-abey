@@ -29,7 +29,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/abeychain/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/log"
 	"golang.org/x/net/websocket"
 	"gopkg.in/fatih/set.v0"
 )

@@ -17,7 +17,7 @@ to make the chain even more decentralized and fair.
 ABEY chain also creates a hybrid consensus incentive model and a stable gas fee mechanism to lower the cost for the developers 
 and operators of DApps, and provide better infrastructure for decentralized eco-system. 
 
-<a href="https://github.com/abeychain/go-abey/blob/master/COPYING"><img src="https://img.shields.io/badge/license-GPL%20%20Abeychain-lightgrey.svg"></a>
+<a href="https://github.com/AbeyFoundation/go-abey/blob/master/COPYING"><img src="https://img.shields.io/badge/license-GPL%20%20Abeychain-lightgrey.svg"></a>
 
 ## Building the source
 
@@ -37,7 +37,7 @@ The execuable command gabey will be found in the `cmd` directory.
 ## Running gabey
 
 Going through all the possible command line flags is out of scope here (please consult our
-[CLI Wiki page](https://github.com/abeychain/go-abey/wiki/Command-Line-Options)), 
+[CLI Wiki page](https://github.com/AbeyFoundation/go-abey/wiki/Command-Line-Options)), 
 also you can quickly run your own gabey instance with a few common parameter combos.
 
 ### Running on the AbeyChain main network
@@ -50,8 +50,8 @@ This command will:
 
  * Start gabey with network ID `19330` in full node mode(default, can be changed with the `--syncmode` flag after version 1.1).
  * Start up Gabey's built-in interactive console,
-   (via the trailing `console` subcommand) through which you can invoke all official [`web3` methods](https://github.com/abeychain/go-abey/wiki/RPC-API)
-   as well as Geth's own [management APIs](https://github.com/abeychain/go-abey/wiki/Management-API).
+   (via the trailing `console` subcommand) through which you can invoke all official [`web3` methods](https://github.com/AbeyFoundation/go-abey/wiki/RPC-API)
+   as well as Geth's own [management APIs](https://github.com/AbeyFoundation/go-abey/wiki/Management-API).
    This too is optional and if you leave it out you can always attach to an already running Gabey instance
    with `gabey attach`.
 

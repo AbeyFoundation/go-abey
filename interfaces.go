@@ -5,8 +5,8 @@ import (
 	"errors"
 	"math/big"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/core/types"
 )
 
 // NotFound is returned by API methods if the requested item does not exist.

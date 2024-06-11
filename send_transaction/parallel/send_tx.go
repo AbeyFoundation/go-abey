@@ -7,14 +7,14 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/abeychain/go-abey/abeyclient"
-	"github.com/abeychain/go-abey/accounts/keystore"
-	"github.com/abeychain/go-abey/cmd/utils"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/console"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/crypto"
-	tlog "github.com/abeychain/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/abeyclient"
+	"github.com/AbeyFoundation/go-abey/accounts/keystore"
+	"github.com/AbeyFoundation/go-abey/cmd/utils"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/console"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	tlog "github.com/AbeyFoundation/go-abey/log"
 	"gopkg.in/urfave/cli.v1"
 	"io/ioutil"
 	"log"
@@ -163,7 +163,7 @@ func startDelegateTx(conn *abeyclient.Client) {
 	sendTransactions(conn, minValue)
 }
 
-//send count transaction
+// send count transaction
 func sendTransactions(client *abeyclient.Client, value *big.Int) {
 	waitGroup := &sync.WaitGroup{}
 	Time := time.Now()

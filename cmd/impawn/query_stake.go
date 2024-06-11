@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"github.com/abeychain/go-abey/cmd/utils"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/cmd/utils"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/core/types"
 	"gopkg.in/urfave/cli.v1"
 	"math/big"
 )

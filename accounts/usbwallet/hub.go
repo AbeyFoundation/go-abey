@@ -22,9 +22,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/abeychain/go-abey/accounts"
-	"github.com/abeychain/go-abey/event"
-	"github.com/abeychain/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/accounts"
+	"github.com/AbeyFoundation/go-abey/event"
+	"github.com/AbeyFoundation/go-abey/log"
 	"github.com/karalabe/hid"
 )
 

@@ -22,12 +22,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/abeychain/go-abey/common/hexutil"
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/metrics"
-	"github.com/abeychain/go-abey/p2p"
-	"github.com/abeychain/go-abey/p2p/enode"
-	"github.com/abeychain/go-abey/rpc"
+	"github.com/AbeyFoundation/go-abey/common/hexutil"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/metrics"
+	"github.com/AbeyFoundation/go-abey/p2p"
+	"github.com/AbeyFoundation/go-abey/p2p/enode"
+	"github.com/AbeyFoundation/go-abey/rpc"
 )
 
 // PrivateAdminAPI is the collection of administrative API methods exposed only

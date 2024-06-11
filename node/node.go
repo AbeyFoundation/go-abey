@@ -26,14 +26,14 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/abeychain/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/accounts"
+	"github.com/AbeyFoundation/go-abey/event"
+	"github.com/AbeyFoundation/go-abey/internal/debug"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/p2p"
+	"github.com/AbeyFoundation/go-abey/rpc"
 	"github.com/prometheus/prometheus/util/flock"
-	"github.com/abeychain/go-abey/accounts"
-	"github.com/abeychain/go-abey/abeydb"
-	"github.com/abeychain/go-abey/event"
-	"github.com/abeychain/go-abey/internal/debug"
-	"github.com/abeychain/go-abey/p2p"
-	"github.com/abeychain/go-abey/rpc"
 )
 
 // Node is a container on which services can be registered.

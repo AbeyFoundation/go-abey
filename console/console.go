@@ -12,12 +12,12 @@ import (
 	"strings"
 	"syscall"
 
+	"github.com/AbeyFoundation/go-abey/internal/jsre"
+	"github.com/AbeyFoundation/go-abey/internal/web3ext"
+	"github.com/AbeyFoundation/go-abey/rpc"
 	"github.com/mattn/go-colorable"
 	"github.com/peterh/liner"
 	"github.com/robertkrimen/otto"
-	"github.com/abeychain/go-abey/internal/jsre"
-	"github.com/abeychain/go-abey/internal/web3ext"
-	"github.com/abeychain/go-abey/rpc"
 )
 
 var (

@@ -25,8 +25,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/abeychain/go-abey/accounts"
-	"github.com/abeychain/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/accounts"
+	"github.com/AbeyFoundation/go-abey/crypto"
 	"github.com/pborman/uuid"
 	"golang.org/x/crypto/pbkdf2"
 )

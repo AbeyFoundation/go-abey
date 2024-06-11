@@ -19,7 +19,7 @@ package state
 import (
 	"math/big"
 
-	"github.com/abeychain/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common"
 )
 
 // journalEntry is a modification entry in the state change journal that can be

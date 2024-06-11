@@ -18,16 +18,16 @@ package snailchain
 
 import (
 	"fmt"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/consensus"
-	"github.com/abeychain/go-abey/consensus/minerva"
-	"github.com/abeychain/go-abey/core"
-	"github.com/abeychain/go-abey/core/snailchain/rawdb"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/core/vm"
-	"github.com/abeychain/go-abey/abeydb"
-	"github.com/abeychain/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/consensus"
+	"github.com/AbeyFoundation/go-abey/consensus/minerva"
+	"github.com/AbeyFoundation/go-abey/core"
+	"github.com/AbeyFoundation/go-abey/core/snailchain/rawdb"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/core/vm"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/params"
 	"math/big"
 	"math/rand"
 	"os"
@@ -386,7 +386,7 @@ func testBrokenChain(t *testing.T, full bool) {
 
 // Tests that reorganising a long difficult chain after a short easy one
 // overwrites the canonical numbers and links in the database.
-//func TestReorgLongHeaders(t *testing.T) { testReorgLong(t, false) }
+// func TestReorgLongHeaders(t *testing.T) { testReorgLong(t, false) }
 func TestReorgLongBlocks(t *testing.T) { testReorgLong(t, true) }
 
 func testReorgLong(t *testing.T, full bool) {
@@ -395,7 +395,7 @@ func testReorgLong(t *testing.T, full bool) {
 
 // Tests that reorganising a short difficult chain after a long easy one
 // overwrites the canonical numbers and links in the database.
-//func TestReorgShortHeaders(t *testing.T) { testReorgShort(t, false) }
+// func TestReorgShortHeaders(t *testing.T) { testReorgShort(t, false) }
 func TestReorgShortBlocks(t *testing.T) { testReorgShort(t, true) }
 
 func testReorgShort(t *testing.T, full bool) {
@@ -523,7 +523,7 @@ func testBadHashes(t *testing.T, full bool) {
 
 // Tests that bad hashes are detected on boot, and the chain rolled back to a
 // good state prior to the bad hash.
-//func TestReorgBadHeaderHashes(t *testing.T) { testReorgBadHashes(t, false) }
+// func TestReorgBadHeaderHashes(t *testing.T) { testReorgBadHashes(t, false) }
 func TestReorgBadBlockHashes(t *testing.T) { testReorgBadHashes(t, true) }
 
 func testReorgBadHashes(t *testing.T, full bool) {
@@ -1213,7 +1213,7 @@ func TestCanonicalBlockRetrieval(t *testing.T) {
 // tests that under weird reorg conditions the blockchain and its internal header-
 // chain return the same latest block/header.
 //
-// https://github.com/abeychain/go-abey/pull/15941
+// https://github.com/AbeyFoundation/go-abey/pull/15941
 func TestBlockchainHeaderchainReorgConsistency(t *testing.T) {
 	// Generate a canonical chain to act as the main dataset
 	engine := minerva.NewFaker()

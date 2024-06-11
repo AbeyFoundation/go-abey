@@ -42,7 +42,7 @@ import (
 	"fmt"
 	"hash"
 
-	ethcrypto "github.com/abeychain/go-abey/crypto"
+	ethcrypto "github.com/AbeyFoundation/go-abey/crypto"
 )
 
 var (

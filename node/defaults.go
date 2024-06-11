@@ -22,8 +22,8 @@ import (
 	"path/filepath"
 	"runtime"
 
-	"github.com/abeychain/go-abey/p2p"
-	"github.com/abeychain/go-abey/p2p/nat"
+	"github.com/AbeyFoundation/go-abey/p2p"
+	"github.com/AbeyFoundation/go-abey/p2p/nat"
 )
 
 const (

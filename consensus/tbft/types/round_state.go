@@ -3,9 +3,10 @@ package types
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/abeychain/go-abey/consensus/tbft/help"
-	"github.com/abeychain/go-abey/core/types"
 	"time"
+
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/help"
+	"github.com/AbeyFoundation/go-abey/core/types"
 )
 
 //-----------------------------------------------------------------------------
@@ -80,7 +81,7 @@ type RoundState struct {
 	LastCommit         *VoteSet       `json:"last_commit"`  // Last precommits at Height-1
 }
 
-//RoundStateSimple  Compressed version of the RoundState for use in RPC
+// RoundStateSimple  Compressed version of the RoundState for use in RPC
 type RoundStateSimple struct {
 	HeightRoundStep   string          `json:"height/round/step"`
 	StartTime         time.Time       `json:"start_time"`

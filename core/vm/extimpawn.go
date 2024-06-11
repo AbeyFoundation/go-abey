@@ -3,11 +3,11 @@ package vm
 import (
 	"encoding/json"
 	"errors"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/common/hexutil"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/params"
-	"github.com/abeychain/go-abey/rlp"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common/hexutil"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/rlp"
 	"io"
 	"math/big"
 )

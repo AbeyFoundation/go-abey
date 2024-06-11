@@ -24,10 +24,10 @@ import (
 
 	"sync"
 
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/internal/abeyapi"
+	"github.com/AbeyFoundation/go-abey/log"
 	"github.com/davecgh/go-spew/spew"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/internal/abeyapi"
-	"github.com/abeychain/go-abey/log"
 	"golang.org/x/crypto/ssh/terminal"
 )
 

@@ -6,10 +6,10 @@ package contract
 import (
 	"strings"
 
-	"github.com/abeychain/go-abey/accounts/abi"
-	"github.com/abeychain/go-abey/accounts/abi/bind"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/accounts/abi"
+	"github.com/AbeyFoundation/go-abey/accounts/abi/bind"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/core/types"
 )
 
 // FIFSRegistrarABI is the input ABI used to generate the binding from.

@@ -26,15 +26,15 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/consensus"
+	"github.com/AbeyFoundation/go-abey/core"
+	"github.com/AbeyFoundation/go-abey/core/snailchain/rawdb"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/params"
 	"github.com/hashicorp/golang-lru"
-	"github.com/abeychain/go-abey/consensus"
-	"github.com/abeychain/go-abey/core"
-	"github.com/abeychain/go-abey/core/snailchain/rawdb"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/abeydb"
-	"github.com/abeychain/go-abey/params"
 )
 
 const (
@@ -68,9 +68,10 @@ type HeaderChain struct {
 }
 
 // NewHeaderChain creates a new HeaderChain structure.
-//  getValidator should return the parent's validator
-//  procInterrupt points to the parent's interrupt semaphore
-//  wg points to the parent's shutdown wait group
+//
+//	getValidator should return the parent's validator
+//	procInterrupt points to the parent's interrupt semaphore
+//	wg points to the parent's shutdown wait group
 func NewHeaderChain(chainDb abeydb.Database, config *params.ChainConfig, engine consensus.Engine, procInterrupt func() bool) (*HeaderChain, error) {
 	headerCache, _ := lru.New(headerCacheLimit)
 	tdCache, _ := lru.New(tdCacheLimit)
@@ -218,7 +219,7 @@ func (hc *HeaderChain) WriteHeader(header *types.SnailHeader, fruitHeads []*type
 // header writes should be protected by the parent chain mutex individually.
 type WhCallback func(*types.SnailHeader, []*types.SnailHeader) error
 
-//ValidateHeaderChain validate the header of the snailchain
+// ValidateHeaderChain validate the header of the snailchain
 func (hc *HeaderChain) ValidateHeaderChain(chain []*types.SnailHeader, fruits [][]*types.SnailHeader, checkFreq int, fastchain *core.HeaderChain, checkpoint uint64) (int, error) {
 	// Do a sanity check that the provided chain is actually ordered and linked
 	for i := 1; i < len(chain); i++ {

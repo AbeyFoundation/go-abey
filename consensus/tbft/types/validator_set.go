@@ -5,14 +5,15 @@ import (
 	"crypto/ecdsa"
 	"encoding/hex"
 	"fmt"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/consensus/tbft/crypto"
-	"github.com/abeychain/go-abey/consensus/tbft/help"
-	ctypes "github.com/abeychain/go-abey/core/types"
 	"math"
 	"sort"
 	"strings"
+
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/crypto"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/help"
+	ctypes "github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/log"
 )
 
 // ValidatorSet represent a set of *Validator at a given height.
@@ -33,7 +34,7 @@ type ValidatorSet struct {
 	totalVotingPower int64
 }
 
-//NewValidatorSet is make a Validator to ValidatorSet
+// NewValidatorSet is make a Validator to ValidatorSet
 func NewValidatorSet(vals []*Validator) *ValidatorSet {
 	validators := make([]*Validator, len(vals))
 	for i, val := range vals {
@@ -283,7 +284,7 @@ func (valSet *ValidatorSet) Iterate(fn func(index int, val *Validator) bool) {
 	}
 }
 
-//VerifyCommit  Verify that +2/3 of the set had signed the given signBytes
+// VerifyCommit  Verify that +2/3 of the set had signed the given signBytes
 func (valSet *ValidatorSet) VerifyCommit(chainID string, blockID BlockID, height uint64, commit *Commit) error {
 	if valSet.Size() != uint(len(commit.Precommits)) {
 		return fmt.Errorf("invalid commit -- wrong set size: %v vs %v", valSet.Size(), len(commit.Precommits))
@@ -338,8 +339,8 @@ func (valSet *ValidatorSet) VerifyCommit(chainID string, blockID BlockID, height
 // * over 2/3 of the power in old signed this block
 //
 // newSet is the validator set that signed this block
-// * only votes from old are sufficient for 2/3 majority
-//   in the new set as well
+//   - only votes from old are sufficient for 2/3 majority
+//     in the new set as well
 //
 // That means that:
 // * 10% of the valset can't just declare themselves kings
@@ -441,7 +442,7 @@ func (valSet *ValidatorSet) StringIndented(indent string) string {
 //-------------------------------------
 // Implements sort for sorting validators by address.
 
-//ValidatorsByAddress is Sort validators by address
+// ValidatorsByAddress is Sort validators by address
 type ValidatorsByAddress []*Validator
 
 func (vs ValidatorsByAddress) Len() int {

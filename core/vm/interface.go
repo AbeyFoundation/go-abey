@@ -19,8 +19,8 @@ package vm
 import (
 	"math/big"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/core/types"
 )
 
 // StateDB is an EVM database for full state querying.

@@ -27,11 +27,11 @@ import (
 	"net"
 	"time"
 
-	"github.com/abeychain/go-abey/common/math"
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/p2p/enode"
-	"github.com/abeychain/go-abey/p2p/enr"
-	"github.com/abeychain/go-abey/rlp"
+	"github.com/AbeyFoundation/go-abey/common/math"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/p2p/enode"
+	"github.com/AbeyFoundation/go-abey/p2p/enr"
+	"github.com/AbeyFoundation/go-abey/rlp"
 )
 
 // RPC packet types

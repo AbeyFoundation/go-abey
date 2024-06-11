@@ -25,14 +25,14 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/abeychain/go-abey/accounts"
-	"github.com/abeychain/go-abey/accounts/keystore"
-	"github.com/abeychain/go-abey/accounts/usbwallet"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/p2p"
-	"github.com/abeychain/go-abey/p2p/enode"
+	"github.com/AbeyFoundation/go-abey/accounts"
+	"github.com/AbeyFoundation/go-abey/accounts/keystore"
+	"github.com/AbeyFoundation/go-abey/accounts/usbwallet"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/p2p"
+	"github.com/AbeyFoundation/go-abey/p2p/enode"
 )
 
 const (

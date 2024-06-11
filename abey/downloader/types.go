@@ -18,10 +18,8 @@ package downloader
 
 import (
 	"fmt"
-	"github.com/abeychain/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/core/types"
 )
-
-
 
 // headerPack is a batch of block headers returned by a peer.
 type headerPack struct {
@@ -35,8 +33,8 @@ func (p *headerPack) Stats() string  { return fmt.Sprintf("Snail %d", len(p.head
 
 // bodyPack is a batch of block bodies returned by a peer.
 type bodyPack struct {
-	peerID       string
-	fruit 		 [][]*types.SnailBlock
+	peerID string
+	fruit  [][]*types.SnailBlock
 }
 
 func (p *bodyPack) PeerId() string { return p.peerID }

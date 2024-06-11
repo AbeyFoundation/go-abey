@@ -13,7 +13,6 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with go-ethereum. If not, see <http://www.gnu.org/licenses/>.
-//
 package core
 
 import (
@@ -27,16 +26,16 @@ import (
 	"testing"
 	"time"
 
-	"github.com/abeychain/go-abey/accounts/keystore"
-	"github.com/abeychain/go-abey/cmd/utils"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/common/hexutil"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/internal/abeyapi"
-	"github.com/abeychain/go-abey/rlp"
+	"github.com/AbeyFoundation/go-abey/accounts/keystore"
+	"github.com/AbeyFoundation/go-abey/cmd/utils"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common/hexutil"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/internal/abeyapi"
+	"github.com/AbeyFoundation/go-abey/rlp"
 )
 
-//Used for testing
+// Used for testing
 type HeadlessUI struct {
 	controller chan string
 }

@@ -19,14 +19,14 @@ package abey
 import (
 	"crypto/ecdsa"
 	"fmt"
-	"github.com/abeychain/go-abey/core/state"
+	"github.com/AbeyFoundation/go-abey/core/state"
 	"io"
 	"math/big"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/event"
-	"github.com/abeychain/go-abey/rlp"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/event"
+	"github.com/AbeyFoundation/go-abey/rlp"
 )
 
 // Constants to match up protocol versions and messages

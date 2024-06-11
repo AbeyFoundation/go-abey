@@ -2,11 +2,11 @@ package tbft
 
 import (
 	"fmt"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/rlp"
-	"github.com/abeychain/go-abey/consensus/tbft/help"
-	"github.com/abeychain/go-abey/consensus/tbft/types"
-	types2 "github.com/abeychain/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/help"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/types"
+	types2 "github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/rlp"
 	"math/rand"
 	"testing"
 )

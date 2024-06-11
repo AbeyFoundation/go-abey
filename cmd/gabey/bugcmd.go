@@ -10,10 +10,10 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/abeychain/go-abey/cmd/internal/browser"
-	"github.com/abeychain/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/cmd/internal/browser"
+	"github.com/AbeyFoundation/go-abey/params"
 
-	"github.com/abeychain/go-abey/cmd/utils"
+	"github.com/AbeyFoundation/go-abey/cmd/utils"
 	cli "gopkg.in/urfave/cli.v1"
 )
 
@@ -25,7 +25,7 @@ var bugCommand = cli.Command{
 	Category:  "MISCELLANEOUS COMMANDS",
 }
 
-const issueURL = "https://github.com/abeychain/go-abey/issues/new"
+const issueURL = "https://github.com/AbeyFoundation/go-abey/issues/new"
 
 // reportBug reports a bug by opening a new URL to the abey issue
 // tracker and setting default values as the issue body.

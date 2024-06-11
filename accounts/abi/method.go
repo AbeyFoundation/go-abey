@@ -20,7 +20,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/abeychain/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/crypto"
 )
 
 // FunctionType represents different types of functions a contract might have.

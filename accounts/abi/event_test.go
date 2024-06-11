@@ -25,10 +25,10 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/crypto"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/crypto"
 )
 
 var jsonEventTransfer = []byte(`{

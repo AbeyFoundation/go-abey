@@ -18,19 +18,19 @@ package gasprice
 
 import (
 	"context"
-	"github.com/abeychain/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/abeydb"
 	"math"
 	"math/big"
 	"testing"
 
-	"github.com/abeychain/go-abey/common"
-	ethash "github.com/abeychain/go-abey/consensus/minerva"
-	"github.com/abeychain/go-abey/core"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/core/vm"
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/params"
-	"github.com/abeychain/go-abey/rpc"
+	"github.com/AbeyFoundation/go-abey/common"
+	ethash "github.com/AbeyFoundation/go-abey/consensus/minerva"
+	"github.com/AbeyFoundation/go-abey/core"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/core/vm"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/rpc"
 )
 
 type testBackend struct {

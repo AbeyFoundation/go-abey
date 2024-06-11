@@ -21,9 +21,9 @@ import (
 	"errors"
 	"math/big"
 
-	"github.com/abeychain/go-abey/common"
-	abeychain "github.com/abeychain/go-abey"
-	"github.com/abeychain/go-abey/core/types"
+	abeychain "github.com/AbeyFoundation/go-abey"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/core/types"
 )
 
 var (

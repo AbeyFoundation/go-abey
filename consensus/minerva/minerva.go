@@ -28,17 +28,17 @@ import (
 	"sync"
 	"time"
 
+	"github.com/AbeyFoundation/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/consensus"
+	"github.com/AbeyFoundation/go-abey/core/snailchain/rawdb"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/metrics"
+	"github.com/AbeyFoundation/go-abey/rlp"
+	"github.com/AbeyFoundation/go-abey/rpc"
 	"github.com/hashicorp/golang-lru/simplelru"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/consensus"
-	"github.com/abeychain/go-abey/core/snailchain/rawdb"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/abeydb"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/metrics"
-	"github.com/abeychain/go-abey/rlp"
-	"github.com/abeychain/go-abey/rpc"
 	"golang.org/x/crypto/sha3"
 )
 
@@ -63,11 +63,11 @@ var (
 	SqrtMin = 25
 
 	//SqrtMax ...
-	SqrtMax = 6400
-	MaxReduce = 20
-	NewRewardCoinForPow = new(big.Int).Mul(big.NewInt(3560),BaseBig)
+	SqrtMax              = 6400
+	MaxReduce            = 20
+	NewRewardCoinForPow  = new(big.Int).Mul(big.NewInt(3560), BaseBig)
 	RewardReduceInterval = 210000
-	NewRewardCoinForPos = new(big.Int).Mul(big.NewInt(570),BaseBig)
+	NewRewardCoinForPos  = new(big.Int).Mul(big.NewInt(570), BaseBig)
 )
 
 // ConstSqrt ...
@@ -211,10 +211,10 @@ type Minerva struct {
 
 	lock sync.Mutex // Ensures thread safety for the in-memory caches and mining fields
 
-	sbc      consensus.SnailChainReader
-	election consensus.CommitteeElection
+	sbc          consensus.SnailChainReader
+	election     consensus.CommitteeElection
 	rewardAccess consensus.RewardInfosAccess
-	chainDB  abeydb.Database
+	chainDB      abeydb.Database
 }
 
 //var MinervaLocal *Minerva
@@ -369,7 +369,7 @@ func (d *Dataset) Generate(epoch uint64, headershash *[STARTUPDATENUM][]byte) {
 
 }
 
-//SetSnailChainReader Append interface SnailChainReader after instantiations
+// SetSnailChainReader Append interface SnailChainReader after instantiations
 func (m *Minerva) SetSnailChainReader(scr consensus.SnailChainReader) {
 	m.sbc = scr
 }
@@ -378,7 +378,7 @@ func (m *Minerva) SetSnailHeaderHash(db abeydb.Database) {
 	m.chainDB = db
 }
 
-//SetElection Append interface CommitteeElection after instantiation
+// SetElection Append interface CommitteeElection after instantiation
 func (m *Minerva) SetElection(e consensus.CommitteeElection) {
 	m.election = e
 }

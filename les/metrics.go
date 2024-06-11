@@ -17,8 +17,8 @@
 package les
 
 import (
-	"github.com/abeychain/go-abey/metrics"
-	"github.com/abeychain/go-abey/p2p"
+	"github.com/AbeyFoundation/go-abey/metrics"
+	"github.com/AbeyFoundation/go-abey/p2p"
 )
 
 var (

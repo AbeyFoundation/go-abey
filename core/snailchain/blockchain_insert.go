@@ -19,11 +19,11 @@ package snailchain
 import (
 	"time"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/common/mclock"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/core"
-	"github.com/abeychain/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common/mclock"
+	"github.com/AbeyFoundation/go-abey/core"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/log"
 )
 
 // insertSnailStats tracks and reports on block insertion.

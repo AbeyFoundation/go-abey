@@ -26,15 +26,15 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/abeychain/go-abey/consensus/tbft/help"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/help"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/core/state"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/event"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/metrics"
-	"github.com/abeychain/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/core/state"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/event"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/metrics"
+	"github.com/AbeyFoundation/go-abey/params"
 	"gopkg.in/karalabe/cookiejar.v2/collections/prque"
 )
 
@@ -128,7 +128,7 @@ var (
 // TxStatus is the current status of a transaction as seen by the pool.
 type TxStatus uint
 
-//all kind of status
+// all kind of status
 const (
 	TxStatusUnknown TxStatus = iota
 	TxStatusQueued

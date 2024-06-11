@@ -2,10 +2,10 @@ package types
 
 import (
 	"errors"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/event"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/event"
+	"github.com/AbeyFoundation/go-abey/log"
 	"math/big"
 	"sort"
 	"sync"

@@ -2,7 +2,7 @@ FROM alpine:3.14
 
 RUN \
   apk add --update go git make gcc musl-dev=1.1.19-r10 linux-headers ca-certificates && \
-  git clone --depth 1 --branch release/1.8 https://github.com/abeychain/go-abey && \
+  git clone --depth 1 --branch release/1.8 https://github.com/AbeyFoundation/go-abey && \
   (cd abey && make gabey) && \
   cp abey/build/bin/gabey /gabey && \
   apk del go git make gcc musl-dev linux-headers && \

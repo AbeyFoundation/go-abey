@@ -19,7 +19,7 @@ package core
 import (
 	"runtime"
 
-	"github.com/abeychain/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/core/types"
 )
 
 // senderCacher is a concurrent tranaction sender recoverer anc cacher.

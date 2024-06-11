@@ -16,7 +16,7 @@
 
 package core
 
-import "github.com/abeychain/go-abey/common"
+import "github.com/AbeyFoundation/go-abey/common"
 
 // BadHashes represent a set of manually tracked bad hashes (usually hard forks)
 var BadHashes = map[common.Hash]bool{

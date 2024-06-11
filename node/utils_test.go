@@ -22,8 +22,8 @@ package node
 import (
 	"reflect"
 
-	"github.com/abeychain/go-abey/p2p"
-	"github.com/abeychain/go-abey/rpc"
+	"github.com/AbeyFoundation/go-abey/p2p"
+	"github.com/AbeyFoundation/go-abey/rpc"
 )
 
 // NoopService is a trivial implementation of the Service interface.

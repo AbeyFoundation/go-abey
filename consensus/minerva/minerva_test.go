@@ -17,17 +17,17 @@
 package minerva
 
 import (
-	"github.com/abeychain/go-abey/core/types"
+	"fmt"
+	"github.com/AbeyFoundation/go-abey/core/types"
 	"io/ioutil"
 	"time"
-	"fmt"
 	//"math/big"
 	"math/rand"
 	"os"
 	"sync"
 	"testing"
 
-	"github.com/abeychain/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/params"
 	"math/big"
 )
 
@@ -61,7 +61,7 @@ func TestTestMode(t *testing.T) {
 }
 
 // This test checks that cache lru logic doesn't crash under load.
-// It reproduces https://github.com/abeychain/go-abey/issues/14943
+// It reproduces https://github.com/AbeyFoundation/go-abey/issues/14943
 func TestCacheFileEvict(t *testing.T) {
 	tmpdir, err := ioutil.TempDir("", "minerva-test")
 	if err != nil {
@@ -137,18 +137,18 @@ func TestNewAlgorithm(t *testing.T) {
 		DatasetsOnDisk: 2,
 	}
 	minerva := &Minerva{
-		config: config,
+		config:   config,
 		datasets: newlru("dataset", config.DatasetsInMem, NewDataset),
 		update:   make(chan struct{}),
 	}
 	minerva.getDataset(1)
 
 	block := uint64(47000)
-	for i:= 0;i<1000;i++ {
+	for i := 0; i < 1000; i++ {
 		block = block + uint64(i)
 		ds := minerva.getDataset(block)
 		if ds != nil {
-			fmt.Println("len:",len(ds.dataset))
+			fmt.Println("len:", len(ds.dataset))
 		}
 	}
 	fmt.Println("finish")

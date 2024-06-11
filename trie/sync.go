@@ -19,10 +19,10 @@ package trie
 import (
 	"errors"
 	"fmt"
-	"github.com/abeychain/go-abey/common/prque"
+	"github.com/AbeyFoundation/go-abey/common/prque"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/common"
 )
 
 // ErrNotRequested is returned by the trie sync when it's requested to process a

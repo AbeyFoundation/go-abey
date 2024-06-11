@@ -1,8 +1,8 @@
 package tp2p
 
 import (
-	"github.com/abeychain/go-abey/consensus/tbft/help"
-	"github.com/abeychain/go-abey/consensus/tbft/tp2p/conn"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/help"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/tp2p/conn"
 )
 
 type Reactor interface {

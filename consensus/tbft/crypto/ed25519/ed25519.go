@@ -4,12 +4,13 @@ import (
 	"bytes"
 	"crypto/subtle"
 	"fmt"
-	"github.com/abeychain/go-abey/consensus/tbft/crypto"
-	"github.com/abeychain/go-abey/consensus/tbft/help"
+	"io"
+
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/crypto"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/help"
 	"github.com/loinfish/ed25519"
 	"github.com/loinfish/ed25519/extra25519"
 	"github.com/tendermint/go-amino"
-	"io"
 )
 
 //-------------------------------------

@@ -1,5 +1,3 @@
-
-
 package console
 
 import (
@@ -9,9 +7,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/abeychain/go-abey/accounts/usbwallet"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/rpc"
+	"github.com/AbeyFoundation/go-abey/accounts/usbwallet"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/rpc"
 	"github.com/robertkrimen/otto"
 )
 
@@ -31,8 +29,6 @@ func newBridge(client *rpc.Client, prompter UserPrompter, printer io.Writer) *br
 		printer:  printer,
 	}
 }
-
-
 
 // NewAccount is a wrapper around the personal.newAccount RPC method that uses a
 // non-echoing password prompt to acquire the passphrase and executes the original

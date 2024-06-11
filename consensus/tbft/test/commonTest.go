@@ -7,9 +7,9 @@ import (
 	"testing"
 	"time"
 
+	types2 "github.com/AbeyFoundation/go-abey/consensus/tbft/types"
+	"github.com/AbeyFoundation/go-abey/core/types"
 	amino "github.com/tendermint/go-amino"
-	types2 "github.com/abeychain/go-abey/consensus/tbft/types"
-	"github.com/abeychain/go-abey/core/types"
 )
 
 var cdc = amino.NewCodec()

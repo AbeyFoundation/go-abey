@@ -20,7 +20,7 @@ package rawdb
 import (
 	"encoding/binary"
 
-	"github.com/abeychain/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common"
 )
 
 // The fields below define the low level database schema prefixing.

@@ -27,7 +27,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/abeychain/go-abey/p2p/enode"
+	"github.com/AbeyFoundation/go-abey/p2p/enode"
 )
 
 func TestMocker(t *testing.T) {

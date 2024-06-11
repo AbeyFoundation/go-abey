@@ -12,17 +12,17 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/abeychain/go-abey/consensus/tbft/testlog"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/testlog"
 
-	tcrypto "github.com/abeychain/go-abey/consensus/tbft/crypto"
-	"github.com/abeychain/go-abey/consensus/tbft/help"
-	"github.com/abeychain/go-abey/consensus/tbft/tp2p"
-	"github.com/abeychain/go-abey/consensus/tbft/tp2p/pex"
-	ttypes "github.com/abeychain/go-abey/consensus/tbft/types"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/log"
-	cfg "github.com/abeychain/go-abey/params"
+	tcrypto "github.com/AbeyFoundation/go-abey/consensus/tbft/crypto"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/help"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/tp2p"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/tp2p/pex"
+	ttypes "github.com/AbeyFoundation/go-abey/consensus/tbft/types"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/log"
+	cfg "github.com/AbeyFoundation/go-abey/params"
 )
 
 type service struct {
@@ -205,7 +205,7 @@ func (s *service) putNodes(cid *big.Int, nodes []*types.CommitteeNode) {
 	}
 }
 
-//pkToP2pID pk to p2p id
+// pkToP2pID pk to p2p id
 func pkToP2pID(pk *ecdsa.PublicKey) tp2p.ID {
 	publicKey := crypto.FromECDSAPub(pk)
 	pub, err := crypto.UnmarshalPubkey(publicKey)
@@ -236,7 +236,7 @@ func (s *service) updateNodes() {
 	}
 }
 
-//add self check
+// add self check
 func (s *service) canConn(v *nodeInfo) bool {
 	if !v.Enable && v.Flag == types.StateUsedFlag && v.Adrress != nil && v.ID != s.selfID {
 		return true
@@ -412,7 +412,7 @@ func (n *Node) makeNodeInfo() tp2p.NodeInfo {
 	return nodeInfo
 }
 
-//Notify is agent change server order
+// Notify is agent change server order
 func (n *Node) Notify(id *big.Int, action int) error {
 	n.lock.Lock()
 	defer n.lock.Unlock()
@@ -454,7 +454,7 @@ func (n *Node) Notify(id *big.Int, action int) error {
 	return nil
 }
 
-//PutCommittee is agent put all committee to server
+// PutCommittee is agent put all committee to server
 func (n *Node) PutCommittee(committeeInfo *types.CommitteeInfo) error {
 	id := committeeInfo.Id
 	members := committeeInfo.Members
@@ -542,7 +542,7 @@ func (n *Node) AddHealthForCommittee(h *ttypes.HealthMgr, c *types.CommitteeInfo
 	}
 }
 
-//PutNodes is agent put peer's ip port
+// PutNodes is agent put peer's ip port
 func (n *Node) PutNodes(id *big.Int, nodes []*types.CommitteeNode) error {
 	if id == nil || len(nodes) <= 0 {
 		return errors.New("wrong params")
@@ -625,7 +625,7 @@ func (n *Node) UpdateCommittee(info *types.CommitteeInfo) error {
 	return errors.New("service not found")
 }
 
-//MakeValidators is make CommitteeInfo to ValidatorSet
+// MakeValidators is make CommitteeInfo to ValidatorSet
 func MakeValidators(cmm *types.CommitteeInfo) *ttypes.ValidatorSet {
 	id := cmm.Id
 	members := append(cmm.Members, cmm.BackMembers...)
@@ -669,7 +669,7 @@ func makeCommitteeMembers(ss *service, cmm *types.CommitteeInfo) map[tp2p.ID]*no
 	return tab
 }
 
-//SetCommitteeStop is stop committeeID server
+// SetCommitteeStop is stop committeeID server
 func (n *Node) SetCommitteeStop(committeeID *big.Int, stop uint64) error {
 	log.Trace("SetCommitteeStop", "id", committeeID, "stop", stop)
 	n.lock.Lock()
@@ -697,7 +697,7 @@ func getNodeStatus(s *service) map[string]interface{} {
 	return result
 }
 
-//GetCommitteeStatus is show committee info in api
+// GetCommitteeStatus is show committee info in api
 func (n *Node) GetCommitteeStatus(committeeID *big.Int) map[string]interface{} {
 	log.Trace("GetCommitteeStatus", "committeeID", committeeID.Uint64())
 	result := make(map[string]interface{})
@@ -732,7 +732,7 @@ func (n *Node) IsLeader(committeeID *big.Int) bool {
 	return false
 }
 
-//check Committee
+// check Committee
 func (n *Node) verifyCommitteeInfo(cm *types.CommitteeInfo) error {
 	//checkFlag
 	if cm.Id.Uint64() == 0 {
@@ -770,7 +770,7 @@ func (n *Node) verifyCommitteeInfo(cm *types.CommitteeInfo) error {
 	return n.verifySeedNode(seeds, cSeeds)
 }
 
-//check seed node
+// check seed node
 func (n *Node) verifySeedNode(seeds []*types.CommitteeMember, cSeeds []*types.CommitteeMember) error {
 	if len(seeds) == 0 || len(cSeeds) == 0 || (len(seeds) != len(cSeeds)) {
 		return errors.New("committee member error 3")

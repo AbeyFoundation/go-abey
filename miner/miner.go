@@ -23,18 +23,18 @@ import (
 	"math/big"
 	"sync/atomic"
 
-	"github.com/abeychain/go-abey/abey/downloader"
-	"github.com/abeychain/go-abey/abeydb"
-	"github.com/abeychain/go-abey/accounts"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/consensus"
-	"github.com/abeychain/go-abey/core"
-	"github.com/abeychain/go-abey/core/snailchain"
-	"github.com/abeychain/go-abey/core/state"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/event"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/abey/downloader"
+	"github.com/AbeyFoundation/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/accounts"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/consensus"
+	"github.com/AbeyFoundation/go-abey/core"
+	"github.com/AbeyFoundation/go-abey/core/snailchain"
+	"github.com/AbeyFoundation/go-abey/core/state"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/event"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/params"
 )
 
 const (
@@ -51,7 +51,7 @@ type Backend interface {
 	ChainDb() abeydb.Database
 }
 
-//CommitteeElection interface is Election module implementation committee interface
+// CommitteeElection interface is Election module implementation committee interface
 type CommitteeElection interface {
 	//VerifySigns verify the fast chain committee signatures in batches
 	VerifySigns(pvs []*types.PbftSign) ([]*types.CommitteeMember, []error)
@@ -238,7 +238,7 @@ func (miner *Miner) update() {
 
 }
 
-//Start miner
+// Start miner
 func (miner *Miner) Start(coinbase common.Address) {
 	log.Debug("start miner --miner start function")
 
@@ -261,7 +261,7 @@ func (miner *Miner) Start(coinbase common.Address) {
 	}
 }
 
-//Stop stop miner
+// Stop stop miner
 func (miner *Miner) SetShouldStartMining(start bool) {
 	if start {
 		atomic.StoreInt32(&miner.shouldStart, 1)
@@ -270,7 +270,7 @@ func (miner *Miner) SetShouldStartMining(start bool) {
 	}
 }
 
-//Stop stop miner
+// Stop stop miner
 func (miner *Miner) Stop() {
 	log.Debug(" miner stop miner funtion")
 	miner.worker.stop()
@@ -278,7 +278,7 @@ func (miner *Miner) Stop() {
 	//atomic.StoreInt32(&miner.shouldStart, 0)
 }
 
-//Register is for register Agent to start or stop Agent
+// Register is for register Agent to start or stop Agent
 func (miner *Miner) Register(agent Agent) {
 	if miner.Mining() {
 		agent.Start()
@@ -286,12 +286,12 @@ func (miner *Miner) Register(agent Agent) {
 	miner.worker.register(agent)
 }
 
-//Unregister is Unregister the Agent
+// Unregister is Unregister the Agent
 func (miner *Miner) Unregister(agent Agent) {
 	miner.worker.unregister(agent)
 }
 
-//Mining start mining set flage
+// Mining start mining set flage
 func (miner *Miner) Mining() bool {
 	return atomic.LoadInt32(&miner.mining) > 0
 }
@@ -313,7 +313,7 @@ func (miner *Miner) HashRate() (tot int64) {
 	return tot
 }
 
-//SetExtra set Extra data
+// SetExtra set Extra data
 func (miner *Miner) SetExtra(extra []byte) error {
 	if uint64(len(extra)) > params.MaximumExtraDataSize {
 		return fmt.Errorf("Extra exceeds max length. %d > %v", len(extra), params.MaximumExtraDataSize)

@@ -22,13 +22,13 @@ import (
 	"encoding/hex"
 	"errors"
 	"fmt"
-	"github.com/abeychain/go-abey/rlp"
+	"github.com/AbeyFoundation/go-abey/rlp"
 	"math/bits"
 	"math/rand"
 	"net"
 	"strings"
 
-	"github.com/abeychain/go-abey/p2p/enr"
+	"github.com/AbeyFoundation/go-abey/p2p/enr"
 )
 
 var errMissingPrefix = errors.New("missing 'enr:' prefix for base64-encoded record")

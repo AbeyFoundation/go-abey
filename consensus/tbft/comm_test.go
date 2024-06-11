@@ -2,9 +2,9 @@ package tbft
 
 import (
 	"fmt"
-	//"github.com/abeychain/go-abey/consensus/tbft/help"
-	types2 "github.com/abeychain/go-abey/consensus/tbft/types"
-	"github.com/abeychain/go-abey/core/types"
+	//"github.com/AbeyFoundation/go-abey/consensus/tbft/help"
+	types2 "github.com/AbeyFoundation/go-abey/consensus/tbft/types"
+	"github.com/AbeyFoundation/go-abey/core/types"
 	"math/big"
 	"testing"
 	"time"

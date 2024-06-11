@@ -17,20 +17,20 @@
 package snailchain
 
 import (
-	"github.com/abeychain/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/log"
 	"math/big"
 
 	"fmt"
 
-	"github.com/abeychain/go-abey/abeydb"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/consensus"
-	"github.com/abeychain/go-abey/consensus/minerva"
-	"github.com/abeychain/go-abey/core"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/core/vm"
-	"github.com/abeychain/go-abey/params"
-	//"github.com/abeychain/go-abey/abey"
+	"github.com/AbeyFoundation/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/consensus"
+	"github.com/AbeyFoundation/go-abey/consensus/minerva"
+	"github.com/AbeyFoundation/go-abey/core"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/core/vm"
+	"github.com/AbeyFoundation/go-abey/params"
+	//"github.com/AbeyFoundation/go-abey/abey"
 )
 
 // BlockGen creates blocks for testing.
@@ -62,7 +62,7 @@ func (b *BlockGen) SetCoinbase(addr common.Address) {
 	//b.gasPool = new(GasPool).AddGas(b.header.GasLimit)
 }
 
-//AddFruit add a given fruit into the fruit array
+// AddFruit add a given fruit into the fruit array
 func (b *BlockGen) AddFruit(block *types.SnailBlock) {
 	b.fruits = append(b.fruits, block)
 }
@@ -291,7 +291,7 @@ func (cr *fakeChainReader) GetBlock(hash common.Hash, number uint64) *types.Snai
 	return cr.chain[number]
 }
 
-//MakeChain return snailChain and fastchain by given fastBlockNumbers and snailBlockNumbers
+// MakeChain return snailChain and fastchain by given fastBlockNumbers and snailBlockNumbers
 func MakeChain(fastBlockNumbers int, snailBlockNumbers int, genesis *core.Genesis, engine consensus.Engine) (*SnailBlockChain, *core.BlockChain) {
 	var (
 		testdb = abeydb.NewMemDatabase()
@@ -329,7 +329,7 @@ func MakeChain(fastBlockNumbers int, snailBlockNumbers int, genesis *core.Genesi
 	return snailChain, fastchain
 }
 
-//MakeSnailBlockFruits return fruits or blocks by given params and insert these in the chain
+// MakeSnailBlockFruits return fruits or blocks by given params and insert these in the chain
 func MakeSnailBlockBlockChain(chain *SnailBlockChain, fastchain *core.BlockChain, parent *types.SnailBlock, n int, DifficultyLevel int) ([]*types.SnailBlock, error) {
 
 	var blocks types.SnailBlocks
@@ -378,12 +378,12 @@ func MakeSnailBlockBlockChain(chain *SnailBlockChain, fastchain *core.BlockChain
 	return blocks, nil
 }
 
-//MakeSnailBlockFruit retrieves a snailblock or fruit by given parameter
-//create block,fruit
+// MakeSnailBlockFruit retrieves a snailblock or fruit by given parameter
+// create block,fruit
 // chain: for snail chain
 // fastchian: for fast chain
 // makeStartFastNum,makeFruitSize :if you create  a block the fruitset  startnumber and size this is fastblock number
-//pubkey : for election
+// pubkey : for election
 // coinbaseAddr: for coin
 func MakeSnailBlock(chain *SnailBlockChain, fastchain *core.BlockChain, parent *types.SnailBlock, makeFruitSize int, diff *big.Int, blocks []*types.SnailBlock) (*types.SnailBlock, error) {
 	var fruitSet []*types.SnailBlock
@@ -482,17 +482,17 @@ func makeBlockChain(fastChain *core.BlockChain, parents []*types.SnailBlock, n i
 	return blocks
 }
 
-//MakeSnailBlockFruit retrieves a snailblock or fruit by given parameter
+// MakeSnailBlockFruit retrieves a snailblock or fruit by given parameter
 func MakeSnailBlockFruit(chain *SnailBlockChain, fastchain *core.BlockChain, makeBlockNum int, makeFruitSize int,
 	pubkey []byte, coinbaseAddr common.Address, isBlock bool, diff *big.Int) (*types.SnailBlock, error) {
 	return makeSnailBlockFruitInternal(chain, fastchain, makeBlockNum, 0, makeFruitSize, pubkey, coinbaseAddr, isBlock, diff)
 }
 
-//create block,fruit
+// create block,fruit
 // chain: for snail chain
 // fastchian: for fast chain
 // makeStartFastNum,makeFruitSize :if you create  a block the fruitset  startnumber and size this is fastblock number
-//pubkey : for election
+// pubkey : for election
 // coinbaseAddr: for coin
 func makeSnailBlockFruitInternal(chain *SnailBlockChain, fastchain *core.BlockChain, makeBlockNum int, makeStartFastNum int, makeFruitSize int,
 	pubkey []byte, coinbaseAddr common.Address, isBlock bool, diff *big.Int) (*types.SnailBlock, error) {
@@ -630,7 +630,7 @@ func makeSnailBlockFruitInternal(chain *SnailBlockChain, fastchain *core.BlockCh
 	return fruit, nil
 }
 
-//MakeSnailBlockFruits return fruits or blocks by given params and insert these in the chain
+// MakeSnailBlockFruits return fruits or blocks by given params and insert these in the chain
 func MakeSnailBlockFruits(chain *SnailBlockChain, fastchain *core.BlockChain, makeStarblockNumber int, makeblockSize int,
 	makeStartFastNum int, makeFruitSize int, pubkey []byte, coinbaseAddr common.Address, isBlock bool, diff *big.Int) ([]*types.SnailBlock, error) {
 	var blocks types.SnailBlocks
@@ -653,7 +653,7 @@ func MakeSnailBlockFruits(chain *SnailBlockChain, fastchain *core.BlockChain, ma
 	return blocks, nil
 }
 
-//MakeSnailBlockFruitsWithoutInsert return fruits or blocks by given params
+// MakeSnailBlockFruitsWithoutInsert return fruits or blocks by given params
 func MakeSnailBlockFruitsWithoutInsert(chain *SnailBlockChain, fastchain *core.BlockChain, makeStarblockNumber int, makeblockSize int,
 	pubkey []byte, coinbaseAddr common.Address, isBlock bool, diff *big.Int) ([]*types.SnailBlock, error) {
 	var blocks types.SnailBlocks
@@ -673,7 +673,7 @@ func MakeSnailBlockFruitsWithoutInsert(chain *SnailBlockChain, fastchain *core.B
 	return blocks, nil
 }
 
-//MakeSnailChain return snailChain and fastchain by given snailBlockNumbers and a default fastBlockNumbers(60)
+// MakeSnailChain return snailChain and fastchain by given snailBlockNumbers and a default fastBlockNumbers(60)
 func MakeSnailChain(snailBlockNumbers int, genesis *core.Genesis, engine consensus.Engine) (*SnailBlockChain, *core.BlockChain) {
 	return MakeChain(snailBlockNumbers*params.MinimumFruits, snailBlockNumbers, genesis, engine)
 }

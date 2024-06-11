@@ -18,10 +18,10 @@ package rpc
 
 import (
 	"encoding/json"
-	"github.com/abeychain/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common"
 	"testing"
 
-	"github.com/abeychain/go-abey/common/math"
+	"github.com/AbeyFoundation/go-abey/common/math"
 )
 
 func TestBlockNumberJSONUnmarshal(t *testing.T) {

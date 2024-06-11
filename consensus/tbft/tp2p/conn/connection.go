@@ -5,10 +5,10 @@ import (
 	"crypto/elliptic"
 	"errors"
 	"fmt"
-	"github.com/abeychain/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/help"
+	flow "github.com/AbeyFoundation/go-abey/consensus/tbft/help/flowrate"
+	"github.com/AbeyFoundation/go-abey/log"
 	"github.com/tendermint/go-amino"
-	"github.com/abeychain/go-abey/consensus/tbft/help"
-	flow "github.com/abeychain/go-abey/consensus/tbft/help/flowrate"
 	"io"
 	"math"
 	"net"
@@ -55,6 +55,7 @@ The byte id and the relative priorities of each `Channel` are configured upon
 initialization of the connection.
 
 There are two methods for sending messages:
+
 	func (m MConnection) Send(chID byte, msgBytes []byte) bool {}
 	func (m MConnection) TrySend(chID byte, msgBytes []byte}) bool {}
 

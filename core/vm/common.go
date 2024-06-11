@@ -17,9 +17,9 @@
 package vm
 
 import (
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common/math"
 	"github.com/holiman/uint256"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/common/math"
 )
 
 // calcMemSize64 calculates the required memory size, and returns

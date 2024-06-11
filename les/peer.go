@@ -19,17 +19,17 @@ package les
 import (
 	"errors"
 	"fmt"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/light"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/light"
 	"math/big"
 	"sync"
 	"time"
 
-	"github.com/abeychain/go-abey/abey"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/les/flowcontrol"
-	"github.com/abeychain/go-abey/p2p"
-	"github.com/abeychain/go-abey/rlp"
+	"github.com/AbeyFoundation/go-abey/abey"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/les/flowcontrol"
+	"github.com/AbeyFoundation/go-abey/p2p"
+	"github.com/AbeyFoundation/go-abey/rlp"
 )
 
 var (

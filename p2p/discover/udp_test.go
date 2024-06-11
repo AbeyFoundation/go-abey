@@ -23,8 +23,8 @@ import (
 	"encoding/binary"
 	"errors"
 	"fmt"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/p2p/discover/v4wire"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/p2p/discover/v4wire"
 	"io"
 	"math/rand"
 	"net"
@@ -35,7 +35,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/abeychain/go-abey/p2p/enode"
+	"github.com/AbeyFoundation/go-abey/p2p/enode"
 	"github.com/davecgh/go-spew/spew"
 )
 

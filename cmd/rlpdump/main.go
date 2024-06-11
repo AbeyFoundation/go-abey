@@ -26,7 +26,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/abeychain/go-abey/rlp"
+	"github.com/AbeyFoundation/go-abey/rlp"
 )
 
 var (

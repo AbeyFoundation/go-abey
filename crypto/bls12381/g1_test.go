@@ -6,7 +6,7 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/abeychain/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common"
 )
 
 func (g *G1) one() *PointG1 {

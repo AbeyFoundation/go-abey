@@ -30,8 +30,8 @@ import (
 
 	"gopkg.in/check.v1"
 
-	"github.com/abeychain/go-abey/common"
-	ethdb "github.com/abeychain/go-abey/abeydb"
+	ethdb "github.com/AbeyFoundation/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/common"
 )
 
 // Tests that updating a state trie does not leak any database writes prior to
@@ -118,7 +118,7 @@ func TestIntermediateLeaks(t *testing.T) {
 
 // TestCopy tests that copying a statedb object indeed makes the original and
 // the copy independent of each other. This test is a regression test against
-// https://github.com/abeychain/go-abey/pull/15549.
+// https://github.com/AbeyFoundation/go-abey/pull/15549.
 func TestCopy(t *testing.T) {
 	// Create a random state test to copy and modify "independently"
 	orig, _ := New(common.Hash{}, NewDatabase(ethdb.NewMemDatabase()))
@@ -430,7 +430,7 @@ func (s *StateSuite) TestTouchDelete(c *check.C) {
 }
 
 // TestCopyOfCopy tests that modified objects are carried over to the copy, and the copy of the copy.
-// See https://github.com/abeychain/go-abey/pull/15225#issuecomment-380191512
+// See https://github.com/AbeyFoundation/go-abey/pull/15225#issuecomment-380191512
 func TestCopyOfCopy(t *testing.T) {
 	sdb, _ := New(common.Hash{}, NewDatabase(ethdb.NewMemDatabase()))
 	addr := common.HexToAddress("aaaa")

@@ -24,7 +24,7 @@ import (
 	"math/big"
 	"strings"
 
-	"github.com/abeychain/go-abey/rlp"
+	"github.com/AbeyFoundation/go-abey/rlp"
 )
 
 // RLPTest is the JSON structure of a single RLP test.

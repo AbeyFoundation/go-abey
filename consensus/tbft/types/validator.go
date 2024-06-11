@@ -3,9 +3,10 @@ package types
 import (
 	"bytes"
 	"fmt"
-	"github.com/abeychain/go-abey/common/hexutil"
-	"github.com/abeychain/go-abey/consensus/tbft/crypto"
-	"github.com/abeychain/go-abey/consensus/tbft/help"
+
+	"github.com/AbeyFoundation/go-abey/common/hexutil"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/crypto"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/help"
 )
 
 // Validator state for each Validator
@@ -18,7 +19,7 @@ type Validator struct {
 	Accum       int64         `json:"accum"`
 }
 
-//NewValidator is return a new Validator
+// NewValidator is return a new Validator
 func NewValidator(pubKey crypto.PubKey, votingPower int64) *Validator {
 	return &Validator{
 		Address:     pubKey.Address(),

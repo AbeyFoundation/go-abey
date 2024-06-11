@@ -25,20 +25,20 @@ import (
 	"testing"
 	"time"
 
-	"github.com/abeychain/go-abey/core/snailchain"
-	"github.com/abeychain/go-abey/core/vm"
-	"github.com/abeychain/go-abey/abey/fastdownloader"
+	"github.com/AbeyFoundation/go-abey/abey/fastdownloader"
+	"github.com/AbeyFoundation/go-abey/core/snailchain"
+	"github.com/AbeyFoundation/go-abey/core/vm"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/consensus/minerva"
-	"github.com/abeychain/go-abey/core"
-	"github.com/abeychain/go-abey/core/types"
-	dtypes "github.com/abeychain/go-abey/abey/types"
-	"github.com/abeychain/go-abey/abeydb"
-	"github.com/abeychain/go-abey/event"
-	"github.com/abeychain/go-abey/params"
-	"github.com/abeychain/go-abey/trie"
+	dtypes "github.com/AbeyFoundation/go-abey/abey/types"
+	"github.com/AbeyFoundation/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/consensus/minerva"
+	"github.com/AbeyFoundation/go-abey/core"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/event"
+	"github.com/AbeyFoundation/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/trie"
 )
 
 var (
@@ -60,8 +60,8 @@ type downloadTester struct {
 	fdownloader *fastdownloader.Downloader
 	ftester     *fastdownloader.DownloadTester
 	genesis     *types.SnailBlock // Genesis blocks used by the tester and peers
-	stateDb     abeydb.Database  // Database used by the tester for syncing from peers
-	peerDb      abeydb.Database  // Database of the peers containing all data
+	stateDb     abeydb.Database   // Database used by the tester for syncing from peers
+	peerDb      abeydb.Database   // Database of the peers containing all data
 
 	ownHashes   []common.Hash                      // Hash chain belonging to the tester
 	ownHeaders  map[common.Hash]*types.SnailHeader // Headers belonging to the tester

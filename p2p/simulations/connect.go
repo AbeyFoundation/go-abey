@@ -20,7 +20,7 @@ import (
 	"errors"
 	"strings"
 
-	"github.com/abeychain/go-abey/p2p/enode"
+	"github.com/AbeyFoundation/go-abey/p2p/enode"
 )
 
 var (

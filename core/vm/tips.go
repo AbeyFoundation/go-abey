@@ -20,8 +20,8 @@ import (
 	"fmt"
 	"sort"
 
+	"github.com/AbeyFoundation/go-abey/params"
 	"github.com/holiman/uint256"
-	"github.com/abeychain/go-abey/params"
 )
 
 var activators = map[int]func(*JumpTable){

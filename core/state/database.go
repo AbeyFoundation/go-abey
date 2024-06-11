@@ -20,10 +20,10 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/abeychain/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/trie"
 	"github.com/hashicorp/golang-lru"
-	"github.com/abeychain/go-abey/abeydb"
-	"github.com/abeychain/go-abey/trie"
 )
 
 // Trie cache generation limit after which to evict trie nodes from memory.

@@ -22,13 +22,13 @@ import (
 	"os"
 	"strings"
 
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/internal/abeyapi"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/signer/core"
+	"github.com/AbeyFoundation/go-abey/signer/rules/deps"
+	"github.com/AbeyFoundation/go-abey/signer/storage"
 	"github.com/robertkrimen/otto"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/internal/abeyapi"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/signer/core"
-	"github.com/abeychain/go-abey/signer/rules/deps"
-	"github.com/abeychain/go-abey/signer/storage"
 )
 
 var (

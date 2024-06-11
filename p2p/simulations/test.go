@@ -3,10 +3,10 @@ package simulations
 import (
 	"testing"
 
-	"github.com/abeychain/go-abey/p2p"
-	"github.com/abeychain/go-abey/p2p/enode"
-	"github.com/abeychain/go-abey/p2p/enr"
-	"github.com/abeychain/go-abey/rpc"
+	"github.com/AbeyFoundation/go-abey/p2p"
+	"github.com/AbeyFoundation/go-abey/p2p/enode"
+	"github.com/AbeyFoundation/go-abey/p2p/enr"
+	"github.com/AbeyFoundation/go-abey/rpc"
 )
 
 // NoopService is the service that does not do anything

@@ -1,8 +1,9 @@
 package types
 
 import (
-	"github.com/abeychain/go-abey/consensus/tbft/help"
 	"time"
+
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/help"
 )
 
 // Canonical json is amino's json for structs with fields in alphabetical order
@@ -39,7 +40,7 @@ type CanonicalJSONVote struct {
 	Round     uint                 `json:"round"`
 	Timestamp string               `json:"timestamp"`
 	VoteType  byte                 `json:"type"`
-	// Result	  uint				   `json:"result"`	
+	// Result	  uint				   `json:"result"`
 	// ResSign	  []byte			   `json:"result_sign"`
 }
 

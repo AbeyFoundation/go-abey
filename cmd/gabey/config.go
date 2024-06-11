@@ -11,12 +11,12 @@ import (
 
 	"gopkg.in/urfave/cli.v1"
 
+	"github.com/AbeyFoundation/go-abey/abey"
+	"github.com/AbeyFoundation/go-abey/cmd/utils"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/node"
+	"github.com/AbeyFoundation/go-abey/params"
 	"github.com/naoina/toml"
-	"github.com/abeychain/go-abey/cmd/utils"
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/abey"
-	"github.com/abeychain/go-abey/node"
-	"github.com/abeychain/go-abey/params"
 )
 
 var (
@@ -59,7 +59,7 @@ type abeystatsConfig struct {
 
 type gethConfig struct {
 	Abey      abey.Config
-	Node       node.Config
+	Node      node.Config
 	Abeystats abeystatsConfig
 }
 
@@ -91,8 +91,8 @@ func defaultNodeConfig() node.Config {
 func makeConfigNode(ctx *cli.Context) (*node.Node, gethConfig) {
 	// Load defaults.
 	cfg := gethConfig{
-		Abey:     abey.DefaultConfig,
-		Node:      defaultNodeConfig(),
+		Abey: abey.DefaultConfig,
+		Node: defaultNodeConfig(),
 	}
 	if ctx.GlobalBool(utils.SingleNodeFlag.Name) {
 		// set abeyconfig

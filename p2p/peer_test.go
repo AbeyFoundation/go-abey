@@ -19,7 +19,7 @@ package p2p
 import (
 	"errors"
 	"fmt"
-	"github.com/abeychain/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/log"
 	"math/rand"
 	"net"
 	"reflect"

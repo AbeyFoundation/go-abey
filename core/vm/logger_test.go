@@ -20,10 +20,10 @@ import (
 	"math/big"
 	"testing"
 
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/core/state"
+	"github.com/AbeyFoundation/go-abey/params"
 	"github.com/holiman/uint256"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/core/state"
-	"github.com/abeychain/go-abey/params"
 )
 
 type dummyContractRef struct {

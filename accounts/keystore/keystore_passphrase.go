@@ -38,11 +38,11 @@ import (
 	"os"
 	"path/filepath"
 
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common/math"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/log"
 	"github.com/pborman/uuid"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/common/math"
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/log"
 	"golang.org/x/crypto/pbkdf2"
 	"golang.org/x/crypto/scrypt"
 )
@@ -121,7 +121,7 @@ func (ks keyStorePassphrase) StoreKey(filename string, key *Key, auth string) er
 				"This indicates that the keystore is corrupted. \n" +
 				"The corrupted file is stored at \n%v\n" +
 				"Please file a ticket at:\n\n" +
-				"https://github.com/abeychain/go-abey/issues." +
+				"https://github.com/AbeyFoundation/go-abey/issues." +
 				"The error was : %s"
 			return fmt.Errorf(msg, tmpName, err)
 		}

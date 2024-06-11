@@ -18,11 +18,11 @@ package les
 
 import (
 	"context"
-	"github.com/abeychain/go-abey/abey/fastdownloader"
+	"github.com/AbeyFoundation/go-abey/abey/fastdownloader"
 	"math/big"
 	"time"
 
-	"github.com/abeychain/go-abey/light"
+	"github.com/AbeyFoundation/go-abey/light"
 )
 
 // syncer is responsible for periodically synchronising with the network, both

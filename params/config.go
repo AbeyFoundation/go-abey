@@ -22,10 +22,10 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/abeychain/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/crypto"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/common/math"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common/math"
 )
 
 // Genesis hashes to enforce below configs on.

@@ -19,7 +19,7 @@
 package fetcher
 
 import (
-	"github.com/abeychain/go-abey/metrics"
+	"github.com/AbeyFoundation/go-abey/metrics"
 )
 
 var (

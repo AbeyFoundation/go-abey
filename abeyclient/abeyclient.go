@@ -22,15 +22,15 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/abeychain/go-abey/core/vm"
+	"github.com/AbeyFoundation/go-abey/core/vm"
 	"math/big"
 
-	"github.com/abeychain/go-abey"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/common/hexutil"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/rlp"
-	"github.com/abeychain/go-abey/rpc"
+	"github.com/AbeyFoundation/go-abey"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common/hexutil"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/rlp"
+	"github.com/AbeyFoundation/go-abey/rpc"
 )
 
 // Client defines typed wrappers for the Ethereum RPC API.

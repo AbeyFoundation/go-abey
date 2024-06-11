@@ -4,9 +4,10 @@ import (
 	"bytes"
 	"errors"
 	"fmt"
-	"github.com/abeychain/go-abey/consensus/tbft/crypto"
-	"github.com/abeychain/go-abey/consensus/tbft/help"
 	"time"
+
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/crypto"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/help"
 )
 
 var (
@@ -35,7 +36,7 @@ const (
 	VoteTypePrecommit = byte(0x02)
 )
 
-//IsVoteTypeValid return typeB is  vote
+// IsVoteTypeValid return typeB is  vote
 func IsVoteTypeValid(typeB byte) bool {
 	switch typeB {
 	case VoteTypePrevote:
@@ -47,7 +48,7 @@ func IsVoteTypeValid(typeB byte) bool {
 	}
 }
 
-//Vote Represents a prevote, precommit, or commit vote from validators for consensus.
+// Vote Represents a prevote, precommit, or commit vote from validators for consensus.
 type Vote struct {
 	ValidatorAddress help.Address `json:"validator_address"`
 	ValidatorIndex   uint         `json:"validator_index"`
@@ -61,7 +62,7 @@ type Vote struct {
 	ResultSign       []byte       `json:"reuslt_signature"`
 }
 
-//SignBytes is sign CanonicalVote and return rlpHash
+// SignBytes is sign CanonicalVote and return rlpHash
 func (vote *Vote) SignBytes(chainID string) []byte {
 	bz, err := cdc.MarshalJSON(CanonicalVote(chainID, vote))
 	if err != nil {
@@ -106,7 +107,7 @@ func (vote *Vote) String() string {
 	//	CanonicalTime(vote.Timestamp))
 }
 
-//Verify is Verify Signature and ValidatorAddress
+// Verify is Verify Signature and ValidatorAddress
 func (vote *Vote) Verify(chainID string, pubKey crypto.PubKey) error {
 	if !bytes.Equal(pubKey.Address(), vote.ValidatorAddress) {
 		return ErrVoteInvalidValidatorAddress

@@ -21,13 +21,13 @@ package light
 import (
 	"context"
 	"errors"
-	"github.com/abeychain/go-abey/core"
+	"github.com/AbeyFoundation/go-abey/core"
 	"math/big"
 
-	"github.com/abeychain/go-abey/abeydb"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/core/rawdb"
-	"github.com/abeychain/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/core/rawdb"
+	"github.com/AbeyFoundation/go-abey/core/types"
 )
 
 // NoOdr is the default context passed to an ODR capable function when the ODR

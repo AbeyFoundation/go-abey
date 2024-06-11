@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/abeychain/go-abey/cmd/utils"
+	"github.com/AbeyFoundation/go-abey/cmd/utils"
 	"gopkg.in/urfave/cli.v1"
 	"os"
 	"path/filepath"

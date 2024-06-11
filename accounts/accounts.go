@@ -20,10 +20,10 @@ package accounts
 import (
 	"math/big"
 
-	"github.com/abeychain/go-abey"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/event"
+	"github.com/AbeyFoundation/go-abey"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/event"
 )
 
 // Account represents an Ethereum account located at a specific location defined

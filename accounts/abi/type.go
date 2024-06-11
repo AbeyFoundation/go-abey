@@ -19,7 +19,7 @@ package abi
 import (
 	"errors"
 	"fmt"
-	"github.com/abeychain/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common"
 	"reflect"
 	"regexp"
 	"strconv"

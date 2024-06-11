@@ -24,12 +24,12 @@ import (
 	"net"
 	"time"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/rlp"
-	"github.com/abeychain/go-abey/p2p/nat"
-	"github.com/abeychain/go-abey/p2p/netutil"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/p2p/nat"
+	"github.com/AbeyFoundation/go-abey/p2p/netutil"
+	"github.com/AbeyFoundation/go-abey/rlp"
 )
 
 const Version = 520

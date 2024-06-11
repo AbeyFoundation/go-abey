@@ -19,7 +19,7 @@ package abi
 import (
 	"math/big"
 
-	"github.com/abeychain/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common"
 )
 
 type packUnpackTest struct {

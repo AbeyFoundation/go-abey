@@ -20,7 +20,7 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/abeychain/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/params"
 )
 
 // Forks table defines supported forks and their chain config.
@@ -29,40 +29,39 @@ var Forks = map[string]*params.ChainConfig{
 		ChainID: big.NewInt(1),
 	},
 	"Homestead": {
-		ChainID:        big.NewInt(1),
+		ChainID: big.NewInt(1),
 	},
 	"EIP150": {
-		ChainID:        big.NewInt(1),
+		ChainID: big.NewInt(1),
 	},
 	"EIP158": {
-		ChainID:        big.NewInt(1),
+		ChainID: big.NewInt(1),
 	},
 	"Byzantium": {
-		ChainID:        big.NewInt(1),
+		ChainID: big.NewInt(1),
 	},
 	"Constantinople": {
-		ChainID:             big.NewInt(1),
+		ChainID: big.NewInt(1),
 	},
 	"ConstantinopleFix": {
-		ChainID:             big.NewInt(1),
+		ChainID: big.NewInt(1),
 	},
 	"FrontierToHomesteadAt5": {
-		ChainID:        big.NewInt(1),
+		ChainID: big.NewInt(1),
 	},
 	"HomesteadToEIP150At5": {
-		ChainID:        big.NewInt(1),
+		ChainID: big.NewInt(1),
 	},
 	"HomesteadToDaoAt5": {
-		ChainID:        big.NewInt(1),
+		ChainID: big.NewInt(1),
 	},
 	"EIP158ToByzantiumAt5": {
-		ChainID:        big.NewInt(1),
+		ChainID: big.NewInt(1),
 	},
 	"ByzantiumToConstantinopleAt5": {
-		ChainID:             big.NewInt(1),
+		ChainID: big.NewInt(1),
 	},
 }
-
 
 // UnsupportedForkError is returned when a test requests a fork that isn't implemented.
 type UnsupportedForkError struct {

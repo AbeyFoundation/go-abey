@@ -26,9 +26,9 @@ import (
 	"math/rand"
 	"time"
 
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/internal/jsre/deps"
 	"github.com/robertkrimen/otto"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/internal/jsre/deps"
 )
 
 var (

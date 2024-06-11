@@ -16,7 +16,7 @@
 
 package bind
 
-import "github.com/abeychain/go-abey/accounts/abi"
+import "github.com/AbeyFoundation/go-abey/accounts/abi"
 
 // tmplData is the data structure required to fill the binding template.
 type tmplData struct {
@@ -90,12 +90,12 @@ import (
 	"math/big"
 	"strings"
 
-	ethereum "github.com/abeychain/go-abey"
-	"github.com/abeychain/go-abey/accounts/abi"
-	"github.com/abeychain/go-abey/accounts/abi/bind"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/event"
+	ethereum "github.com/AbeyFoundation/go-abey"
+	"github.com/AbeyFoundation/go-abey/accounts/abi"
+	"github.com/AbeyFoundation/go-abey/accounts/abi/bind"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/event"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.

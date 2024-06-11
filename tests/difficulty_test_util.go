@@ -20,11 +20,11 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/common/math"
-	"github.com/abeychain/go-abey/consensus/minerva"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common/math"
+	"github.com/AbeyFoundation/go-abey/consensus/minerva"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/params"
 )
 
 //go:generate gencodec -type DifficultyTest -field-override difficultyTestMarshaling -out gen_difficultytest.go
@@ -50,11 +50,11 @@ type difficultyTestMarshaling struct {
 func (test *DifficultyTest) Run(config *params.ChainConfig) error {
 	parentNumber := big.NewInt(int64(test.CurrentBlockNumber - 1))
 	parent := &types.SnailHeader{
-		Time:       test.ParentTimestamp,
-		Number:     parentNumber,
+		Time:   test.ParentTimestamp,
+		Number: parentNumber,
 	}
 
-	actual := minerva.CalcFruitDifficulty(config, test.CurrentTimestamp.Uint64(),0 ,parent)
+	actual := minerva.CalcFruitDifficulty(config, test.CurrentTimestamp.Uint64(), 0, parent)
 	exp := test.CurrentDifficulty
 
 	if actual.Cmp(exp) != 0 {

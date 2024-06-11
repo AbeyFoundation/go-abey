@@ -30,7 +30,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/abeychain/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/params"
 )
 
 var (

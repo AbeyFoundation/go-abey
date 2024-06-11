@@ -26,8 +26,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/abeychain/go-abey/common/bitutil"
-	"github.com/abeychain/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/common/bitutil"
+	"github.com/AbeyFoundation/go-abey/crypto"
 )
 
 // bloomIndexes represents the bit indexes inside the bloom filter that belong

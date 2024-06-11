@@ -17,7 +17,7 @@
 // Package bind generates Ethereum contract Go bindings.
 //
 // Detailed usage document and tutorial available on the go-ethereum Wiki page:
-// https://github.com/abeychain/go-abey/wiki/Native-DApps:-Go-bindings-to-Ethereum-contracts
+// https://github.com/AbeyFoundation/go-abey/wiki/Native-DApps:-Go-bindings-to-Ethereum-contracts
 package bind
 
 import (
@@ -30,8 +30,8 @@ import (
 	"text/template"
 	"unicode"
 
-	"github.com/abeychain/go-abey/accounts/abi"
-	"github.com/abeychain/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/accounts/abi"
+	"github.com/AbeyFoundation/go-abey/log"
 )
 
 // Lang is a target programming language selector to generate bindings for.

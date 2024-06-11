@@ -29,11 +29,11 @@ import (
 
 	"bytes"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/common/hexutil"
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/params"
-	"github.com/abeychain/go-abey/rlp"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common/hexutil"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/rlp"
 	"golang.org/x/crypto/sha3"
 )
 
@@ -485,7 +485,7 @@ func (b *Block) IsSwitch() bool {
 	return false
 }
 
-//Condition when proposal block award or switch is not nil
+// Condition when proposal block award or switch is not nil
 func (b *Block) IsProposal() bool {
 	if b.IsAward() || b.IsSwitch() {
 		return true
@@ -888,7 +888,7 @@ func (b *SnailBlock) MinFruitNumber() *big.Int {
 }
 
 // Body returns the non-header content of the snailblock.
-//func (b *SnailBlock) Body() *SnailBody { return b.body }
+// func (b *SnailBlock) Body() *SnailBody { return b.body }
 func (b *SnailBlock) Body() *SnailBody { return &SnailBody{b.fruits, b.signs} }
 func (b *SnailBlock) HashNoNonce() common.Hash {
 	return b.header.HashNoNonce()

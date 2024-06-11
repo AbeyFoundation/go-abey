@@ -20,14 +20,14 @@ package consensus
 import (
 	"math/big"
 
-	"github.com/abeychain/go-abey/abeydb"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/core/state"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/core/vm"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/params"
-	"github.com/abeychain/go-abey/rpc"
+	"github.com/AbeyFoundation/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/core/state"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/core/vm"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/rpc"
 )
 
 // ChainReader defines a small collection of methods needed to access the local
@@ -165,7 +165,7 @@ type Engine interface {
 	GetRewardContentBySnailNumber(sBlock *types.SnailBlock) *types.SnailRewardContenet
 }
 
-//CommitteeElection module implementation committee interface
+// CommitteeElection module implementation committee interface
 type CommitteeElection interface {
 	// VerifySigns verify the fast chain committee signatures in batches
 	VerifySigns(pvs []*types.PbftSign) ([]*types.CommitteeMember, []error)

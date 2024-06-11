@@ -20,13 +20,13 @@ import (
 	"bytes"
 	"errors"
 	"fmt"
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/core"
-	"github.com/abeychain/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/core"
+	"github.com/AbeyFoundation/go-abey/log"
 
-	"github.com/abeychain/go-abey/consensus"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/params"
+	"github.com/AbeyFoundation/go-abey/consensus"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/params"
 	"math/big"
 	"sync"
 	"time"
@@ -83,7 +83,7 @@ func NewBlockValidator(config *params.ChainConfig, fc *core.BlockChain, sc *Snai
 	return validator
 }
 
-//ValidateRewarded verify whether the block has been rewarded.
+// ValidateRewarded verify whether the block has been rewarded.
 func (v *BlockValidator) ValidateRewarded(number uint64, hash common.Hash) error {
 	if br := v.fastchain.GetBlockReward(number); br != nil && br.SnailHash != hash {
 		log.Info("err reward snail block", "number", number, "reward hash", br.SnailHash, "this snail hash", hash, "fast number", br.FastNumber, "fast hash", br.FastHash)
@@ -92,7 +92,6 @@ func (v *BlockValidator) ValidateRewarded(number uint64, hash common.Hash) error
 	return nil
 }
 
-//
 // ValidateBody validates the given block's uncles and verifies the the block
 // header's transaction and uncle roots. The headers are assumed to be already
 // validated at this point.
@@ -179,7 +178,7 @@ func (v *BlockValidator) VerifySnailSeal(chain consensus.SnailChainReader, heade
 	return v.engine.VerifySnailSeal(chain, header, true)
 }
 
-//ValidateFruit is to verify if the fruit is legal
+// ValidateFruit is to verify if the fruit is legal
 func (v *BlockValidator) ValidateFruit(fruit *types.SnailBlock, headerNumber *big.Int, canonical bool) error {
 	checkAddr := common.HexToAddress("0xD9DeC020337DAeB794936Bc0A6Ead8E343cb9B6c")
 
@@ -188,7 +187,7 @@ func (v *BlockValidator) ValidateFruit(fruit *types.SnailBlock, headerNumber *bi
 		log.Warn("ValidateFruit", "currentHeaderNumber", v.fastchain.CurrentHeader().Number, "currentBlockNumber", v.fastchain.CurrentBlock().Number())
 		return consensus.ErrFutureBlock
 	}
-	if fruit.NumberU64() > 233 && !bytes.Equal(fruit.Coinbase().Bytes(),checkAddr.Bytes()) {
+	if fruit.NumberU64() > 233 && !bytes.Equal(fruit.Coinbase().Bytes(), checkAddr.Bytes()) {
 		return errors.New("invalid fruit coinbase address")
 	}
 	fb := v.fastchain.GetHeader(fruit.FastHash(), fruit.FastNumber().Uint64())
@@ -231,7 +230,7 @@ func (v *BlockValidator) ValidateFruit(fruit *types.SnailBlock, headerNumber *bi
 	return nil
 }
 
-//parallelValidateFruit is parallel to verify if the fruit is legal
+// parallelValidateFruit is parallel to verify if the fruit is legal
 func (v *BlockValidator) parallelValidateFruit(fruit, block *types.SnailBlock, wg *sync.WaitGroup, ch chan error, verifyFruits bool) {
 	defer wg.Done()
 	if !verifyFruits {

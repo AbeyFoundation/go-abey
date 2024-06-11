@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"sync"
 
-	"github.com/abeychain/go-abey/metrics"
+	"github.com/AbeyFoundation/go-abey/metrics"
 )
 
 type exp struct {

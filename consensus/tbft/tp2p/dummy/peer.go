@@ -3,9 +3,9 @@ package dummy
 import (
 	"net"
 
-	"github.com/abeychain/go-abey/consensus/tbft/help"
-	tp2p "github.com/abeychain/go-abey/consensus/tbft/tp2p"
-	tmconn "github.com/abeychain/go-abey/consensus/tbft/tp2p/conn"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/help"
+	tp2p "github.com/AbeyFoundation/go-abey/consensus/tbft/tp2p"
+	tmconn "github.com/AbeyFoundation/go-abey/consensus/tbft/tp2p/conn"
 )
 
 type peer struct {

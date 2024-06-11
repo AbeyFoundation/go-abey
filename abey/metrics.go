@@ -17,8 +17,8 @@
 package abey
 
 import (
-	"github.com/abeychain/go-abey/metrics"
-	"github.com/abeychain/go-abey/p2p"
+	"github.com/AbeyFoundation/go-abey/metrics"
+	"github.com/AbeyFoundation/go-abey/p2p"
 )
 
 var (
@@ -48,17 +48,15 @@ var (
 	propSBlockOutPacketsMeter = metrics.NewRegisteredMeter("abey/prop/sblocks/out/packets", nil)
 	propSBlockOutTrafficMeter = metrics.NewRegisteredMeter("abey/prop/sblocks/out/traffic", nil)
 
-	propNodeInfoInPacketsMeter    = metrics.NewRegisteredMeter("abey/prop/nodeinfo/in/packets", nil)
+	propNodeInfoInPacketsMeter  = metrics.NewRegisteredMeter("abey/prop/nodeinfo/in/packets", nil)
 	propNodeInfoInTrafficMeter  = metrics.NewRegisteredMeter("abey/prop/nodeinfo/in/traffic", nil)
 	propNodeInfoOutPacketsMeter = metrics.NewRegisteredMeter("abey/prop/nodeinfo/out/packets", nil)
 	propNodeInfoOutTrafficMeter = metrics.NewRegisteredMeter("abey/prop/nodeinfo/out/traffic", nil)
 
-	propNodeInfoHashInPacketsMeter    = metrics.NewRegisteredMeter("abey/prop/nodeinfohash/in/packets", nil)
+	propNodeInfoHashInPacketsMeter  = metrics.NewRegisteredMeter("abey/prop/nodeinfohash/in/packets", nil)
 	propNodeInfoHashInTrafficMeter  = metrics.NewRegisteredMeter("abey/prop/nodeinfohash/in/traffic", nil)
 	propNodeInfoHashOutPacketsMeter = metrics.NewRegisteredMeter("abey/prop/nodeinfohash/out/packets", nil)
 	propNodeInfoHashOutTrafficMeter = metrics.NewRegisteredMeter("abey/prop/nodeinfohash/out/traffic", nil)
-
-
 
 	reqFHeaderInPacketsMeter  = metrics.NewRegisteredMeter("abey/req/headers/in/packets", nil)
 	reqFHeaderInTrafficMeter  = metrics.NewRegisteredMeter("abey/req/headers/in/traffic", nil)
@@ -96,7 +94,7 @@ var (
 	getBodyOutPacketsMeter = metrics.NewRegisteredMeter("abey/get/bodies/out/packets", nil)
 	getBodyOutTrafficMeter = metrics.NewRegisteredMeter("abey/get/bodies/out/traffic", nil)
 
-	getNodeInfoInPacketsMeter    = metrics.NewRegisteredMeter("abey/get/nodeinfo/in/packets", nil)
+	getNodeInfoInPacketsMeter  = metrics.NewRegisteredMeter("abey/get/nodeinfo/in/packets", nil)
 	getNodeInfoInTrafficMeter  = metrics.NewRegisteredMeter("abey/get/nodeinfo/in/traffic", nil)
 	getNodeInfoOutPacketsMeter = metrics.NewRegisteredMeter("abey/get/nodeinfo/out/packets", nil)
 	getNodeInfoOutTrafficMeter = metrics.NewRegisteredMeter("abey/get/nodeinfo/out/traffic", nil)

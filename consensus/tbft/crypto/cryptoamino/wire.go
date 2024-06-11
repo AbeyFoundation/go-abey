@@ -1,8 +1,8 @@
 package cryptoAmino
 
 import (
-	"github.com/abeychain/go-abey/consensus/tbft/crypto"
-	"github.com/abeychain/go-abey/consensus/tbft/crypto/ed25519"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/crypto"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/crypto/ed25519"
 	amino "github.com/tendermint/go-amino"
 )
 

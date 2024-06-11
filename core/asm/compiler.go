@@ -22,8 +22,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/abeychain/go-abey/common/math"
-	"github.com/abeychain/go-abey/core/vm"
+	"github.com/AbeyFoundation/go-abey/common/math"
+	"github.com/AbeyFoundation/go-abey/core/vm"
 )
 
 // Compiler contains information about the parsed source

@@ -25,12 +25,12 @@ import (
 	"sync"
 	"time"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/common/prque"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/core/types"
-	abey "github.com/abeychain/go-abey/abey/types"
-	"github.com/abeychain/go-abey/metrics"
+	abey "github.com/AbeyFoundation/go-abey/abey/types"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common/prque"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/metrics"
 )
 
 var (
@@ -53,7 +53,7 @@ type queue struct {
 	headerTaskPool  map[uint64]*types.SnailHeader  // [eth/62] Pending header retrieval tasks, mapping starting indexes to skeleton headers
 	headerTaskQueue *prque.Prque                   // [eth/62] Priority queue of the skeleton indexes to fetch the filling headers for
 	headerPeerMiss  map[string]map[uint64]struct{} // [eth/62] Set of per-peer header batches known to be unavailable
-	headerPendPool  map[string]*abey.FetchRequest // [eth/62] Currently pending header retrieval operations
+	headerPendPool  map[string]*abey.FetchRequest  // [eth/62] Currently pending header retrieval operations
 	headerResults   []*types.SnailHeader           // [eth/62] Result cache accumulating the completed headers
 	headerProced    int                            // [eth/62] Number of headers already processed from the results
 	headerOffset    uint64                         // [eth/62] Number of the first header in the result cache
@@ -62,12 +62,12 @@ type queue struct {
 	// All data retrievals below are based on an already assembles header chain
 	blockTaskPool  map[common.Hash]*types.SnailHeader // [eth/62] Pending block (body) retrieval tasks, mapping hashes to headers
 	blockTaskQueue *prque.Prque                       // [eth/62] Priority queue of the headers to fetch the blocks (bodies) for
-	blockPendPool  map[string]*abey.FetchRequest     // [eth/62] Currently pending block (body) retrieval operations
+	blockPendPool  map[string]*abey.FetchRequest      // [eth/62] Currently pending block (body) retrieval operations
 	blockDonePool  map[common.Hash]struct{}           // [eth/62] Set of the completed block (body) fetches
 
 	resultCache  []*abey.FetchResult // Downloaded but not yet delivered fetch results
-	resultOffset uint64               // Offset of the first cached fetch result in the block chain
-	resultSize   common.StorageSize   // Approximate size of a block (exponential moving average)
+	resultOffset uint64              // Offset of the first cached fetch result in the block chain
+	resultSize   common.StorageSize  // Approximate size of a block (exponential moving average)
 
 	lock       *sync.Mutex
 	active     *sync.Cond

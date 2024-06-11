@@ -19,8 +19,8 @@ package runtime_test
 import (
 	"fmt"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/core/vm/runtime"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/core/vm/runtime"
 )
 
 func ExampleExecute() {

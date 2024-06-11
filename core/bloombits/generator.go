@@ -19,7 +19,7 @@ package bloombits
 import (
 	"errors"
 
-	"github.com/abeychain/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/core/types"
 )
 
 // errSectionOutOfBounds is returned if the user tried to add more bloom filters

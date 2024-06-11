@@ -21,11 +21,11 @@ import (
 	"bytes"
 	"flag"
 	"fmt"
-	"github.com/abeychain/go-abey/cmd/utils"
+	"github.com/AbeyFoundation/go-abey/cmd/utils"
 	"reflect"
 	"testing"
 
-	"github.com/abeychain/go-abey/core/vm"
+	"github.com/AbeyFoundation/go-abey/core/vm"
 )
 
 func TestState(t *testing.T) {
@@ -34,11 +34,11 @@ func TestState(t *testing.T) {
 
 	st.addDefault()
 	st.addFrontierFails()
-	st.addHomesteadFails();
-	st.addEIP150Fails();
-	st.addEIP158Fails();
-	st.addByzantiumFails();
-	st.addConstantinopleFails();
+	st.addHomesteadFails()
+	st.addEIP150Fails()
+	st.addEIP158Fails()
+	st.addByzantiumFails()
+	st.addConstantinopleFails()
 	st.walk(t, stateTestDir, func(t *testing.T, name string, test *StateTest) {
 		for _, subtest := range test.Subtests() {
 			subtest := subtest

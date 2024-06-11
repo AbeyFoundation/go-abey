@@ -20,9 +20,9 @@ import (
 	"context"
 	"sync"
 
-	"github.com/abeychain/go-abey"
-	"github.com/abeychain/go-abey/event"
-	"github.com/abeychain/go-abey/rpc"
+	"github.com/AbeyFoundation/go-abey"
+	"github.com/AbeyFoundation/go-abey/event"
+	"github.com/AbeyFoundation/go-abey/rpc"
 )
 
 // PublicDownloaderAPI provides an API which gives information about the current synchronisation status.

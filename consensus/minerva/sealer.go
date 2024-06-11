@@ -24,10 +24,10 @@ import (
 	"runtime"
 	"sync"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/consensus"
-	"github.com/abeychain/go-abey/core/types"
-	"github.com/abeychain/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/consensus"
+	"github.com/AbeyFoundation/go-abey/core/types"
+	"github.com/AbeyFoundation/go-abey/log"
 )
 
 // Seal implements consensus.Engine, attempting to find a nonce that satisfies
@@ -344,7 +344,7 @@ func (d *Dataset) updateLookupTBL(plookupTbl []uint64, headershash *[STARTUPDATE
 	return true, ds, cont
 }
 
-//UpdateTBL Update dataset information
+// UpdateTBL Update dataset information
 func (d *Dataset) UpdateTBL(offset [OFF_SKIP_LEN]int, skip [OFF_SKIP_LEN]int, plookupTbl []uint64) []uint64 {
 
 	lktWz := uint32(DATALENGTH / 64)

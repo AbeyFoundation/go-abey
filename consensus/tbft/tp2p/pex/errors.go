@@ -3,7 +3,7 @@ package pex
 import (
 	"fmt"
 
-	"github.com/abeychain/go-abey/consensus/tbft/tp2p"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/tp2p"
 )
 
 type ErrAddrBookNonRoutable struct {

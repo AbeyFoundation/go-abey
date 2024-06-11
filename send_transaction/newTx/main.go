@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/abeychain/go-abey/log"
-	"github.com/abeychain/go-abey/rpc"
+	"github.com/AbeyFoundation/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/rpc"
 	"math/big"
 	"strings"
 	"time"
@@ -19,6 +19,7 @@ var (
 )
 
 // get par
+//
 //	./main 10 1000000 1000 0 0 8888 1
 func main() {
 	fmt.Println("go into main")
@@ -27,7 +28,7 @@ func main() {
 	send(ip)
 }
 
-//send transaction init
+// send transaction init
 func send(ip string) {
 	//dial abey
 	client, err := rpc.Dial("http://" + ip)

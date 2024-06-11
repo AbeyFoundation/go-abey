@@ -20,8 +20,8 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/abeychain/go-abey/common"
-	"github.com/abeychain/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/abeydb"
+	"github.com/AbeyFoundation/go-abey/common"
 )
 
 // makeTestTrie create a sample test trie to test node-wise reconstruction.

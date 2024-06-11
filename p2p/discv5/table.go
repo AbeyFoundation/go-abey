@@ -29,7 +29,7 @@ import (
 	"net"
 	"sort"
 
-	"github.com/abeychain/go-abey/common"
+	"github.com/AbeyFoundation/go-abey/common"
 )
 
 const (

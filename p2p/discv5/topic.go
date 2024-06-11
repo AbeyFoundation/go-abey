@@ -23,8 +23,8 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/abeychain/go-abey/common/mclock"
-	"github.com/abeychain/go-abey/log"
+	"github.com/AbeyFoundation/go-abey/common/mclock"
+	"github.com/AbeyFoundation/go-abey/log"
 )
 
 const (

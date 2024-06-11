@@ -24,8 +24,8 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/abeychain/go-abey/crypto"
-	"github.com/abeychain/go-abey/p2p"
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/p2p"
 )
 
 // Tests that datadirs can be successfully created, be them manually configured

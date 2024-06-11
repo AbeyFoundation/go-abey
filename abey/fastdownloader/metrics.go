@@ -19,7 +19,7 @@
 package fastdownloader
 
 import (
-	"github.com/abeychain/go-abey/metrics"
+	"github.com/AbeyFoundation/go-abey/metrics"
 )
 
 var (
@@ -37,6 +37,4 @@ var (
 	receiptReqTimer     = metrics.NewRegisteredTimer("abey/fastdownloader/receipts/req", nil)
 	receiptDropMeter    = metrics.NewRegisteredMeter("abey/fastdownloader/receipts/drop", nil)
 	receiptTimeoutMeter = metrics.NewRegisteredMeter("abey/fastdownloader/receipts/timeout", nil)
-
-
 )
