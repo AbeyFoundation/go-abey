@@ -17,6 +17,7 @@
 package vm
 
 import (
+	"fmt"
 	"github.com/AbeyFoundation/go-abey/params"
 )
 
