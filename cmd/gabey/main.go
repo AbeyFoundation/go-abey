@@ -103,6 +103,8 @@ var (
 		utils.NodeKeyHexFlag,
 		utils.TestnetFlag,
 		utils.DevnetFlag,
+		utils.MainnetClassicFlag,
+		utils.TestnetClassicFlag,
 		utils.VMEnableDebugFlag,
 		utils.NetworkIdFlag,
 		utils.RPCCORSDomainFlag,

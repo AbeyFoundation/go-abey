@@ -52,6 +52,23 @@ var TrustedCheckpoints = map[common.Hash]*TrustedCheckpoint{
 var (
 	// MainnetChainConfig is the chain parameters to run a node on the main network.
 	MainnetChainConfig = &ChainConfig{
+		ChainID: big.NewInt(170),
+		Minerva: &(MinervaConfig{
+			MinimumDifficulty:      big.NewInt(30000),
+			MinimumFruitDifficulty: big.NewInt(10000),
+			DurationLimit:          big.NewInt(600),
+		}),
+		TIP3:  &BlockConfig{FastNumber: big.NewInt(0)},
+		TIP5:  &BlockConfig{SnailNumber: big.NewInt(0)},
+		TIP7:  &BlockConfig{FastNumber: big.NewInt(0)},
+		TIP8:  &BlockConfig{FastNumber: big.NewInt(0), CID: big.NewInt(0)},
+		TIP9:  &BlockConfig{FastNumber: big.NewInt(0), SnailNumber: big.NewInt(0)},
+		TIP10: &BlockConfig{FastNumber: big.NewInt(0)},
+		TIP11: &BlockConfig{FastNumber: big.NewInt(0)},
+	}
+
+	// classic
+	MainnetChainConfigClassic = &ChainConfig{
 		ChainID: big.NewInt(179),
 		Minerva: &(MinervaConfig{
 			MinimumDifficulty:      big.NewInt(3000000),
@@ -66,7 +83,6 @@ var (
 		TIP10: &BlockConfig{FastNumber: big.NewInt(13303000)},
 		TIP11: &BlockConfig{FastNumber: big.NewInt(18000000)},
 	}
-
 	// MainnetTrustedCheckpoint contains the light client trusted checkpoint for the main network.
 	MainnetTrustedCheckpoint = &TrustedCheckpoint{
 		SectionIndex: 227,
@@ -90,6 +106,22 @@ var (
 
 	// TestnetChainConfig contains the chain parameters to run a node on the Ropsten test network.
 	TestnetChainConfig = &ChainConfig{
+		ChainID: big.NewInt(171),
+		Minerva: &(MinervaConfig{
+			MinimumDifficulty:      big.NewInt(60000),
+			MinimumFruitDifficulty: big.NewInt(200),
+			DurationLimit:          big.NewInt(600),
+		}),
+		TIP3:  &BlockConfig{FastNumber: big.NewInt(0)},
+		TIP5:  &BlockConfig{SnailNumber: big.NewInt(0)},
+		TIP7:  &BlockConfig{FastNumber: big.NewInt(0)},
+		TIP8:  &BlockConfig{FastNumber: big.NewInt(0), CID: big.NewInt(0)},
+		TIP9:  &BlockConfig{FastNumber: big.NewInt(0), SnailNumber: big.NewInt(0)},
+		TIP10: &BlockConfig{FastNumber: big.NewInt(0)},
+		TIP11: &BlockConfig{FastNumber: big.NewInt(0)},
+	}
+	// classic
+	TestnetChainConfigClassic = &ChainConfig{
 		ChainID: big.NewInt(178),
 		Minerva: &(MinervaConfig{
 			MinimumDifficulty:      big.NewInt(60000),
@@ -104,7 +136,6 @@ var (
 		TIP10: &BlockConfig{FastNumber: big.NewInt(0)},
 		TIP11: &BlockConfig{FastNumber: big.NewInt(0)},
 	}
-
 	// TestnetTrustedCheckpoint contains the light client trusted checkpoint for the Ropsten test network.
 	TestnetTrustedCheckpoint = &TrustedCheckpoint{
 		SectionIndex: 161,

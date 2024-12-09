@@ -145,11 +145,19 @@ var (
 	}
 	TestnetFlag = cli.BoolFlag{
 		Name:  "testnet",
-		Usage: "Ropsten network: pre-configured proof-of-work test network",
+		Usage: "test network: pre-configured of test network",
+	}
+	TestnetClassicFlag = cli.BoolFlag{
+		Name:  "testnet-classic",
+		Usage: "classic network: pre-configured of test network",
+	}
+	MainnetClassicFlag = cli.BoolFlag{
+		Name:  "mainnet-classic",
+		Usage: "mainnet-classic network: pre-configured of main classic network",
 	}
 	DevnetFlag = cli.BoolFlag{
 		Name:  "devnet",
-		Usage: "dev network: pre-configured proof-of-work develop network",
+		Usage: "dev network: pre-configured of develop network",
 	}
 	IdentityFlag = cli.StringFlag{
 		Name:  "identity",
@@ -160,14 +168,6 @@ var (
 		Usage: "Document Root for HTTPClient file scheme",
 		Value: DirectoryString{homeDir()},
 	}
-	/*FastSyncFlag = cli.BoolFlag{
-		Name:  "fast",
-		Usage: "Enable fast syncing through state downloads (replaced by --syncmode)",
-	}
-	LightModeFlag = cli.BoolFlag{
-		Name:  "light",
-		Usage: "Enable light client mode (replaced by --syncmode)",
-	}*/
 	//SingleNodeFlag is single node setting
 	SingleNodeFlag = cli.BoolFlag{
 		Name:  "singlenode",
@@ -613,6 +613,12 @@ func MakeDataDir(ctx *cli.Context) string {
 		if ctx.GlobalBool(SingleNodeFlag.Name) {
 			return filepath.Join(path, "singlenode")
 		}
+		if ctx.GlobalBool(MainnetClassicFlag.Name) {
+			return filepath.Join(path, "classic")
+		}
+		if ctx.GlobalBool(TestnetClassicFlag.Name) {
+			return filepath.Join(path, "testnet-classic")
+		}
 		return path
 	}
 	Fatalf("Cannot determine default data directory, please set manually (--datadir)")
@@ -687,6 +693,10 @@ func setBootstrapNodes(ctx *cli.Context, cfg *p2p.Config) {
 		urls = params.TestnetBootnodes
 	case ctx.GlobalBool(DevnetFlag.Name):
 		urls = params.DevnetBootnodes
+	case ctx.GlobalBool(MainnetClassicFlag.Name):
+		urls = params.MainnetClassicBootnodes
+	case ctx.GlobalBool(TestnetClassicFlag.Name):
+		urls = params.TestnetClassicBootnodes
 	case cfg.BootstrapNodes != nil || ctx.GlobalBool(SingleNodeFlag.Name):
 		return // already set, don't apply defaults.
 	}
@@ -974,6 +984,10 @@ func SetNodeConfig(ctx *cli.Context, cfg *node.Config) {
 		cfg.DataDir = filepath.Join(node.DefaultDataDir(), "devnet")
 	case ctx.GlobalBool(SingleNodeFlag.Name):
 		cfg.DataDir = ctx.GlobalString(DataDirFlag.Name)
+	case ctx.GlobalBool(MainnetClassicFlag.Name):
+		cfg.DataDir = filepath.Join(node.DefaultDataDir(), "classic")
+	case ctx.GlobalBool(TestnetClassicFlag.Name):
+		cfg.DataDir = filepath.Join(node.DefaultDataDir(), "testnet-classic")
 	}
 	if ctx.GlobalIsSet(KeyStoreDirFlag.Name) {
 		cfg.KeyStoreDir = ctx.GlobalString(KeyStoreDirFlag.Name)
@@ -1089,7 +1103,7 @@ func CheckExclusive(ctx *cli.Context, args ...interface{}) {
 // SetAbeychainConfig applies abey-related command line flags to the config.
 func SetAbeychainConfig(ctx *cli.Context, stack *node.Node, cfg *abey.Config) {
 	// Avoid conflicting network flags
-	CheckExclusive(ctx, TestnetFlag, DevnetFlag, SingleNodeFlag)
+	CheckExclusive(ctx, TestnetFlag, DevnetFlag, SingleNodeFlag, MainnetClassicFlag, TestnetClassicFlag)
 	//CheckExclusive(ctx, LightServFlag, LightModeFlag)
 	CheckExclusive(ctx, LightServFlag, SyncModeFlag, "light")
 
@@ -1213,7 +1227,7 @@ func SetAbeychainConfig(ctx *cli.Context, stack *node.Node, cfg *abey.Config) {
 	switch {
 	case ctx.GlobalBool(TestnetFlag.Name):
 		if !ctx.GlobalIsSet(NetworkIdFlag.Name) {
-			cfg.NetworkId = 178
+			cfg.NetworkId = 171
 		}
 		cfg.Genesis = core.DefaultTestnetGenesisBlock()
 	case ctx.GlobalBool(DevnetFlag.Name):
@@ -1226,6 +1240,16 @@ func SetAbeychainConfig(ctx *cli.Context, stack *node.Node, cfg *abey.Config) {
 			cfg.NetworkId = 176
 		}
 		cfg.Genesis = core.DefaultSingleNodeGenesisBlock()
+	case ctx.GlobalBool(MainnetClassicFlag.Name):
+		if !ctx.GlobalIsSet(NetworkIdFlag.Name) {
+			cfg.NetworkId = 179
+		}
+		cfg.Genesis = core.DefaultClassicGenesisBlock()
+	case ctx.GlobalBool(TestnetClassicFlag.Name):
+		if !ctx.GlobalIsSet(NetworkIdFlag.Name) {
+			cfg.NetworkId = 178
+		}
+		cfg.Genesis = core.DefaultTestnetClassicGenesisBlock()
 	}
 	// TODO(fjl): move trie cache generations into config
 	if gen := ctx.GlobalInt(TrieCacheGenFlag.Name); gen > 0 {
@@ -1319,6 +1343,10 @@ func MakeGenesis(ctx *cli.Context) *core.Genesis {
 		genesis = core.DefaultDevGenesisBlock()
 	case ctx.GlobalBool(SingleNodeFlag.Name):
 		genesis = core.DefaultSingleNodeGenesisBlock()
+	case ctx.GlobalBool(MainnetClassicFlag.Name):
+		genesis = core.DefaultClassicGenesisBlock()
+	case ctx.GlobalBool(TestnetClassicFlag.Name):
+		genesis = core.DefaultTestnetClassicGenesisBlock()
 	}
 	return genesis
 }
