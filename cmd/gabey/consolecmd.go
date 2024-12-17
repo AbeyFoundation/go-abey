@@ -112,6 +112,10 @@ func remoteConsole(ctx *cli.Context) error {
 				path = filepath.Join(path, "devnet")
 			} else if ctx.GlobalBool(utils.SingleNodeFlag.Name) {
 				path = filepath.Join(path, "singlenode")
+			} else if ctx.GlobalBool(utils.MainnetClassicFlag.Name) {
+				path = filepath.Join(path, "classic")
+			} else if ctx.GlobalBool(utils.TestnetClassicFlag.Name) {
+				path = filepath.Join(path, "testnet-classic")
 			}
 		}
 		endpoint = fmt.Sprintf("%s/gabey.ipc", path)

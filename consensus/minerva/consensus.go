@@ -513,9 +513,12 @@ func (m *Minerva) VerifySigns(fastnumber *big.Int, fastHash common.Hash, signs [
 			count++
 		}
 	}
-	if count <= len(members)*2/3 {
-		log.Warn("VerifySigns number error", "signs", len(signs), "agree", count, "members", len(members))
-		return consensus.ErrInvalidSign
+	// single node mode
+	if len(members) > 1 {
+		if count <= len(members)*2/3 {
+			log.Warn("VerifySigns number error", "signs", len(signs), "agree", count, "members", len(members))
+			return consensus.ErrInvalidSign
+		}
 	}
 
 	signMembers, errs := m.election.VerifySigns(signs)
