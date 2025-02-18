@@ -1,10 +1,10 @@
 # Build Gabey in a stock Go builder container
-FROM golang:1.18-alpine as construction
+FROM golang:1.22-alpine as construction
 
-RUN apk add --no-cache git make gcc musl-dev=1.2.3-r5 linux-headers
+RUN apk add --no-cache git make gcc musl-dev=1.2.5-r9 linux-headers
 
 ADD . /abey
-RUN cd /abey && make gabey
+RUN cd /abey && go mod tidy && make gabey
 
 # Pull Gabey into a second stage deploy alpine container
 FROM alpine:3.18.5
