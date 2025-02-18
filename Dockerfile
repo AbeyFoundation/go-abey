@@ -1,5 +1,5 @@
 # Build Gabey in a stock Go builder container
-FROM golang:1.22-alpine as construction
+FROM golang:1.22.12-alpine as construction
 
 RUN apk add --no-cache git make gcc musl-dev=1.2.5-r9 linux-headers
 
