@@ -20,14 +20,15 @@ package downloader
 import (
 	"errors"
 	"fmt"
-	"github.com/AbeyFoundation/go-abey/core/rawdb"
-	"github.com/AbeyFoundation/go-abey/params"
 	"math/big"
 	"sync"
 	"sync/atomic"
 	"time"
 
-	"github.com/AbeyFoundation/go-abey"
+	abeychain "github.com/AbeyFoundation/go-abey"
+	"github.com/AbeyFoundation/go-abey/core/rawdb"
+	"github.com/AbeyFoundation/go-abey/params"
+
 	"github.com/AbeyFoundation/go-abey/abey/fastdownloader"
 	abey "github.com/AbeyFoundation/go-abey/abey/types"
 	"github.com/AbeyFoundation/go-abey/abeydb"

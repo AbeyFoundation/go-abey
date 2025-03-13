@@ -20,7 +20,7 @@ import (
 	"context"
 	"sync"
 
-	"github.com/AbeyFoundation/go-abey"
+	abeychain "github.com/AbeyFoundation/go-abey"
 	"github.com/AbeyFoundation/go-abey/event"
 	"github.com/AbeyFoundation/go-abey/rpc"
 )

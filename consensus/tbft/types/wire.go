@@ -1,7 +1,7 @@
 package types
 
 import (
-	"github.com/AbeyFoundation/go-abey/consensus/tbft/crypto/cryptoamino"
+	cryptoAmino "github.com/AbeyFoundation/go-abey/consensus/tbft/crypto/cryptoamino"
 	"github.com/tendermint/go-amino"
 )
 

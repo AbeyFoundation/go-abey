@@ -20,7 +20,7 @@ package accounts
 import (
 	"math/big"
 
-	"github.com/AbeyFoundation/go-abey"
+	abeychain "github.com/AbeyFoundation/go-abey"
 	"github.com/AbeyFoundation/go-abey/common"
 	"github.com/AbeyFoundation/go-abey/core/types"
 	"github.com/AbeyFoundation/go-abey/event"

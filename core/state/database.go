@@ -23,7 +23,7 @@ import (
 	"github.com/AbeyFoundation/go-abey/abeydb"
 	"github.com/AbeyFoundation/go-abey/common"
 	"github.com/AbeyFoundation/go-abey/trie"
-	"github.com/hashicorp/golang-lru"
+	lru "github.com/hashicorp/golang-lru"
 )
 
 // Trie cache generation limit after which to evict trie nodes from memory.
