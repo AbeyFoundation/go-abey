@@ -29,7 +29,7 @@ import (
 	"github.com/AbeyFoundation/go-abey/log"
 	"github.com/AbeyFoundation/go-abey/p2p"
 	"github.com/AbeyFoundation/go-abey/rlp"
-	"github.com/deckarep/golang-set"
+	mapset "github.com/deckarep/golang-set"
 )
 
 var (

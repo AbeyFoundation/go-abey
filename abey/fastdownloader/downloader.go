@@ -20,12 +20,13 @@ package fastdownloader
 import (
 	"errors"
 	"fmt"
-	"github.com/AbeyFoundation/go-abey/consensus/tbft/help"
 	"sync"
 	"sync/atomic"
 	"time"
 
-	"github.com/AbeyFoundation/go-abey"
+	abeychain "github.com/AbeyFoundation/go-abey"
+	"github.com/AbeyFoundation/go-abey/consensus/tbft/help"
+
 	abey "github.com/AbeyFoundation/go-abey/abey/types"
 	"github.com/AbeyFoundation/go-abey/abeydb"
 	"github.com/AbeyFoundation/go-abey/common"

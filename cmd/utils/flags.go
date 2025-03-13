@@ -145,11 +145,11 @@ var (
 	}
 	TestnetFlag = cli.BoolFlag{
 		Name:  "testnet",
-		Usage: "test network: pre-configured of test network",
+		Usage: "Ropsten network: pre-configured proof-of-work test network",
 	}
 	DevnetFlag = cli.BoolFlag{
 		Name:  "devnet",
-		Usage: "dev network: pre-configured of develop network",
+		Usage: "dev network: pre-configured proof-of-work develop network",
 	}
 	IdentityFlag = cli.StringFlag{
 		Name:  "identity",
@@ -160,6 +160,14 @@ var (
 		Usage: "Document Root for HTTPClient file scheme",
 		Value: DirectoryString{homeDir()},
 	}
+	/*FastSyncFlag = cli.BoolFlag{
+		Name:  "fast",
+		Usage: "Enable fast syncing through state downloads (replaced by --syncmode)",
+	}
+	LightModeFlag = cli.BoolFlag{
+		Name:  "light",
+		Usage: "Enable light client mode (replaced by --syncmode)",
+	}*/
 	//SingleNodeFlag is single node setting
 	SingleNodeFlag = cli.BoolFlag{
 		Name:  "singlenode",
@@ -1205,7 +1213,7 @@ func SetAbeychainConfig(ctx *cli.Context, stack *node.Node, cfg *abey.Config) {
 	switch {
 	case ctx.GlobalBool(TestnetFlag.Name):
 		if !ctx.GlobalIsSet(NetworkIdFlag.Name) {
-			cfg.NetworkId = 171
+			cfg.NetworkId = 178
 		}
 		cfg.Genesis = core.DefaultTestnetGenesisBlock()
 	case ctx.GlobalBool(DevnetFlag.Name):

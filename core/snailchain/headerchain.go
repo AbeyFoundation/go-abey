@@ -34,7 +34,7 @@ import (
 	"github.com/AbeyFoundation/go-abey/core/types"
 	"github.com/AbeyFoundation/go-abey/log"
 	"github.com/AbeyFoundation/go-abey/params"
-	"github.com/hashicorp/golang-lru"
+	lru "github.com/hashicorp/golang-lru"
 )
 
 const (

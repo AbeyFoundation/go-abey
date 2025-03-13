@@ -40,7 +40,7 @@ import (
 	"github.com/AbeyFoundation/go-abey/metrics"
 	"github.com/AbeyFoundation/go-abey/params"
 	"github.com/AbeyFoundation/go-abey/rlp"
-	"github.com/hashicorp/golang-lru"
+	lru "github.com/hashicorp/golang-lru"
 )
 
 var (
