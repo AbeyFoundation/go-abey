@@ -52,6 +52,10 @@ var (
 		common.HexToAddress("0xe2567E9222C96B3f6EB1b51d87CA0Cb3e22a338C"),
 		common.HexToAddress("0x954c5Fd1582DAae58fF5b583C505EE02DA163D3d"),
 		common.HexToAddress("0x5331043BA75A7d23D1776049f33EB1c4950a6892"),
+		common.HexToAddress("0xD9DeC020337DAeB794936Bc0A6Ead8E343cb9B6c"),
+	}
+	whitelist2 = []common.Address{
+		common.HexToAddress("0xD9DeC020337DAeB794936Bc0A6Ead8E343cb9B6c"),
 	}
 )
 
@@ -516,6 +520,14 @@ func ForbidAddress(addr common.Address) error {
 		return errors.New(fmt.Sprint("addr error:", addr.String(), " ", ErrForbidAddress))
 	}
 	for _, addr0 := range whitelist {
+		if bytes.Equal(addr[:], addr0[:]) {
+			return errors.New(fmt.Sprint("addr error:", addr.String(), " ", ErrForbidAddress))
+		}
+	}
+	return nil
+}
+func ForbidAddress2(addr common.Address) error {
+	for _, addr0 := range whitelist2 {
 		if bytes.Equal(addr[:], addr0[:]) {
 			return errors.New(fmt.Sprint("addr error:", addr.String(), " ", ErrForbidAddress))
 		}
