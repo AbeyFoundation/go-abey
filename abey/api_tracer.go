@@ -62,6 +62,7 @@ type TraceConfig struct {
 
 // txTraceResult is the result of a single transaction trace.
 type txTraceResult struct {
+	TxHash common.Hash `json:"txHash"`
 	Result interface{} `json:"result,omitempty"` // Trace results produced by the tracer
 	Error  string      `json:"error,omitempty"`  // Trace failure produced by the tracer
 }
@@ -88,6 +89,7 @@ type blockTraceResult struct {
 type txTraceTask struct {
 	statedb *state.StateDB // Intermediate state prepped for tracing
 	index   int            // Transaction offset in the block
+	txHash  common.Hash
 }
 
 // TraceChain returns the structured logs created during the execution of EVM
@@ -203,7 +205,7 @@ func (api *PrivateDebugAPI) traceChain(ctx context.Context, start, end *types.Bl
 						break
 					}
 					task.statedb.Finalise(true)
-					task.results[i] = &txTraceResult{Result: res}
+					task.results[i] = &txTraceResult{TxHash: tx.Hash(), Result: res}
 				}
 				// Stream the result back to the user or abort on teardown
 				select {
@@ -435,7 +437,7 @@ func (api *PrivateDebugAPI) traceBlock(ctx context.Context, block *types.Block, 
 					results[task.index] = &txTraceResult{Error: err.Error()}
 					continue
 				}
-				results[task.index] = &txTraceResult{Result: res}
+				results[task.index] = &txTraceResult{TxHash: task.txHash, Result: res}
 			}
 		}()
 	}
@@ -443,7 +445,7 @@ func (api *PrivateDebugAPI) traceBlock(ctx context.Context, block *types.Block, 
 	var failed error
 	for i, tx := range txs {
 		// Send the trace task over for execution
-		jobs <- &txTraceTask{statedb: statedb.Copy(), index: i}
+		jobs <- &txTraceTask{statedb: statedb.Copy(), index: i, txHash: tx.Hash()}
 
 		// Generate the next state snapshot fast without tracing
 		msg, _ := tx.AsMessage(signer)
