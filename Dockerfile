@@ -7,11 +7,13 @@ ADD . /abey
 RUN cd /abey && go mod tidy && make gabey
 
 # Pull Gabey into a second stage deploy alpine container
-FROM alpine:3.18.5
+FROM alpine:3.21
 
-RUN apk add --no-cache ca-certificates
+RUN apk add --no-cache ca-certificates && \
+    addgroup -S gabey && adduser -S -G gabey gabey
 COPY --from=construction /abey/build/bin/gabey /usr/local/bin/
-CMD ["gabey"]
+
+USER gabey
 
 EXPOSE 8545 8545 9215 9215 30310 30310 30311 30311 30313 30313
 ENTRYPOINT ["gabey"]
