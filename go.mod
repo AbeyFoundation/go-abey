@@ -1,6 +1,8 @@
 module github.com/AbeyFoundation/go-abey
 
-go 1.15
+go 1.24.0
+
+toolchain go1.24.2
 
 replace gopkg.in/fatih/set.v0 v0.2.1 => github.com/loinfish/set v0.0.1
 
@@ -14,7 +16,6 @@ require (
 	github.com/docker/docker v20.10.6+incompatible
 	github.com/elastic/gosigar v0.14.1
 	github.com/fatih/color v1.15.0
-	github.com/fjl/memsize v0.0.0-20190710130421-bcb5799ab5e5
 	github.com/gizak/termui v2.2.1-0.20170117222342-991cd3d38091+incompatible
 	github.com/go-stack/stack v1.8.0
 	github.com/golang/protobuf v1.5.4
@@ -41,9 +42,9 @@ require (
 	github.com/stretchr/testify v1.10.0
 	github.com/syndtr/goleveldb v1.0.0
 	github.com/tendermint/go-amino v0.12.0
-	golang.org/x/crypto v0.33.0
-	golang.org/x/net v0.34.0
-	golang.org/x/sys v0.30.0
+	golang.org/x/crypto v0.46.0
+	golang.org/x/net v0.48.0
+	golang.org/x/sys v0.39.0
 	gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c
 	gopkg.in/fatih/set.v0 v0.2.1 // 27c40922c40b43fe04554d8223a402af3ea333f3
 	gopkg.in/karalabe/cookiejar.v2 v2.0.0-20150724131613-8dcd6a7f4951
@@ -53,12 +54,28 @@ require (
 )
 
 require (
+	github.com/Azure/go-autorest v14.2.0+incompatible // indirect
 	github.com/Azure/go-autorest/autorest v0.11.18 // indirect
+	github.com/Azure/go-autorest/autorest/adal v0.9.13 // indirect
+	github.com/Azure/go-autorest/autorest/date v0.3.0 // indirect
+	github.com/Azure/go-autorest/logger v0.2.1 // indirect
+	github.com/Azure/go-autorest/tracing v0.6.0 // indirect
+	github.com/form3tech-oss/jwt-go v3.2.2+incompatible // indirect
 	github.com/google/gofuzz v1.2.0 // indirect
+	github.com/google/uuid v1.6.0 // indirect
+	github.com/kr/pretty v0.2.1 // indirect
+	github.com/kr/text v0.2.0 // indirect
 	github.com/maruel/panicparse v0.0.0-20160720141634-ad661195ed0e // indirect
 	github.com/maruel/ut v1.0.2 // indirect
+	github.com/mattn/go-runewidth v0.0.9 // indirect
+	github.com/mitchellh/go-wordwrap v1.0.1 // indirect
 	github.com/naoina/go-stringutil v0.1.0 // indirect
 	github.com/nsf/termbox-go v1.1.0 // indirect
+	github.com/pmezard/go-difflib v1.0.0 // indirect
+	golang.org/x/term v0.38.0 // indirect
+	golang.org/x/text v0.32.0 // indirect
+	google.golang.org/protobuf v1.36.10 // indirect
 	gopkg.in/sourcemap.v1 v1.0.5 // indirect
+	gopkg.in/yaml.v3 v3.0.1 // indirect
 	gotest.tools/v3 v3.5.2 // indirect
 )

@@ -27,13 +27,10 @@ import (
 	"github.com/AbeyFoundation/go-abey/log"
 	"github.com/AbeyFoundation/go-abey/metrics"
 	"github.com/AbeyFoundation/go-abey/metrics/exp"
-	"github.com/fjl/memsize/memsizeui"
 	colorable "github.com/mattn/go-colorable"
 	"github.com/mattn/go-isatty"
 	"gopkg.in/urfave/cli.v1"
 )
-
-var Memsize memsizeui.Handler
 
 var (
 	verbosityFlag = cli.IntFlag{
@@ -157,7 +154,6 @@ func StartPProf(address string) {
 	// Hook go-metrics into expvar on any /debug/metrics request, load all vars
 	// from the registry into expvar, and execute regular expvar handler.
 	exp.Exp(metrics.DefaultRegistry)
-	http.Handle("/memsize/", http.StripPrefix("/memsize", &Memsize))
 	log.Info("Starting pprof server", "addr", fmt.Sprintf("http://%s/debug/pprof", address))
 	go func() {
 		if err := http.ListenAndServe(address, nil); err != nil {
