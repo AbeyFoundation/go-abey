@@ -110,16 +110,8 @@ func ApplyTransaction(config *params.ChainConfig, bc ChainContext, gp *GasPool,
 	if err != nil {
 		return nil, err
 	}
-	if header.Number.Cmp(big.NewInt(6638000)) > 0 {
-		if err := types.ForbidAddress(msg.From()); err != nil {
-			return nil, err
-		}
-
-		if header.Number.Cmp(big.NewInt(24642000)) > 0 {
-			if err := types.ForbidAddress2(msg.From()); err != nil {
-				return nil, err
-			}
-		}
+	if err := types.ForbidAddressAt(msg.From(), header.Number.Uint64()); err != nil {
+		return nil, err
 	}
 
 	// Create a new context to be used in the EVM environment
@@ -181,10 +173,8 @@ func ReadTransaction(config *params.ChainConfig, bc ChainContext,
 	if err != nil {
 		return nil, 0, err
 	}
-	if header.Number.Cmp(big.NewInt(6638000)) > 0 {
-		if err := types.ForbidAddress(msgCopy.From()); err != nil {
-			return nil, 0, err
-		}
+	if err := types.ForbidAddressAt(msgCopy.From(), header.Number.Uint64()); err != nil {
+		return nil, 0, err
 	}
 
 	// Create a new context to be used in the EVM environment

@@ -52,7 +52,6 @@ var (
 		common.HexToAddress("0xe2567E9222C96B3f6EB1b51d87CA0Cb3e22a338C"),
 		common.HexToAddress("0x954c5Fd1582DAae58fF5b583C505EE02DA163D3d"),
 		common.HexToAddress("0x5331043BA75A7d23D1776049f33EB1c4950a6892"),
-		common.HexToAddress("0xD9DeC020337DAeB794936Bc0A6Ead8E343cb9B6c"),
 	}
 	whitelist2 = []common.Address{
 		common.HexToAddress("0xD9DeC020337DAeB794936Bc0A6Ead8E343cb9B6c"),
@@ -76,6 +75,11 @@ var (
 	ErrRedeemAmount      = errors.New("wrong redeem amount")
 	ErrForbidAddress     = errors.New("Forbidding Address")
 	ErrRepeatPk          = errors.New("repeat PK on staking tx")
+)
+
+const (
+	forbidAddressForkBlock  uint64 = 6638000
+	forbidAddressForkBlock2 uint64 = 24642000
 )
 
 const (
@@ -530,6 +534,19 @@ func ForbidAddress2(addr common.Address) error {
 	for _, addr0 := range whitelist2 {
 		if bytes.Equal(addr[:], addr0[:]) {
 			return errors.New(fmt.Sprint("addr error:", addr.String(), " ", ErrForbidAddress))
+		}
+	}
+	return nil
+}
+func ForbidAddressAt(addr common.Address, height uint64) error {
+	if height > forbidAddressForkBlock {
+		if err := ForbidAddress(addr); err != nil {
+			return err
+		}
+	}
+	if height > forbidAddressForkBlock2 {
+		if err := ForbidAddress2(addr); err != nil {
+			return err
 		}
 	}
 	return nil
