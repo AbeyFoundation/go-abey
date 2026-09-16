@@ -18,10 +18,12 @@ package core
 
 import (
 	//"github.com/AbeyFoundation/go-abey/common"
-	"github.com/AbeyFoundation/go-abey/crypto"
-	"github.com/AbeyFoundation/go-abey/metrics"
+	"errors"
 	"math"
 	"time"
+
+	"github.com/AbeyFoundation/go-abey/crypto"
+	"github.com/AbeyFoundation/go-abey/metrics"
 
 	//"github.com/AbeyFoundation/go-abey/log"
 	"github.com/AbeyFoundation/go-abey/consensus"
@@ -104,6 +106,11 @@ func (fp *StateProcessor) Process(block *types.Block, statedb *state.StateDB,
 // and uses the input parameters for its environment. It returns the receipt
 // for the transaction, gas used and an error if the transaction failed,
 // indicating the block was invalid.
+// ErrFeeNotSupported is returned from TIP12 on for any transaction carrying a
+// non-zero fee. Such a transaction is invalid at block import, which makes the
+// whole block invalid on honest nodes.
+var ErrFeeNotSupported = errors.New("fee transactions are not supported")
+
 func ApplyTransaction(config *params.ChainConfig, bc ChainContext, gp *GasPool,
 	statedb *state.StateDB, header *types.Header, tx *types.Transaction, usedGas *uint64, feeAmount *big.Int, cfg vm.Config) (*types.Receipt, error) {
 	msg, err := tx.AsMessage(types.MakeSigner(config, header.Number))
@@ -112,6 +119,14 @@ func ApplyTransaction(config *params.ChainConfig, bc ChainContext, gp *GasPool,
 	}
 	if err := types.ForbidAddressAt(msg.From(), header.Number.Uint64()); err != nil {
 		return nil, err
+	}
+	// From TIP12 on, a fee-bearing transaction is invalid at block import. The
+	// fee field's settlement never matched the block-level payout to the
+	// committee, so a malicious leader could include such a transaction to mint
+	// balance. Rejecting it here makes any block containing one fail validation
+	// on every honest node, not just at the RPC/mempool layer.
+	if config.IsTIP12(header.Number) && msg.Fee() != nil && msg.Fee().Sign() != 0 {
+		return nil, ErrFeeNotSupported
 	}
 
 	// Create a new context to be used in the EVM environment

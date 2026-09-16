@@ -65,6 +65,9 @@ var (
 		TIP9:  &BlockConfig{FastNumber: big.NewInt(8742700), SnailNumber: big.NewInt(73000)},
 		TIP10: &BlockConfig{FastNumber: big.NewInt(13303000)},
 		TIP11: &BlockConfig{FastNumber: big.NewInt(18000000)},
+		// TIP12 rejects fee-bearing transactions at block import; height set in a
+		// follow-up release once testnet validation and node upgrades are confirmed.
+		TIP12: nil,
 	}
 
 	// MainnetTrustedCheckpoint contains the light client trusted checkpoint for the main network.
@@ -103,6 +106,7 @@ var (
 		TIP9:  &BlockConfig{FastNumber: big.NewInt(0), SnailNumber: big.NewInt(0)},
 		TIP10: &BlockConfig{FastNumber: big.NewInt(0)},
 		TIP11: &BlockConfig{FastNumber: big.NewInt(0)},
+		TIP12: &BlockConfig{FastNumber: big.NewInt(15950000)},
 	}
 
 	// TestnetTrustedCheckpoint contains the light client trusted checkpoint for the Ropsten test network.
@@ -141,6 +145,7 @@ var (
 		TIP9:  &BlockConfig{FastNumber: big.NewInt(0), SnailNumber: big.NewInt(0)},
 		TIP10: &BlockConfig{FastNumber: big.NewInt(0)},
 		TIP11: &BlockConfig{FastNumber: big.NewInt(0)},
+		TIP12: &BlockConfig{FastNumber: big.NewInt(0)},
 	}
 
 	SingleNodeChainConfig = &ChainConfig{
@@ -157,6 +162,7 @@ var (
 		TIP9:  &BlockConfig{FastNumber: big.NewInt(0), SnailNumber: big.NewInt(0)},
 		TIP10: &BlockConfig{FastNumber: big.NewInt(0)},
 		TIP11: &BlockConfig{FastNumber: big.NewInt(0)},
+		TIP12: &BlockConfig{FastNumber: big.NewInt(0)},
 	}
 
 	// TestnetTrustedCheckpoint contains the light client trusted checkpoint for the Ropsten test network.
@@ -250,6 +256,7 @@ type ChainConfig struct {
 	TIP9     *BlockConfig `json:"tip9"`
 	TIP10    *BlockConfig `json:"tip10"`
 	TIP11    *BlockConfig `json:"tip11"`
+	TIP12    *BlockConfig `json:"tip12"`
 	TIPStake *BlockConfig `json:"tipstake"`
 }
 
@@ -512,4 +519,13 @@ func (c *ChainConfig) IsTIP11(num *big.Int) bool {
 		return false
 	}
 	return isForked(c.TIP11.FastNumber, num)
+}
+
+// IsTIP12 returns whether num is at or after the TIP12 fork, which rejects
+// fee-bearing transactions at block import to close the fee-inflation path.
+func (c *ChainConfig) IsTIP12(num *big.Int) bool {
+	if c.TIP12 == nil {
+		return false
+	}
+	return isForked(c.TIP12.FastNumber, num)
 }
