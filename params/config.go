@@ -65,9 +65,7 @@ var (
 		TIP9:  &BlockConfig{FastNumber: big.NewInt(8742700), SnailNumber: big.NewInt(73000)},
 		TIP10: &BlockConfig{FastNumber: big.NewInt(13303000)},
 		TIP11: &BlockConfig{FastNumber: big.NewInt(18000000)},
-		// TIP12 rejects fee-bearing transactions at block import; height set in a
-		// follow-up release once testnet validation and node upgrades are confirmed.
-		TIP12: nil,
+		TIP12: &BlockConfig{FastNumber: big.NewInt(34285000)},
 	}
 
 	// MainnetTrustedCheckpoint contains the light client trusted checkpoint for the main network.
